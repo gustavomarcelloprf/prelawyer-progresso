@@ -116,7 +116,7 @@
         "Olhe a linha do item onde você anexou a imagem.",
         "Tente anexar uma imagem com mais de 5 MB."
       ],
-      "esperado": "A imagem fica anexada ao item e a análise da IA aparece para ela, como acontece com um PDF. Na linha do item aparece um selo \"IMG\", mostrando que o anexo é uma imagem. O sistema não aceita e mostra uma mensagem explicando o motivo."
+      "esperado": "A imagem fica anexada ao item e a análise da IA aparece para ela, como acontece com um PDF. Na linha do item aparece um selo \"IMG\", mostrando que o anexo é uma imagem. A imagem acima de 5 MB não é aceita, e aparece uma mensagem explicando o motivo."
     },
     {
       "id": "#16",

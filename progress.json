@@ -287,7 +287,19 @@
     {
       "id": "B1",
       "titulo": "Topo da operação: \"Progresso\" e \"Documentos anexados\"",
-      "status": "em_andamento"
+      "status": "feito",
+      "desc": "No topo da tela de uma operação, os dois cartões de resumo mudaram. O cartão <b>\"Itens emitidos\"</b> virou <b>\"Progresso\"</b> e agora mostra <b>exatamente o mesmo número da aba Dashboard</b>: quantos itens já foram marcados como <i>Concluída</i>, de quantos itens estão no escopo (itens marcados como <i>Não aplicável</i> ficam de fora). O cartão <b>\"Targets\"</b> (que mostrava 3 targets · 1 PJ · 2 PF…) virou <b>\"Documentos anexados\"</b>: quantos itens já têm pelo menos um arquivo anexado. Um item com vários PDFs conta uma vez só. Ter documento não significa estar concluído — são dois cartões independentes.",
+      "passos": [
+        "Entre no app e abra uma operação que já tenha itens com documentos anexados e alguns itens marcados como \"Concluída\".",
+        "Olhe os dois cartões logo abaixo do nome da operação: o da esquerda deve se chamar \"Documentos anexados\" e o da direita \"Progresso\". Os nomes antigos (\"Targets\" e \"Itens emitidos\") não devem mais aparecer.",
+        "Anote o número do cartão \"Progresso\" (por exemplo, 4 / 7 e, embaixo, \"57,1% do escopo concluído\").",
+        "Clique na aba \"Dashboard\", logo abaixo dos cartões. No quadro \"Progresso geral\", confira que a porcentagem grande e a frase \"4 de 7 itens no escopo\" trazem os MESMOS números do cartão. Repita em mais de uma operação: os dois nunca podem divergir.",
+        "Volte para a aba \"Targets\" e conte, à mão, quantos itens têm documento anexado (o item que tem arquivo mostra o botão de abrir/ver o PDF). Compare com o cartão \"Documentos anexados\".",
+        "Teste um item com mais de um PDF (aqueles que aparecem agrupados): ele deve contar como 1 no cartão, não como 2.",
+        "Marque um item que já tem PDF como \"Concluída\" (no seletor de status do item) e volte ao topo: \"Progresso\" sobe em 1; \"Documentos anexados\" não muda.",
+        "Anexe um PDF novo em um item que ainda não tinha arquivo e volte ao topo: \"Documentos anexados\" sobe em 1; \"Progresso\" só muda se você também marcar o item como \"Concluída\"."
+      ],
+      "esperado": "O cartão \"Progresso\" mostra sempre o mesmo número e a mesma porcentagem da aba Dashboard. O cartão \"Documentos anexados\" mostra quantos itens têm pelo menos um arquivo (vários PDFs no mesmo item contam uma vez), sem depender do status. Um item respondido só por texto, sem arquivo, não conta como documento anexado."
     },
     {
       "id": "B4",

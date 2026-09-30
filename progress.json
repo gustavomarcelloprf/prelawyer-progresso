@@ -317,7 +317,16 @@
     {
       "id": "C4",
       "titulo": "Análise de documentos com um modelo de IA mais forte",
-      "status": "em_andamento"
+      "status": "feito",
+      "desc": "A análise de IA dos documentos anexados passa a usar um modelo mais forte, que lê o documento com mais cuidado. Por enquanto ela fica ligada só na conta de teste que avisarmos, para comparar antes de ligar para todos.",
+      "passos": [
+        "Entre no ambiente de teste com a conta que avisarmos que está com a análise nova ligada.",
+        "Abra uma operação, entre em um target e anexe um documento a um item (por exemplo, uma certidão).",
+        "Espere alguns segundos até aparecer o resultado da análise da IA no item.",
+        "Abra o resultado e leia a explicação da IA.",
+        "Se puder, anexe também um documento com problema (de outra pessoa, de outro tipo ou vencido) e veja o que a IA diz."
+      ],
+      "esperado": "A análise aparece normalmente, sem erro. A explicação fica mais precisa e aponta certo quando o documento é de outra pessoa, de outro tipo ou está vencido. Pode demorar um pouco mais que antes."
     },
     {
       "id": "#9",

@@ -68,13 +68,15 @@
       "id": "#19",
       "titulo": "\"Finalizar operação\" encerra e trava a operação",
       "status": "validado",
-      "desc": "O antigo \"Aceitar entrega\" virou \"Finalizar operação\". Depois de finalizada, a operação não pode mais ser alterada.",
+      "desc": "O antigo \"Aceitar entrega\" virou \"Finalizar operação\". Depois de finalizada, a operação não pode mais ser alterada. Se precisar, dá para reabrir a operação e ela volta a aceitar alterações.",
       "passos": [
         "Abra uma operação de teste que possa ser encerrada.",
         "Clique em \"Finalizar operação\" e confirme.",
-        "Tente anexar um documento, mudar a situação de um item ou renomear um item."
+        "Tente anexar um documento, mudar a situação de um item ou renomear um item.",
+        "Na mesma operação finalizada, clique em \"Reabrir operação\" e confirme.",
+        "Tente de novo anexar um documento ou mudar a situação de um item."
       ],
-      "esperado": "A operação aparece como \"Finalizada\" e nenhuma alteração é aceita."
+      "esperado": "A operação aparece como \"Finalizada\" e nenhuma alteração é aceita. Depois de reabrir, a operação deixa de aparecer como \"Finalizada\" e as alterações voltam a ser aceitas."
     },
     {
       "id": "#25",
@@ -111,9 +113,10 @@
         "Em um item, clique em \"Anexar PDF ou imagem\".",
         "Escolha uma foto ou print de um documento (arquivo PNG ou JPG) e envie.",
         "Aguarde alguns segundos.",
+        "Olhe a linha do item onde você anexou a imagem.",
         "Tente anexar uma imagem com mais de 5 MB."
       ],
-      "esperado": "A imagem fica anexada ao item e a análise da IA aparece para ela, como acontece com um PDF. O sistema não aceita e mostra uma mensagem explicando o motivo."
+      "esperado": "A imagem fica anexada ao item e a análise da IA aparece para ela, como acontece com um PDF. Na linha do item aparece um selo \"IMG\", mostrando que o anexo é uma imagem. O sistema não aceita e mostra uma mensagem explicando o motivo."
     },
     {
       "id": "#16",

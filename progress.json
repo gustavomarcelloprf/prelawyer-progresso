@@ -275,7 +275,18 @@
     {
       "id": "#28 · B3",
       "titulo": "\"Remover target\" vai para o fim da lista; a busca fica no lugar dele",
-      "status": "em_andamento"
+      "status": "feito",
+      "desc": "Na tela de um target, o botão \"Remover target\" saiu do canto superior direito e foi para o fim da lista de itens, ao lado de \"+ Adicionar item\". No lugar dele entrou um campo de busca (lupa) que filtra os itens pelo nome e também por qualquer palavra que apareça num apontamento.",
+      "passos": [
+        "Abra uma operação e clique em um target que tenha vários itens (de preferência um com apontamentos cadastrados).",
+        "Olhe o canto superior direito, ao lado do nome do target: deve haver um campo de busca com uma lupa, e não mais o botão \"Remover target\".",
+        "Digite parte do nome de um item (por exemplo, \"matr\"). Pode digitar em maiúsculas ou sem acento.",
+        "Apague e digite uma palavra que aparece só dentro de um apontamento de algum item (abra o item antes para ver o texto do apontamento).",
+        "Digite algo que não existe (por exemplo, \"zzzz\").",
+        "Clique no \"x\" dentro do campo para limpar a busca.",
+        "Role até o fim da lista de itens."
+      ],
+      "esperado": "Ao digitar parte do nome, a lista mostra só os itens cujo nome contém o que foi digitado. Ao digitar a palavra do apontamento, aparece o item que tem esse apontamento, mesmo que a palavra não esteja no nome dele. Com algo que não existe, aparece a mensagem \"Nenhum item corresponde a …\" e nenhum item. Ao limpar, todos os itens voltam. No fim da lista, o botão \"Remover target\" aparece ao lado de \"+ Adicionar item\"."
     },
     {
       "id": "A1",

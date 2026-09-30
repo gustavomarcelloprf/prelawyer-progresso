@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guia de validação</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --border: #dfe3e8; --text: #1f2933; --muted: #5f6b7a;
+    --azul: #2c5fa8; --azul-bg: #eaf1fb;
+    --ok: #2e7d4f; --ok-bg: #e8f4ec; --erro: #b3261e; --erro-bg: #fbeaea;
+    --espera: #6b7280; --espera-bg: #eef0f3; --barra: #e4e7eb;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 28px 16px 64px; }
+  h1 { font-size: 26px; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 14px; margin: 0 0 20px; }
+  .como { background: var(--azul-bg); border-radius: 10px; padding: 14px 16px; margin-bottom: 20px; font-size: 15px; }
+  .como ol { margin: 6px 0 0; padding-left: 20px; }
+  .painel { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 16px; margin-bottom: 32px; }
+  .painel h2 { margin: 0 0 10px; font-size: 17px; }
+  .barra { height: 12px; border-radius: 6px; background: var(--barra); overflow: hidden; display: flex; }
+  .barra span { height: 100%; }
+  .nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px; }
+  .num { background: var(--bg); border-radius: 8px; padding: 10px; text-align: center; }
+  .num b { display: block; font-size: 24px; font-variant-numeric: tabular-nums; }
+  .num span { font-size: 13px; color: var(--muted); }
+  .alerta { margin-top: 12px; color: var(--erro); font-size: 14px; }
+  section { margin-bottom: 36px; }
+  section > h2 { font-size: 19px; margin: 0 0 4px; }
+  section > p.explica { color: var(--muted); margin: 0 0 14px; font-size: 14.5px; }
+  .item-nome { font-size: 16px; font-weight: 600; margin: 22px 0 8px; }
+  .item-nome small { color: var(--muted); font-weight: 400; font-size: 13px; margin-left: 6px; }
+  .cartao { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 12px; }
+  .bloco { margin-bottom: 14px; }
+  .rotulo { font-size: 12.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--azul); margin-bottom: 4px; }
+  .bloco p { margin: 0; }
+  .bloco ol { margin: 0; padding-left: 22px; }
+  .bloco ol li { margin-bottom: 4px; }
+  .esperado { background: var(--bg); border-radius: 8px; padding: 10px 12px; }
+  .deu { border-top: 1px solid var(--border); padding-top: 12px; }
+  .oficial { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 14px; }
+  .selo { display: inline-block; border-radius: 999px; padding: 2px 10px; font-size: 13px; font-weight: 600; }
+  .selo.a_validar { background: var(--espera-bg); color: var(--espera); }
+  .selo.ok { background: var(--ok-bg); color: var(--ok); }
+  .selo.erro { background: var(--erro-bg); color: var(--erro); }
+  .nota-oficial { font-size: 14px; color: var(--muted); margin: -4px 0 10px; }
+  .minha { background: var(--bg); border-radius: 8px; padding: 10px 12px; }
+  .minha .t { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  .opcoes { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+  .opcoes label { display: inline-flex; align-items: center; gap: 6px; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 6px; padding: 5px 10px; font-size: 14px; cursor: pointer; }
+  .opcoes input { margin: 0; }
+  textarea { width: 100%; min-height: 60px; font: inherit; font-size: 14px; border: 1px solid var(--border); border-radius: 6px; padding: 8px; background: var(--surface); color: var(--text); resize: vertical; }
+  .simples { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-bottom: 6px; }
+  .simples small { color: var(--muted); margin-right: 6px; }
+  details.cartao > summary { cursor: pointer; font-weight: 600; }
+  details.cartao > summary small { color: var(--muted); font-weight: 400; margin-left: 6px; }
+  details.cartao[open] > summary { margin-bottom: 12px; }
+  .acoes { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  button { font: inherit; font-size: 14px; background: var(--azul); color: #fff; border: 0; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
+  button.sec { background: var(--surface); color: var(--azul); border: 1px solid var(--border); }
+  .falha { background: var(--erro-bg); color: var(--erro); border-radius: 8px; padding: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Guia de validação</h1>
+  <p class="sub" id="sub">Carregando…</p>
+
+  <div class="como">
+    <b>Como usar este guia</b>
+    <ol>
+      <li>Vá até a seção <b>“Prontos para conferir”</b>.</li>
+      <li>Em cada cartão, siga o passo a passo no sistema de testes.</li>
+      <li>Compare o que apareceu na tela com “O que você deve ver”.</li>
+      <li>Marque se deu certo e escreva o que notou. No fim, toque em <b>“Copiar minhas anotações”</b> e envie o texto para quem coordena.</li>
+    </ol>
+  </div>
+
+  <div id="app"></div>
+</main>
+<script>
+(function () {
+  var GRUPOS = [
+    { k: "erro", titulo: "Com problema", explica: "Algo não funcionou como deveria. Já estamos corrigindo." },
+    { k: "feito", titulo: "Prontos para conferir", explica: "Estas mudanças já estão no sistema de testes. Siga os passos e diga se deu certo." },
+    { k: "em_andamento", titulo: "Em preparação", explica: "Estamos trabalhando nestes. Ainda não há o que conferir." },
+    { k: "validado", titulo: "Já conferidos", explica: "Alguém já conferiu e deu tudo certo. Toque para ver os passos." },
+    { k: "pendente", titulo: "A fazer", explica: "Ainda não começamos. O passo a passo aparece aqui quando ficarem prontos." }
+  ];
+  var ESTADO = { a_validar: "A validar", ok: "OK", erro: "Encontrei um problema" };
+  var PREFIXO = "guia-validacao:";
+
+  function ler(chave) { try { return JSON.parse(localStorage.getItem(PREFIXO + chave)) || {}; } catch (e) { return {}; } }
+  function gravar(chave, v) { try { localStorage.setItem(PREFIXO + chave, JSON.stringify(v)); } catch (e) {} }
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function fmtData(iso) {
+    var d = new Date(iso);
+    return isNaN(d) ? esc(iso) : d.toLocaleString("pt-BR", { dateStyle: "long", timeStyle: "short" });
+  }
+
+  function cartaoValidacao(item, v, idx) {
+    var chave = item.id + "#" + idx;
+    var minha = ler(chave);
+    var est = v.estado in ESTADO ? v.estado : "a_validar";
+    var nome = "m-" + btoa(unescape(encodeURIComponent(chave))).replace(/[^a-z0-9]/gi, "");
+    var passos = (v.passos || []).map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("");
+    function op(val, rot) {
+      return '<label><input type="radio" name="' + nome + '" value="' + val + '"' +
+        (minha.estado === val ? " checked" : "") + ' data-chave="' + esc(chave) + '"> ' + rot + "</label>";
+    }
+    return '<div class="bloco"><div class="rotulo">O que estamos conferindo</div><p>' + esc(v.acao) + "</p></div>" +
+      (passos ? '<div class="bloco"><div class="rotulo">Passo a passo</div><ol>' + passos + "</ol></div>" : "") +
+      (v.esperado ? '<div class="bloco"><div class="rotulo">O que você deve ver</div><p class="esperado">' + esc(v.esperado) + "</p></div>" : "") +
+      '<div class="deu"><div class="rotulo">Deu certo?</div>' +
+      '<div class="oficial">Situação oficial: <span class="selo ' + est + '">' + ESTADO[est] + "</span></div>" +
+      (v.nota ? '<p class="nota-oficial">' + esc(v.nota) + "</p>" : "") +
+      '<div class="minha"><div class="t">Sua anotação (fica só neste aparelho)</div><div class="opcoes">' +
+      op("ok", "Deu certo") + op("erro", "Encontrei um problema") + "</div>" +
+      '<textarea placeholder="O que você viu? Se algo deu errado, descreva onde e o quê." data-chave="' + esc(chave) + '">' +
+      esc(minha.obs || "") + "</textarea></div></div>";
+  }
+
+  function render(dados) {
+    var itens = dados.itens || [];
+    var total = itens.length;
+    var c = { pendente: 0, em_andamento: 0, feito: 0, validado: 0, erro: 0 };
+    itens.forEach(function (i) { if (i.status in c) c[i.status]++; });
+    var feitos = c.feito + c.validado;
+    var aFazer = c.pendente + c.em_andamento;
+
+    document.getElementById("sub").textContent = "Atualizado em " + fmtData(dados.atualizado_em);
+
+    var pc = function (n) { return total ? (n / total * 100) : 0; };
+    var html = '<div class="painel"><h2>Visão geral</h2>' +
+      '<div class="barra" role="img" aria-label="' + feitos + " de " + total + ' feitos">' +
+      '<span style="width:' + pc(c.validado) + '%;background:var(--ok)"></span>' +
+      '<span style="width:' + pc(c.feito) + '%;background:var(--azul)"></span></div>' +
+      '<div class="nums">' +
+      '<div class="num"><b>' + feitos + "</b><span>feitos (de " + total + ")</span></div>" +
+      '<div class="num"><b>' + c.validado + "</b><span>conferidos</span></div>" +
+      '<div class="num"><b>' + aFazer + "</b><span>a fazer</span></div></div>" +
+      (c.erro ? '<div class="alerta">' + c.erro + " com problema, sendo corrigido.</div>" : "") +
+      '<div class="acoes"><button type="button" id="copiar">Copiar minhas anotações</button>' +
+      '<button type="button" class="sec" id="limpar">Apagar minhas anotações</button></div></div>';
+
+    GRUPOS.forEach(function (g) {
+      var grupo = itens.filter(function (i) { return i.status === g.k; });
+      if (!grupo.length) return;
+      html += "<section><h2>" + g.titulo + " (" + grupo.length + ')</h2><p class="explica">' + g.explica + "</p>";
+      grupo.forEach(function (i) {
+        var vals = i.validacoes || [];
+        if (g.k === "pendente" || g.k === "em_andamento") {
+          html += '<div class="simples"><small>' + esc(i.id) + "</small>" + esc(i.titulo) + "</div>";
+        } else if (g.k === "validado") {
+          html += '<details class="cartao"><summary>' + esc(i.titulo) + "<small>" + esc(i.id) + "</small></summary>" +
+            vals.map(function (v, n) { return (n ? '<hr style="border:0;border-top:1px solid var(--border);margin:16px 0">' : "") + cartaoValidacao(i, v, n); }).join("") +
+            "</details>";
+        } else {
+          html += '<div class="item-nome">' + esc(i.titulo) + "<small>" + esc(i.id) + "</small></div>";
+          if (!vals.length) {
+            html += '<div class="simples">Nada para conferir na tela: é uma melhoria interna.</div>';
+          }
+          vals.forEach(function (v, n) { html += '<div class="cartao">' + cartaoValidacao(i, v, n) + "</div>"; });
+        }
+      });
+      html += "</section>";
+    });
+
+    var app = document.getElementById("app");
+    app.innerHTML = html;
+
+    app.addEventListener("change", function (e) {
+      var t = e.target;
+      if (t.type !== "radio") return;
+      var m = ler(t.dataset.chave); m.estado = t.value; gravar(t.dataset.chave, m);
+    });
+    app.addEventListener("input", function (e) {
+      var t = e.target;
+      if (t.tagName !== "TEXTAREA") return;
+      var m = ler(t.dataset.chave); m.obs = t.value; gravar(t.dataset.chave, m);
+    });
+
+    document.getElementById("copiar").addEventListener("click", function () {
+      var linhas = [];
+      itens.forEach(function (i) {
+        (i.validacoes || []).forEach(function (v, n) {
+          var m = ler(i.id + "#" + n);
+          if (!m.estado && !m.obs) return;
+          linhas.push("[" + i.id + "] " + i.titulo + "\n  " + v.acao + "\n  Resultado: " +
+            (m.estado === "ok" ? "Deu certo" : m.estado === "erro" ? "Encontrei um problema" : "(não marcado)") +
+            (m.obs ? "\n  Observação: " + m.obs : ""));
+        });
+      });
+      var texto = linhas.length ? linhas.join("\n\n") : "Nenhuma anotação ainda.";
+      var btn = this;
+      function ok() { btn.textContent = "Copiado!"; setTimeout(function () { btn.textContent = "Copiar minhas anotações"; }, 1500); }
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(texto).then(ok, function () { window.prompt("Copie o texto abaixo:", texto); });
+      } else {
+        window.prompt("Copie o texto abaixo:", texto);
+      }
+    });
+    document.getElementById("limpar").addEventListener("click", function () {
+      if (!window.confirm("Apagar todas as suas anotações deste aparelho?")) return;
+      try {
+        Object.keys(localStorage).forEach(function (k) { if (k.indexOf(PREFIXO) === 0) localStorage.removeItem(k); });
+      } catch (e) {}
+      location.reload();
+    });
+  }
+
+  fetch("progress.json", { cache: "no-store" })
+    .then(function (r) { if (!r.ok) throw new Error("erro " + r.status); return r.json(); })
+    .then(render)
+    .catch(function () {
+      document.getElementById("sub").textContent = "";
+      document.getElementById("app").innerHTML =
+        '<div class="falha">Não foi possível carregar o guia agora. Tente recarregar a página em alguns minutos.</div>';
+    });
+})();
+</script>
+</body>
+</html>

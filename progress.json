@@ -297,7 +297,17 @@
     {
       "id": "C1",
       "titulo": "Fim da ordenação manual dos itens",
-      "status": "em_andamento"
+      "status": "feito",
+      "desc": "Os itens de cada target (pessoa, empresa ou imóvel) aparecem <b>sempre na ordem do número</b> (#1, #2, #3…), que é a ordem do checklist original. Não dá mais para arrastar os itens para mudar a posição. Por enquanto isso vale só nas contas em que a regra for ligada (teste controlado); nas outras, tudo segue como hoje.",
+      "passos": [
+        "Peça ao coordenador para ligar a regra \"Ordem por número\" na conta de teste.",
+        "Entre no app e abra uma operação que tenha targets com vários itens.",
+        "Clique em um target e olhe a lista de itens: confira que os números à esquerda (#1, #2, #3…) estão em ordem crescente, de cima para baixo.",
+        "Passe o mouse sobre um item: não deve aparecer nenhuma alça de arrastar (o ícone de seis pontinhos à esquerda do número).",
+        "Tente arrastar um item para cima ou para baixo segurando o mouse: nada deve se mover.",
+        "Se puder, abra outra conta em que a regra NÃO foi ligada: lá a alça de arrastar continua aparecendo e arrastar continua funcionando."
+      ],
+      "esperado": "Na conta com a regra ligada, os itens ficam sempre na ordem do número e não há como arrastar. Itens sem número (adicionados à mão) ficam no fim da lista. Na conta sem a regra, nada muda."
     },
     {
       "id": "C3",

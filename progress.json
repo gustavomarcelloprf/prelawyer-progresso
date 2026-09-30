@@ -302,7 +302,17 @@
     {
       "id": "C3",
       "titulo": "Membros não veem a análise da IA",
-      "status": "em_andamento"
+      "status": "feito",
+      "desc": "Quem entra numa operação como <b>Membro</b> deixa de ver qualquer coisa feita pela IA: o selo \"IA: aprovado/reprovado\", o quadro \"Análise da IA\", a cor na lateral do item, o \"Aguardando análise\", as datas de validade lidas pela IA e as sugestões da IA nos dados do target. Quem é <b>Admin</b> da operação continua vendo tudo. Por enquanto isso vale só nas contas em que a regra for ligada (teste controlado).",
+      "passos": [
+        "Peça ao coordenador para ligar a regra \"Membro sem IA\" na conta de teste.",
+        "Entre no app com um usuário que seja <b>Membro</b> de uma operação que já tenha documentos anexados.",
+        "Abra a operação e clique em um dos targets (pessoa, empresa ou imóvel).",
+        "Olhe a lista de itens: confira que não aparece nenhum selo \"IA: aprovado\" ou \"IA: reprovado\", nenhum \"Aguardando análise\" e nenhuma data \"Válido / Vence em / Vencido\".",
+        "Saia e entre de novo com um usuário que seja <b>Admin</b> da mesma operação.",
+        "Abra o mesmo target e confira que os selos da IA e as datas de validade aparecem normalmente."
+      ],
+      "esperado": "Como Membro, a análise de IA não aparece em lugar nenhum da tela do target (os documentos, os status e os comentários continuam lá). Como Admin, tudo aparece como antes. Nas contas em que a regra não foi ligada, nada muda para ninguém."
     },
     {
       "id": "C4",

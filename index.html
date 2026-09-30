@@ -1,233 +1,232 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Guia de validação</title>
+<title>DueHub — Progresso & Validação</title>
 <style>
-  :root {
-    --bg: #f6f7f9; --surface: #ffffff; --border: #dfe3e8; --text: #1f2933; --muted: #5f6b7a;
-    --azul: #2c5fa8; --azul-bg: #eaf1fb;
-    --ok: #2e7d4f; --ok-bg: #e8f4ec; --erro: #b3261e; --erro-bg: #fbeaea;
-    --espera: #6b7280; --espera-bg: #eef0f3; --barra: #e4e7eb;
-    color-scheme: light;
+  :root{
+    --bg:#f6f7f9; --card:#ffffff; --ink:#1a1d23; --muted:#6b7280; --faint:#9aa1ab;
+    --line:#e6e8ec; --line2:#eef0f3;
+    --todo:#94a3b8; --todo-bg:#f1f3f6;
+    --doing:#d98a04; --doing-bg:#fdf6e9;
+    --done:#2563eb; --done-bg:#eef3ff;
+    --ok:#15925a; --ok-bg:#eaf6ef;
+    --shadow:0 1px 2px rgba(16,24,40,.04),0 4px 16px rgba(16,24,40,.05);
+    --radius:14px;
   }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text);
-    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 28px 16px 64px; }
-  h1 { font-size: 26px; margin: 0 0 4px; }
-  .sub { color: var(--muted); font-size: 14px; margin: 0 0 20px; }
-  .como { background: var(--azul-bg); border-radius: 10px; padding: 14px 16px; margin-bottom: 20px; font-size: 15px; }
-  .como ol { margin: 6px 0 0; padding-left: 20px; }
-  .painel { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 16px; margin-bottom: 32px; }
-  .painel h2 { margin: 0 0 10px; font-size: 17px; }
-  .barra { height: 12px; border-radius: 6px; background: var(--barra); overflow: hidden; display: flex; }
-  .barra span { height: 100%; }
-  .nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px; }
-  .num { background: var(--bg); border-radius: 8px; padding: 10px; text-align: center; }
-  .num b { display: block; font-size: 24px; font-variant-numeric: tabular-nums; }
-  .num span { font-size: 13px; color: var(--muted); }
-  .alerta { margin-top: 12px; color: var(--erro); font-size: 14px; }
-  section { margin-bottom: 36px; }
-  section > h2 { font-size: 19px; margin: 0 0 4px; }
-  section > p.explica { color: var(--muted); margin: 0 0 14px; font-size: 14.5px; }
-  .item-nome { font-size: 16px; font-weight: 600; margin: 22px 0 8px; }
-  .item-nome small { color: var(--muted); font-weight: 400; font-size: 13px; margin-left: 6px; }
-  .cartao { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 12px; }
-  .bloco { margin-bottom: 14px; }
-  .rotulo { font-size: 12.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--azul); margin-bottom: 4px; }
-  .bloco p { margin: 0; }
-  .bloco ol { margin: 0; padding-left: 22px; }
-  .bloco ol li { margin-bottom: 4px; }
-  .esperado { background: var(--bg); border-radius: 8px; padding: 10px 12px; }
-  .deu { border-top: 1px solid var(--border); padding-top: 12px; }
-  .oficial { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 14px; }
-  .selo { display: inline-block; border-radius: 999px; padding: 2px 10px; font-size: 13px; font-weight: 600; }
-  .selo.a_validar { background: var(--espera-bg); color: var(--espera); }
-  .selo.ok { background: var(--ok-bg); color: var(--ok); }
-  .selo.erro { background: var(--erro-bg); color: var(--erro); }
-  .nota-oficial { font-size: 14px; color: var(--muted); margin: -4px 0 10px; }
-  .minha { background: var(--bg); border-radius: 8px; padding: 10px 12px; }
-  .minha .t { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
-  .opcoes { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
-  .opcoes label { display: inline-flex; align-items: center; gap: 6px; background: var(--surface); border: 1px solid var(--border);
-    border-radius: 6px; padding: 5px 10px; font-size: 14px; cursor: pointer; }
-  .opcoes input { margin: 0; }
-  textarea { width: 100%; min-height: 60px; font: inherit; font-size: 14px; border: 1px solid var(--border); border-radius: 6px; padding: 8px; background: var(--surface); color: var(--text); resize: vertical; }
-  .simples { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-bottom: 6px; }
-  .simples small { color: var(--muted); margin-right: 6px; }
-  details.cartao > summary { cursor: pointer; font-weight: 600; }
-  details.cartao > summary small { color: var(--muted); font-weight: 400; margin-left: 6px; }
-  details.cartao[open] > summary { margin-bottom: 12px; }
-  .acoes { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-  button { font: inherit; font-size: 14px; background: var(--azul); color: #fff; border: 0; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
-  button.sec { background: var(--surface); color: var(--azul); border: 1px solid var(--border); }
-  .falha { background: var(--erro-bg); color: var(--erro); border-radius: 8px; padding: 14px; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:860px;margin:0 auto;padding:28px 20px 72px;}
+  header .kicker{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--done);}
+  h1{font-size:27px;letter-spacing:-.02em;margin:4px 0 2px;font-weight:750;}
+  .updated{color:var(--muted);font-size:13px;}
+
+  .how{background:linear-gradient(180deg,#fbfcfe,#f4f7fb);border:1px solid var(--line);
+    border-radius:var(--radius);padding:16px 18px;margin:20px 0;font-size:14.5px;color:#39414d;}
+  .how b{color:var(--ink)}
+  .how ol{margin:8px 0 0;padding-left:20px;} .how li{margin:3px 0;}
+
+  .overview{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:20px;margin-bottom:22px;}
+  .bar{height:12px;border-radius:8px;background:var(--todo-bg);overflow:hidden;display:flex;margin-bottom:16px;}
+  .bar i{display:block;height:100%}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+  .stat{border:1px solid var(--line);border-radius:11px;padding:12px 6px;text-align:center;background:#fff;}
+  .stat .n{font-size:24px;font-weight:750;line-height:1.1;}
+  .stat .l{font-size:11.5px;color:var(--muted);margin-top:3px;font-weight:600;letter-spacing:.02em;}
+  .stat.doing{background:var(--doing-bg);border-color:#f3e2bf} .stat.doing .n{color:var(--doing)}
+  .stat.done{background:var(--done-bg);border-color:#d7e2fd} .stat.done .n{color:var(--done)}
+  .stat.ok{background:var(--ok-bg);border-color:#c9e7d6} .stat.ok .n{color:var(--ok)}
+  .stat.todo .n{color:var(--todo)}
+
+  .sec-title{display:flex;align-items:center;gap:9px;margin:26px 0 12px;font-size:15px;font-weight:700;}
+  .sec-title .dot{width:9px;height:9px;border-radius:50%}
+  .sec-title .cnt{color:var(--faint);font-weight:600;font-size:13px;}
+  .sec-note{color:var(--muted);font-size:13.5px;margin:-6px 0 12px;}
+
+  .item{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);margin-bottom:10px;overflow:hidden;border-left:4px solid var(--line);}
+  .item.doing{border-left-color:var(--doing)} .item.done{border-left-color:var(--done)}
+  .item.ok{border-left-color:var(--ok)} .item.todo{border-left-color:var(--todo)}
+  .item-head{display:flex;align-items:center;gap:10px;padding:13px 16px;cursor:pointer;}
+  .item.plain .item-head{cursor:default}
+  .item-head .name{font-weight:650;font-size:15.5px;flex:1;}
+  .badge{font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap;letter-spacing:.01em;}
+  .b-todo{color:#54607a;background:var(--todo-bg)} .b-doing{color:#8a5a02;background:var(--doing-bg)}
+  .b-done{color:#1e40af;background:var(--done-bg)} .b-ok{color:#0f6b41;background:var(--ok-bg)}
+  .chev{color:var(--faint);font-size:13px;transition:transform .15s;}
+  .item.open .chev{transform:rotate(90deg)}
+
+  .body{display:none;padding:2px 16px 16px;border-top:1px solid var(--line2);}
+  .item.open .body{display:block}
+  .lbl{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--done);margin:14px 0 5px;}
+  .item.ok .lbl{color:var(--ok)}
+  .desc{font-size:14.5px;color:#39414d;}
+  ol.steps{margin:4px 0 0;padding-left:22px;} ol.steps li{margin:4px 0;font-size:14.5px;}
+  .expect{background:var(--todo-bg);border-radius:10px;padding:10px 13px;font-size:14.5px;color:#2b3340;}
+
+  .check{margin-top:14px;padding-top:13px;border-top:1px dashed var(--line);}
+  .check .q{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;}
+  .opts{display:flex;gap:8px;flex-wrap:wrap;}
+  .opt{border:1.5px solid var(--line);background:#fff;border-radius:9px;padding:7px 13px;font-size:13.5px;
+    font-weight:600;cursor:pointer;color:#39414d;}
+  .opt.sel-ok{border-color:var(--ok);background:var(--ok-bg);color:#0f6b41}
+  .opt.sel-bad{border-color:#dc2626;background:#fdecec;color:#b42318}
+  .obs{margin-top:9px;width:100%;border:1px solid var(--line);border-radius:9px;padding:9px 11px;
+    font:inherit;font-size:14px;resize:vertical;min-height:42px;}
+  .official{font-size:12px;color:var(--faint);margin-top:8px;}
+
+  .todo-list{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:6px 4px;}
+  .todo-row{display:flex;align-items:center;gap:10px;padding:10px 13px;border-bottom:1px solid var(--line2);font-size:15px;}
+  .todo-row:last-child{border-bottom:none}
+  .todo-row .badge{margin-left:auto}
+
+  .toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+  .btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 15px;font:inherit;
+    font-size:14px;font-weight:650;cursor:pointer;color:var(--ink);}
+  .btn.primary{background:var(--done);border-color:var(--done);color:#fff;}
+  footer{color:var(--faint);font-size:12px;text-align:center;margin-top:34px;}
+  @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
-<main>
-  <h1>Guia de validação</h1>
-  <p class="sub" id="sub">Carregando…</p>
+<div class="wrap">
+  <header>
+    <div class="kicker">DueHub</div>
+    <h1>Progresso &amp; Validação</h1>
+    <div class="updated" id="updated">Carregando…</div>
+  </header>
 
-  <div class="como">
-    <b>Como usar este guia</b>
-    <ol>
-      <li>Vá até a seção <b>“Prontos para conferir”</b>.</li>
-      <li>Em cada cartão, siga o passo a passo no sistema de testes.</li>
-      <li>Compare o que apareceu na tela com “O que você deve ver”.</li>
-      <li>Marque se deu certo e escreva o que notou. No fim, toque em <b>“Copiar minhas anotações”</b> e envie o texto para quem coordena.</li>
-    </ol>
+  <div class="how">
+    <b>Como usar:</b> role até <b>“Prontos para conferir”</b>. Em cada cartão, siga o passo a passo no sistema de testes, compare com <b>“O que você deve ver”</b> e marque se deu certo. No fim, toque em <b>Copiar minhas anotações</b> e envie a quem coordena.
+    <div class="toolbar">
+      <button class="btn primary" onclick="copiar()">Copiar minhas anotações</button>
+      <button class="btn" onclick="limpar()">Apagar minhas anotações</button>
+    </div>
   </div>
 
-  <div id="app"></div>
-</main>
+  <div class="overview">
+    <div class="bar" id="bar"></div>
+    <div class="stats" id="stats"></div>
+  </div>
+
+  <div id="content"></div>
+
+  <footer>Guia interno de acompanhamento — sem dados de clientes.</footer>
+</div>
+
 <script>
-(function () {
-  var GRUPOS = [
-    { k: "erro", titulo: "Com problema", explica: "Algo não funcionou como deveria. Já estamos corrigindo." },
-    { k: "feito", titulo: "Prontos para conferir", explica: "Estas mudanças já estão no sistema de testes. Siga os passos e diga se deu certo." },
-    { k: "em_andamento", titulo: "Em preparação", explica: "Estamos trabalhando nestes. Ainda não há o que conferir." },
-    { k: "validado", titulo: "Já conferidos", explica: "Alguém já conferiu e deu tudo certo. Toque para ver os passos." },
-    { k: "pendente", titulo: "A fazer", explica: "Ainda não começamos. O passo a passo aparece aqui quando ficarem prontos." }
-  ];
-  var ESTADO = { a_validar: "A validar", ok: "OK", erro: "Encontrei um problema" };
-  var PREFIXO = "guia-validacao:";
+let DATA = {atualizado_em:"", itens:[]};
 
-  function ler(chave) { try { return JSON.parse(localStorage.getItem(PREFIXO + chave)) || {}; } catch (e) { return {}; } }
-  function gravar(chave, v) { try { localStorage.setItem(PREFIXO + chave, JSON.stringify(v)); } catch (e) {} }
+const META = {
+  a_fazer:   {rot:"A fazer",              cls:"todo",  badge:"b-todo",  bar:"var(--todo)",  dot:"var(--todo)"},
+  em_andamento:{rot:"Em desenvolvimento", cls:"doing", badge:"b-doing", bar:"var(--doing)", dot:"var(--doing)"},
+  feito:     {rot:"Pronto para conferir", cls:"done",  badge:"b-done",  bar:"var(--done)",  dot:"var(--done)"},
+  validado:  {rot:"Conferido",            cls:"ok",    badge:"b-ok",    bar:"var(--ok)",    dot:"var(--ok)"}
+};
+const ORDER = ["em_andamento","feito","validado","a_fazer"];
 
-  function esc(s) {
-    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
-      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
-    });
+function render(d){
+  document.getElementById("updated").textContent = "Atualizado em "+d.atualizado_em;
+  const by = {a_fazer:[],em_andamento:[],feito:[],validado:[]};
+  d.itens.forEach(i=> (by[i.status]||by.a_fazer).push(i));
+  const tot = d.itens.length;
+
+  // barra + stats
+  const bar = ORDER.map(s=>`<i style="width:${(by[s].length/tot*100).toFixed(1)}%;background:${META[s].bar}"></i>`).join("");
+  document.getElementById("bar").innerHTML = bar;
+  document.getElementById("stats").innerHTML = `
+    <div class="stat doing"><div class="n">${by.em_andamento.length}</div><div class="l">em desenvolvimento</div></div>
+    <div class="stat done"><div class="n">${by.feito.length}</div><div class="l">a conferir</div></div>
+    <div class="stat ok"><div class="n">${by.validado.length}</div><div class="l">conferidos</div></div>
+    <div class="stat todo"><div class="n">${by.a_fazer.length}</div><div class="l">a fazer</div></div>`;
+
+  let html = "";
+  // seções com cartão-guia
+  [["em_andamento","Estão sendo feitos agora — ainda não precisam de conferência."],
+   ["feito","Já estão no sistema de testes. Siga os passos e diga se deu certo."],
+   ["validado","Já conferidos e aprovados."]].forEach(([s,nota])=>{
+    if(!by[s].length) return;
+    const m=META[s];
+    html += `<div class="sec-title"><span class="dot" style="background:${m.dot}"></span>${m.rot}<span class="cnt">(${by[s].length})</span></div>`;
+    html += `<div class="sec-note">${nota}</div>`;
+    by[s].forEach(i=>{ html += card(i,s); });
+  });
+  // a fazer = lista simples
+  if(by.a_fazer.length){
+    html += `<div class="sec-title"><span class="dot" style="background:${META.a_fazer.dot}"></span>A fazer<span class="cnt">(${by.a_fazer.length})</span></div>`;
+    html += `<div class="todo-list">`;
+    by.a_fazer.forEach(i=>{ html += `<div class="todo-row">${i.titulo}<span class="badge b-todo">${i.id}</span></div>`; });
+    html += `</div>`;
   }
-  function fmtData(iso) {
-    var d = new Date(iso);
-    return isNaN(d) ? esc(iso) : d.toLocaleString("pt-BR", { dateStyle: "long", timeStyle: "short" });
-  }
+  document.getElementById("content").innerHTML = html;
+  restore();
+}
 
-  function cartaoValidacao(item, v, idx) {
-    var chave = item.id + "#" + idx;
-    var minha = ler(chave);
-    var est = v.estado in ESTADO ? v.estado : "a_validar";
-    var nome = "m-" + btoa(unescape(encodeURIComponent(chave))).replace(/[^a-z0-9]/gi, "");
-    var passos = (v.passos || []).map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("");
-    function op(val, rot) {
-      return '<label><input type="radio" name="' + nome + '" value="' + val + '"' +
-        (minha.estado === val ? " checked" : "") + ' data-chave="' + esc(chave) + '"> ' + rot + "</label>";
-    }
-    return '<div class="bloco"><div class="rotulo">O que estamos conferindo</div><p>' + esc(v.acao) + "</p></div>" +
-      (passos ? '<div class="bloco"><div class="rotulo">Passo a passo</div><ol>' + passos + "</ol></div>" : "") +
-      (v.esperado ? '<div class="bloco"><div class="rotulo">O que você deve ver</div><p class="esperado">' + esc(v.esperado) + "</p></div>" : "") +
-      '<div class="deu"><div class="rotulo">Deu certo?</div>' +
-      '<div class="oficial">Situação oficial: <span class="selo ' + est + '">' + ESTADO[est] + "</span></div>" +
-      (v.nota ? '<p class="nota-oficial">' + esc(v.nota) + "</p>" : "") +
-      '<div class="minha"><div class="t">Sua anotação (fica só neste aparelho)</div><div class="opcoes">' +
-      op("ok", "Deu certo") + op("erro", "Encontrei um problema") + "</div>" +
-      '<textarea placeholder="O que você viu? Se algo deu errado, descreva onde e o quê." data-chave="' + esc(chave) + '">' +
-      esc(minha.obs || "") + "</textarea></div></div>";
-  }
+function card(i,s){
+  const m=META[s];
+  const guia = (s==="feito"||s==="validado");
+  const open = s==="feito" ? "open":"";
+  const steps = (i.passos||[]).map(p=>`<li>${p}</li>`).join("");
+  return `<div class="item ${m.cls} ${open} ${guia?'':'plain'}" data-id="${i.id}">
+    <div class="item-head" ${guia?'onclick="tog(this)"':''}>
+      <span class="name">${i.titulo}</span>
+      <span class="badge ${m.badge}">${m.rot}</span>
+      ${guia?'<span class="chev">▸</span>':''}
+    </div>
+    ${guia?`<div class="body">
+      <div class="lbl">O que estamos conferindo</div><div class="desc">${i.desc||""}</div>
+      ${steps?`<div class="lbl">Passo a passo</div><ol class="steps">${steps}</ol>`:''}
+      ${i.esperado?`<div class="lbl">O que você deve ver</div><div class="expect">${i.esperado}</div>`:''}
+      <div class="check">
+        <div class="q">Deu certo?</div>
+        <div class="opts">
+          <button class="opt" data-v="ok" onclick="mark('${i.id}','ok',this)">✓ Deu certo</button>
+          <button class="opt" data-v="bad" onclick="mark('${i.id}','bad',this)">✕ Encontrei um problema</button>
+        </div>
+        <textarea class="obs" placeholder="Observação (opcional)" data-obs="${i.id}" oninput="save()"></textarea>
+      </div>
+    </div>`:''}
+  </div>`;
+}
 
-  function render(dados) {
-    var itens = dados.itens || [];
-    var total = itens.length;
-    var c = { pendente: 0, em_andamento: 0, feito: 0, validado: 0, erro: 0 };
-    itens.forEach(function (i) { if (i.status in c) c[i.status]++; });
-    var feitos = c.feito + c.validado;
-    var aFazer = c.pendente + c.em_andamento;
+function tog(el){ el.parentElement.classList.toggle("open"); }
+const KEY="duehub_val_v3";
+let notes = {}; try{ notes = JSON.parse(localStorage.getItem(KEY)||"{}"); }catch(e){}
+function mark(id,v,btn){
+  notes[id]=notes[id]||{}; notes[id].v=v;
+  btn.parentElement.querySelectorAll(".opt").forEach(o=>o.classList.remove("sel-ok","sel-bad"));
+  btn.classList.add(v==="ok"?"sel-ok":"sel-bad"); save();
+}
+function save(){
+  document.querySelectorAll("[data-obs]").forEach(t=>{ const id=t.dataset.obs; if(t.value){notes[id]=notes[id]||{}; notes[id].obs=t.value;} });
+  try{ localStorage.setItem(KEY,JSON.stringify(notes)); }catch(e){}
+}
+function restore(){
+  Object.entries(notes).forEach(([id,n])=>{
+    const item=document.querySelector(`.item[data-id="${id}"]`); if(!item)return;
+    if(n.v){ const b=item.querySelector(`.opt[data-v="${n.v}"]`); if(b)b.classList.add(n.v==="ok"?"sel-ok":"sel-bad"); }
+    if(n.obs){ const t=item.querySelector("[data-obs]"); if(t)t.value=n.obs; }
+  });
+}
+function copiar(){
+  let out="Anotações de validação — DueHub\n\n";
+  Object.entries(notes).forEach(([id,n])=>{
+    const nm=(DATA.itens.find(x=>x.id===id)||{}).titulo||id;
+    out+=`${id} ${nm}: ${n.v==="ok"?"Deu certo":n.v==="bad"?"Problema":"—"}${n.obs?" — "+n.obs:""}\n`;
+  });
+  navigator.clipboard.writeText(out).then(()=>alert("Anotações copiadas! Cole na mensagem para quem coordena."));
+}
+function limpar(){ if(confirm("Apagar suas anotações deste aparelho?")){ notes={}; try{ localStorage.removeItem(KEY); }catch(e){} render(DATA);} }
 
-    document.getElementById("sub").textContent = "Atualizado em " + fmtData(dados.atualizado_em);
-
-    var pc = function (n) { return total ? (n / total * 100) : 0; };
-    var html = '<div class="painel"><h2>Visão geral</h2>' +
-      '<div class="barra" role="img" aria-label="' + feitos + " de " + total + ' feitos">' +
-      '<span style="width:' + pc(c.validado) + '%;background:var(--ok)"></span>' +
-      '<span style="width:' + pc(c.feito) + '%;background:var(--azul)"></span></div>' +
-      '<div class="nums">' +
-      '<div class="num"><b>' + feitos + "</b><span>feitos (de " + total + ")</span></div>" +
-      '<div class="num"><b>' + c.validado + "</b><span>conferidos</span></div>" +
-      '<div class="num"><b>' + aFazer + "</b><span>a fazer</span></div></div>" +
-      (c.erro ? '<div class="alerta">' + c.erro + " com problema, sendo corrigido.</div>" : "") +
-      '<div class="acoes"><button type="button" id="copiar">Copiar minhas anotações</button>' +
-      '<button type="button" class="sec" id="limpar">Apagar minhas anotações</button></div></div>';
-
-    GRUPOS.forEach(function (g) {
-      var grupo = itens.filter(function (i) { return i.status === g.k; });
-      if (!grupo.length) return;
-      html += "<section><h2>" + g.titulo + " (" + grupo.length + ')</h2><p class="explica">' + g.explica + "</p>";
-      grupo.forEach(function (i) {
-        var vals = i.validacoes || [];
-        if (g.k === "pendente" || g.k === "em_andamento") {
-          html += '<div class="simples"><small>' + esc(i.id) + "</small>" + esc(i.titulo) + "</div>";
-        } else if (g.k === "validado") {
-          html += '<details class="cartao"><summary>' + esc(i.titulo) + "<small>" + esc(i.id) + "</small></summary>" +
-            vals.map(function (v, n) { return (n ? '<hr style="border:0;border-top:1px solid var(--border);margin:16px 0">' : "") + cartaoValidacao(i, v, n); }).join("") +
-            "</details>";
-        } else {
-          html += '<div class="item-nome">' + esc(i.titulo) + "<small>" + esc(i.id) + "</small></div>";
-          if (!vals.length) {
-            html += '<div class="simples">Nada para conferir na tela: é uma melhoria interna.</div>';
-          }
-          vals.forEach(function (v, n) { html += '<div class="cartao">' + cartaoValidacao(i, v, n) + "</div>"; });
-        }
-      });
-      html += "</section>";
-    });
-
-    var app = document.getElementById("app");
-    app.innerHTML = html;
-
-    app.addEventListener("change", function (e) {
-      var t = e.target;
-      if (t.type !== "radio") return;
-      var m = ler(t.dataset.chave); m.estado = t.value; gravar(t.dataset.chave, m);
-    });
-    app.addEventListener("input", function (e) {
-      var t = e.target;
-      if (t.tagName !== "TEXTAREA") return;
-      var m = ler(t.dataset.chave); m.obs = t.value; gravar(t.dataset.chave, m);
-    });
-
-    document.getElementById("copiar").addEventListener("click", function () {
-      var linhas = [];
-      itens.forEach(function (i) {
-        (i.validacoes || []).forEach(function (v, n) {
-          var m = ler(i.id + "#" + n);
-          if (!m.estado && !m.obs) return;
-          linhas.push("[" + i.id + "] " + i.titulo + "\n  " + v.acao + "\n  Resultado: " +
-            (m.estado === "ok" ? "Deu certo" : m.estado === "erro" ? "Encontrei um problema" : "(não marcado)") +
-            (m.obs ? "\n  Observação: " + m.obs : ""));
-        });
-      });
-      var texto = linhas.length ? linhas.join("\n\n") : "Nenhuma anotação ainda.";
-      var btn = this;
-      function ok() { btn.textContent = "Copiado!"; setTimeout(function () { btn.textContent = "Copiar minhas anotações"; }, 1500); }
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(texto).then(ok, function () { window.prompt("Copie o texto abaixo:", texto); });
-      } else {
-        window.prompt("Copie o texto abaixo:", texto);
-      }
-    });
-    document.getElementById("limpar").addEventListener("click", function () {
-      if (!window.confirm("Apagar todas as suas anotações deste aparelho?")) return;
-      try {
-        Object.keys(localStorage).forEach(function (k) { if (k.indexOf(PREFIXO) === 0) localStorage.removeItem(k); });
-      } catch (e) {}
-      location.reload();
-    });
-  }
-
-  fetch("progress.json", { cache: "no-store" })
-    .then(function (r) { if (!r.ok) throw new Error("erro " + r.status); return r.json(); })
-    .then(render)
-    .catch(function () {
-      document.getElementById("sub").textContent = "";
-      document.getElementById("app").innerHTML =
-        '<div class="falha">Não foi possível carregar o guia agora. Tente recarregar a página em alguns minutos.</div>';
-    });
-})();
+fetch('./progress.json',{cache:"no-store"})
+  .then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); })
+  .then(d=>{ DATA=d; render(DATA); })
+  .catch(()=>{ document.getElementById("content").innerHTML='<div class="how">Não foi possível carregar o painel agora. Recarregue a página em alguns minutos.</div>'; });
 </script>
 </body>
 </html>

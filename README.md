@@ -1,27 +1,38 @@
-# Guia de validação (gh-pages)
+# Progresso & Validação
 
-Branch órfã, sem ligação com `staging` nem `main`. Guarda só o guia de validação dos ajustes.
+Painel público de acompanhamento dos ajustes, com passo a passo para quem valida.
 
-- `index.html`: página autocontida (sem CDN). Lê o `progress.json` e mostra a visão geral, os itens agrupados por status e, em cada validação, o passo a passo.
-- `progress.json`: **o único arquivo que muda a cada sessão.**
+- `index.html`: página autocontida (sem CDN), no layout v3. Lê o `./progress.json` e guarda as anotações do validador só no navegador dele (localStorage).
+- `progress.json`: **o único arquivo que muda a cada tarefa.**
 
 ## Como o CLI atualiza
 
-Editar só o `progress.json`, depois `git commit` e `git push origin gh-pages`. O Pages republica em cerca de 1 minuto.
+Toda tarefa inclui atualizar o painel: mover o status e escrever os passos. Editar só o `progress.json`, depois `git commit` e `git push`. O Pages republica em cerca de 1 minuto.
 
-- `atualizado_em`: data e hora em ISO 8601.
-- `itens[].status`: `pendente` | `em_andamento` | `feito` | `validado` | `erro`
-- `itens[].validacoes[]`: `{ acao, passos: [...], esperado, estado, nota }`
-  - `estado`: `a_validar` | `ok` | `erro`
-  - `nota`: o retorno do validador, escrito por quem coordena.
-- `pr` e `flag` ficam no JSON para uso interno. A página **não** os mostra.
+```json
+{
+  "atualizado_em": "30 de setembro de 2026",
+  "itens": [
+    { "id": "#20", "titulo": "…", "status": "feito",
+      "desc": "o que estamos conferindo, numa frase",
+      "passos": ["onde ir", "o que clicar", "o que digitar"],
+      "esperado": "o que a pessoa deve ver" },
+    { "id": "C4", "titulo": "…", "status": "a_fazer" }
+  ]
+}
+```
 
-Regras do texto: português simples, sem jargão técnico, passos literais (onde ir, o que clicar, o que digitar). Nada de dados reais: nomes de clientes, CPF/CNPJ, e-mails e endereços do sistema ficam de fora.
-
-As marcações que o validador faz na página ficam só no navegador dele (localStorage). Ele usa "Copiar minhas anotações" e envia o texto para quem coordena, que atualiza o `progress.json`.
+- `atualizado_em`: texto por extenso, exibido do jeito que está escrito.
+- `status`:
+  - `a_fazer`: só precisa de `id`, `titulo` e `status`.
+  - `em_andamento` ("Em desenvolvimento"): o item entra aqui quando o spec dele é disparado.
+  - `feito` ("Pronto para conferir"): precisa de `desc`, `passos` e `esperado`.
+  - `validado` ("Conferido"): mantém `desc`, `passos` e `esperado`.
+- Os textos entram na página como HTML. Não use `<` nem `>`, e prefira aspas duplas às simples no `id`.
+- Português simples, sem jargão técnico e sem dados reais (clientes, CPF/CNPJ, e-mails, endereços do sistema).
 
 ## Publicar
 
-Settings → Pages → Source: **Deploy from a branch** → Branch **gh-pages** / **(root)** → Save.
+Settings → Pages → Deploy from a branch → **gh-pages** / **(root)**. Já está ativo em https://gustavomarcelloprf.github.io/prelawyer-progresso/
 
-Teste local: `python3 -m http.server` nesta pasta e abrir `http://localhost:8000` (o `fetch` não funciona em `file://`).
+Teste local: `python3 -m http.server` nesta pasta e abrir `http://localhost:8000`.

@@ -1,578 +1,325 @@
 {
-  "atualizado_em": "2026-09-30T15:30:00-03:00",
+  "atualizado_em": "30 de setembro de 2026",
   "itens": [
     {
       "id": "#23",
       "titulo": "Apontamentos e comentários separados em abas",
-      "area": "Item",
       "status": "validado",
-      "pr": "#237 / #244",
-      "flag": "COMENTARIOS_HABILITADO",
-      "validacoes": [
-        {
-          "acao": "Cada documento tem duas abas: uma para os apontamentos (pendências) e outra para os comentários.",
-          "passos": [
-            "Entre no sistema com o seu usuário de teste.",
-            "No menu à esquerda, clique em \"Operações\" e abra uma operação de teste.",
-            "Na aba \"Targets\", clique em qualquer target (pessoa, empresa ou imóvel).",
-            "Em um documento da lista, procure as abas \"Apontamentos\" e \"Comentários\".",
-            "Clique em \"Comentários\", escreva um comentário curto e envie."
-          ],
-          "esperado": "As duas abas aparecem lado a lado. O comentário enviado aparece na aba \"Comentários\" e continua lá depois de recarregar a página.",
-          "estado": "ok",
-          "nota": ""
-        }
-      ]
+      "desc": "Cada documento tem duas abas: uma para os apontamentos (pendências) e outra para os comentários.",
+      "passos": [
+        "Entre no sistema com o seu usuário de teste.",
+        "No menu à esquerda, clique em \"Operações\" e abra uma operação de teste.",
+        "Na aba \"Targets\", clique em qualquer target (pessoa, empresa ou imóvel).",
+        "Em um documento da lista, procure as abas \"Apontamentos\" e \"Comentários\".",
+        "Clique em \"Comentários\", escreva um comentário curto e envie."
+      ],
+      "esperado": "As duas abas aparecem lado a lado. O comentário enviado aparece na aba \"Comentários\" e continua lá depois de recarregar a página."
     },
     {
       "id": "#13",
       "titulo": "Ficha com os dados do target, preenchida pela IA",
-      "area": "Target",
       "status": "validado",
-      "pr": "#239",
-      "flag": "FICHA_TARGET_HABILITADA",
-      "validacoes": [
-        {
-          "acao": "Cada target tem uma ficha de dados que a IA consegue preencher a partir dos documentos.",
-          "passos": [
-            "Entre no sistema com o seu usuário de teste.",
-            "No menu à esquerda, clique em \"Operações\" e abra uma operação de teste.",
-            "Na aba \"Targets\", abra um target que já tenha documentos anexados.",
-            "Logo abaixo do nome do target está a ficha, com os campos e o botão \"Ver todos\".",
-            "Clique em \"Extrair via IA\" e aguarde alguns segundos."
-          ],
-          "esperado": "Os campos da ficha são preenchidos e cada um mostra de onde veio a informação (de qual documento ou se foi digitado à mão).",
-          "estado": "ok",
-          "nota": ""
-        }
-      ]
+      "desc": "Cada target tem uma ficha de dados que a IA consegue preencher a partir dos documentos.",
+      "passos": [
+        "Entre no sistema com o seu usuário de teste.",
+        "No menu à esquerda, clique em \"Operações\" e abra uma operação de teste.",
+        "Na aba \"Targets\", abra um target que já tenha documentos anexados.",
+        "Logo abaixo do nome do target está a ficha, com os campos e o botão \"Ver todos\".",
+        "Clique em \"Extrair via IA\" e aguarde alguns segundos."
+      ],
+      "esperado": "Os campos da ficha são preenchidos e cada um mostra de onde veio a informação (de qual documento ou se foi digitado à mão)."
     },
     {
       "id": "#4",
       "titulo": "Cores diferentes para cada situação do documento",
-      "area": "Item",
       "status": "validado",
-      "pr": "#243",
-      "flag": "",
-      "validacoes": [
-        {
-          "acao": "Cada uma das 4 situações possíveis de um documento tem uma cor própria.",
-          "passos": [
-            "Abra um target de uma operação de teste.",
-            "Em um documento, clique na caixa que mostra a situação dele.",
-            "Escolha cada uma das 4 opções, uma de cada vez."
-          ],
-          "esperado": "A cada troca, a cor muda. As 4 situações têm cores diferentes e fáceis de distinguir.",
-          "estado": "ok",
-          "nota": ""
-        }
-      ]
+      "desc": "Cada uma das 4 situações possíveis de um documento tem uma cor própria.",
+      "passos": [
+        "Abra um target de uma operação de teste.",
+        "Em um documento, clique na caixa que mostra a situação dele.",
+        "Escolha cada uma das 4 opções, uma de cada vez."
+      ],
+      "esperado": "A cada troca, a cor muda. As 4 situações têm cores diferentes e fáceis de distinguir."
     },
     {
       "id": "#26",
       "titulo": "Extrato com filtro por tipo de acontecimento e ordem por data",
-      "area": "Extrato",
       "status": "validado",
-      "pr": "#242",
-      "flag": "",
-      "validacoes": [
-        {
-          "acao": "Dá para filtrar o Extrato pelo tipo de acontecimento e escolher se a data vem da mais nova para a mais antiga ou o contrário.",
-          "passos": [
-            "Abra uma operação de teste e clique na aba \"Extrato\".",
-            "Acima da lista de eventos, clique num dos filtros (os botões arredondados) para escolher um tipo de acontecimento.",
-            "Ao lado dos filtros, clique no botão de ordenar por data para inverter a ordem."
-          ],
-          "esperado": "A lista mostra só o tipo escolhido. Ao inverter, as linhas trocam de ordem e fica claro qual é a direção (mais recentes primeiro ou mais antigas primeiro).",
-          "estado": "ok",
-          "nota": ""
-        }
-      ]
+      "desc": "Dá para filtrar o Extrato pelo tipo de acontecimento e escolher se a data vem da mais nova para a mais antiga ou o contrário.",
+      "passos": [
+        "Abra uma operação de teste e clique na aba \"Extrato\".",
+        "Acima da lista de eventos, clique num dos filtros (os botões arredondados) para escolher um tipo de acontecimento.",
+        "Ao lado dos filtros, clique no botão de ordenar por data para inverter a ordem."
+      ],
+      "esperado": "A lista mostra só o tipo escolhido. Ao inverter, as linhas trocam de ordem e fica claro qual é a direção (mais recentes primeiro ou mais antigas primeiro)."
     },
     {
       "id": "#27",
       "titulo": "Imóvel aparece como \"IM\"",
-      "area": "Target",
       "status": "validado",
-      "pr": "#245",
-      "flag": "",
-      "validacoes": [
-        {
-          "acao": "A sigla dos imóveis passou de \"IR\" para \"IM\" em toda a tela.",
-          "passos": [
-            "Abra uma operação de teste que tenha pelo menos um imóvel.",
-            "Olhe o resumo no topo e os filtros da aba \"Targets\"."
-          ],
-          "esperado": "Aparece \"IM\" (nunca \"IR\") junto de \"PF\" e \"PJ\".",
-          "estado": "ok",
-          "nota": ""
-        }
-      ]
+      "desc": "A sigla dos imóveis passou de \"IR\" para \"IM\" em toda a tela.",
+      "passos": [
+        "Abra uma operação de teste que tenha pelo menos um imóvel.",
+        "Olhe o resumo no topo e os filtros da aba \"Targets\"."
+      ],
+      "esperado": "Aparece \"IM\" (nunca \"IR\") junto de \"PF\" e \"PJ\"."
     },
     {
       "id": "#19",
       "titulo": "\"Finalizar operação\" encerra e trava a operação",
-      "area": "Operação",
       "status": "validado",
-      "pr": "#256",
-      "flag": "FINALIZAR_OPERACAO_HABILITADO",
-      "validacoes": [
-        {
-          "acao": "O antigo \"Aceitar entrega\" virou \"Finalizar operação\". Depois de finalizada, a operação não pode mais ser alterada.",
-          "passos": [
-            "Abra uma operação de teste que possa ser encerrada.",
-            "Clique em \"Finalizar operação\" e confirme.",
-            "Tente anexar um documento, mudar a situação de um item ou renomear um item."
-          ],
-          "esperado": "A operação aparece como \"Finalizada\" e nenhuma alteração é aceita.",
-          "estado": "ok",
-          "nota": ""
-        }
-      ]
+      "desc": "O antigo \"Aceitar entrega\" virou \"Finalizar operação\". Depois de finalizada, a operação não pode mais ser alterada.",
+      "passos": [
+        "Abra uma operação de teste que possa ser encerrada.",
+        "Clique em \"Finalizar operação\" e confirme.",
+        "Tente anexar um documento, mudar a situação de um item ou renomear um item."
+      ],
+      "esperado": "A operação aparece como \"Finalizada\" e nenhuma alteração é aceita."
     },
     {
       "id": "#25",
       "titulo": "Data de emissão e validade lidas pela IA",
-      "area": "Validade",
       "status": "validado",
-      "pr": "#259 / #266",
-      "flag": "VALIDADE_ASSUMIDA_HABILITADA",
-      "validacoes": [
-        {
-          "acao": "Cada documento mostra quando foi emitido e se ainda está válido.",
-          "passos": [
-            "Abra um target de uma operação de teste que tenha documentos anexados.",
-            "Olhe as informações de cada documento."
-          ],
-          "esperado": "Aparece a data de emissão e a situação da validade (por exemplo, \"Válido\" ou \"Vencido há X dias\"), batendo com o que está escrito no próprio documento.",
-          "estado": "ok",
-          "nota": ""
-        },
-        {
-          "acao": "Quando o documento não tem data, o sistema não inventa uma.",
-          "passos": [
-            "Anexe, num item de teste, um documento que não tenha data de emissão escrita.",
-            "Aguarde a análise terminar e olhe a validade desse documento."
-          ],
-          "esperado": "A validade aparece como \"indeterminada\", nunca com uma data errada.",
-          "estado": "ok",
-          "nota": ""
-        }
-      ]
+      "desc": "Cada documento mostra quando foi emitido e se ainda está válido. Quando o documento não tem data, o sistema não inventa uma.",
+      "passos": [
+        "Abra um target de uma operação de teste que tenha documentos anexados.",
+        "Olhe as informações de cada documento.",
+        "Anexe, num item de teste, um documento que não tenha data de emissão escrita.",
+        "Aguarde a análise terminar e olhe a validade desse documento."
+      ],
+      "esperado": "Aparece a data de emissão e a situação da validade (por exemplo, \"Válido\" ou \"Vencido há X dias\"), batendo com o que está escrito no próprio documento. A validade aparece como \"indeterminada\", nunca com uma data errada."
     },
     {
       "id": "#11",
       "titulo": "Convite de participantes com sugestões",
-      "area": "Convites",
       "status": "validado",
-      "pr": "#238",
-      "flag": "SUGESTOES_PARTICIPANTES_HABILITADO",
-      "validacoes": [
-        {
-          "acao": "Ao criar uma operação, a etapa de participantes tem visual novo e sugere pessoas para convidar.",
-          "passos": [
-            "No menu à esquerda, clique em \"Operações\" e depois em \"+ Nova operação\".",
-            "Preencha a primeira etapa e avance até a etapa dos participantes.",
-            "Veja a lista de sugestões e clique em uma delas."
-          ],
-          "esperado": "A pessoa sugerida entra na lista de participantes com um clique, sem precisar digitar.",
-          "estado": "ok",
-          "nota": ""
-        }
-      ]
+      "desc": "Ao criar uma operação, a etapa de participantes tem visual novo e sugere pessoas para convidar.",
+      "passos": [
+        "No menu à esquerda, clique em \"Operações\" e depois em \"+ Nova operação\".",
+        "Preencha a primeira etapa e avance até a etapa dos participantes.",
+        "Veja a lista de sugestões e clique em uma delas."
+      ],
+      "esperado": "A pessoa sugerida entra na lista de participantes com um clique, sem precisar digitar."
     },
     {
       "id": "#14",
       "titulo": "Enviar fotos (PNG e JPG) além de PDF",
-      "area": "Envio de arquivos",
       "status": "validado",
-      "pr": "#265",
-      "flag": "IMAGEM_UPLOAD_HABILITADA",
-      "validacoes": [
-        {
-          "acao": "Além de PDF, agora dá para anexar imagens, e a IA também analisa as imagens.",
-          "passos": [
-            "Abra um target de uma operação de teste.",
-            "Em um item, clique em \"Anexar PDF ou imagem\".",
-            "Escolha uma foto ou print de um documento (arquivo PNG ou JPG) e envie.",
-            "Aguarde alguns segundos."
-          ],
-          "esperado": "A imagem fica anexada ao item e a análise da IA aparece para ela, como acontece com um PDF.",
-          "estado": "ok",
-          "nota": ""
-        },
-        {
-          "acao": "Arquivos grandes demais são recusados com um aviso claro.",
-          "passos": [
-            "Tente anexar uma imagem com mais de 5 MB."
-          ],
-          "esperado": "O sistema não aceita e mostra uma mensagem explicando o motivo.",
-          "estado": "ok",
-          "nota": ""
-        }
-      ]
+      "desc": "Além de PDF, agora dá para anexar imagens, e a IA também analisa as imagens. Arquivos grandes demais são recusados com um aviso claro.",
+      "passos": [
+        "Abra um target de uma operação de teste.",
+        "Em um item, clique em \"Anexar PDF ou imagem\".",
+        "Escolha uma foto ou print de um documento (arquivo PNG ou JPG) e envie.",
+        "Aguarde alguns segundos.",
+        "Tente anexar uma imagem com mais de 5 MB."
+      ],
+      "esperado": "A imagem fica anexada ao item e a análise da IA aparece para ela, como acontece com um PDF. O sistema não aceita e mostra uma mensagem explicando o motivo."
     },
     {
       "id": "#16",
       "titulo": "Seta de voltar sempre leva para a tela anterior certa",
-      "area": "Navegação",
       "status": "feito",
-      "pr": "#226",
-      "flag": "",
-      "validacoes": [
-        {
-          "acao": "A seta de voltar, no topo das telas, leva sempre para o nível de cima (e não para a última página visitada).",
-          "passos": [
-            "Abra uma operação e depois um target dentro dela.",
-            "Clique na seta de voltar no topo da tela.",
-            "Repita em outras telas de detalhe (por exemplo, a de uma conta ou da equipe)."
-          ],
-          "esperado": "Do target você volta para a operação. Da operação, volta para a lista de operações. A seta aparece sempre no mesmo lugar.",
-          "estado": "a_validar",
-          "nota": ""
-        }
-      ]
+      "desc": "A seta de voltar, no topo das telas, leva sempre para o nível de cima (e não para a última página visitada).",
+      "passos": [
+        "Abra uma operação e depois um target dentro dela.",
+        "Clique na seta de voltar no topo da tela.",
+        "Repita em outras telas de detalhe (por exemplo, a de uma conta ou da equipe)."
+      ],
+      "esperado": "Do target você volta para a operação. Da operação, volta para a lista de operações. A seta aparece sempre no mesmo lugar."
     },
     {
       "id": "#20",
       "titulo": "Renomear um item direto na lista",
-      "area": "Item",
       "status": "feito",
-      "pr": "#227",
-      "flag": "",
-      "validacoes": [
-        {
-          "acao": "Dá para mudar o nome de um item sem sair da lista.",
-          "passos": [
-            "Abra um target de uma operação de teste.",
-            "Ao lado do nome de um item, clique no ícone de lápis (\"Editar nome\").",
-            "Digite um nome novo e confirme.",
-            "Recarregue a página."
-          ],
-          "esperado": "O novo nome aparece na hora e continua depois de recarregar.",
-          "estado": "a_validar",
-          "nota": ""
-        }
-      ]
+      "desc": "Dá para mudar o nome de um item sem sair da lista.",
+      "passos": [
+        "Abra um target de uma operação de teste.",
+        "Ao lado do nome de um item, clique no ícone de lápis (\"Editar nome\").",
+        "Digite um nome novo e confirme.",
+        "Recarregue a página."
+      ],
+      "esperado": "O novo nome aparece na hora e continua depois de recarregar."
     },
     {
       "id": "#8",
       "titulo": "Botão para copiar o nome do item",
-      "area": "Item",
       "status": "feito",
-      "pr": "#225",
-      "flag": "",
-      "validacoes": [
-        {
-          "acao": "Ao lado do nome de cada item há um ícone que copia o nome inteiro.",
-          "passos": [
-            "Abra um target de uma operação de teste.",
-            "Clique no ícone de copiar (\"Copiar nome\") ao lado do nome de um item.",
-            "Cole o texto em qualquer lugar (por exemplo, num bloco de notas)."
-          ],
-          "esperado": "O ícone confirma a cópia por um instante, e o texto colado é o nome completo do item.",
-          "estado": "a_validar",
-          "nota": ""
-        }
-      ]
+      "desc": "Ao lado do nome de cada item há um ícone que copia o nome inteiro.",
+      "passos": [
+        "Abra um target de uma operação de teste.",
+        "Clique no ícone de copiar (\"Copiar nome\") ao lado do nome de um item.",
+        "Cole o texto em qualquer lugar (por exemplo, num bloco de notas)."
+      ],
+      "esperado": "O ícone confirma a cópia por um instante, e o texto colado é o nome completo do item."
     },
     {
       "id": "#10",
       "titulo": "\"Baixar PDF\" do Extrato virou um ícone",
-      "area": "Extrato",
       "status": "feito",
-      "pr": "#225",
-      "flag": "",
-      "validacoes": [
-        {
-          "acao": "No Extrato, o botão de texto \"Baixar PDF\" foi trocado por um ícone de download.",
-          "passos": [
-            "Abra uma operação de teste e clique na aba \"Extrato\".",
-            "Numa linha com documento, clique no ícone de download."
-          ],
-          "esperado": "O documento certo daquela linha é baixado ou aberto.",
-          "estado": "a_validar",
-          "nota": ""
-        }
-      ]
+      "desc": "No Extrato, o botão de texto \"Baixar PDF\" foi trocado por um ícone de download.",
+      "passos": [
+        "Abra uma operação de teste e clique na aba \"Extrato\".",
+        "Numa linha com documento, clique no ícone de download."
+      ],
+      "esperado": "O documento certo daquela linha é baixado ou aberto."
     },
     {
       "id": "#1",
       "titulo": "\"Expandir tudo\" também abre a análise da IA",
-      "area": "Target",
       "status": "feito",
-      "pr": "#225",
-      "flag": "",
-      "validacoes": [
-        {
-          "acao": "O botão \"Expandir tudo\" abre, de uma vez, a análise da IA de todos os documentos.",
-          "passos": [
-            "Abra um target com vários documentos já analisados.",
-            "Clique em \"Expandir tudo\".",
-            "Depois, clique em \"Colapsar tudo\"."
-          ],
-          "esperado": "Todas as análises da IA abrem juntas e depois fecham juntas.",
-          "estado": "a_validar",
-          "nota": ""
-        }
-      ]
+      "desc": "O botão \"Expandir tudo\" abre, de uma vez, a análise da IA de todos os documentos.",
+      "passos": [
+        "Abra um target com vários documentos já analisados.",
+        "Clique em \"Expandir tudo\".",
+        "Depois, clique em \"Colapsar tudo\"."
+      ],
+      "esperado": "Todas as análises da IA abrem juntas e depois fecham juntas."
     },
     {
       "id": "#18",
       "titulo": "\"Exportar CSV\" saiu do menu \"Ações\"",
-      "area": "Operação",
       "status": "feito",
-      "pr": "#225",
-      "flag": "",
-      "validacoes": [
-        {
-          "acao": "A opção \"Exportar CSV\", que não funcionava, foi retirada do menu \"Ações\" da operação.",
-          "passos": [
-            "Abra uma operação de teste.",
-            "No canto superior direito, clique no menu \"Ações\"."
-          ],
-          "esperado": "A opção \"Exportar CSV\" não aparece mais no menu.",
-          "estado": "a_validar",
-          "nota": ""
-        }
-      ]
+      "desc": "A opção \"Exportar CSV\", que não funcionava, foi retirada do menu \"Ações\" da operação.",
+      "passos": [
+        "Abra uma operação de teste.",
+        "No canto superior direito, clique no menu \"Ações\"."
+      ],
+      "esperado": "A opção \"Exportar CSV\" não aparece mais no menu."
     },
     {
       "id": "#05 · #22 · #6",
       "titulo": "Aba Extrato mais limpa",
-      "area": "Extrato",
       "status": "feito",
-      "pr": "#202",
-      "flag": "",
-      "validacoes": [
-        {
-          "acao": "Saíram do Extrato o botão \"Convidado externo envia\" e os filtros de Emissor e Categoria.",
-          "passos": [
-            "Abra uma operação de teste e clique na aba \"Extrato\".",
-            "Olhe o topo da tabela e as linhas."
-          ],
-          "esperado": "Não há mais o botão \"Convidado externo envia\" nem os filtros de Emissor e Categoria. A coluna de atividade mostra o nome do documento.",
-          "estado": "a_validar",
-          "nota": ""
-        }
-      ]
+      "desc": "Saíram do Extrato o botão \"Convidado externo envia\" e os filtros de Emissor e Categoria.",
+      "passos": [
+        "Abra uma operação de teste e clique na aba \"Extrato\".",
+        "Olhe o topo da tabela e as linhas."
+      ],
+      "esperado": "Não há mais o botão \"Convidado externo envia\" nem os filtros de Emissor e Categoria. A coluna de atividade mostra o nome do documento."
     },
     {
       "id": "#21",
       "titulo": "Nome completo do documento ao passar o mouse",
-      "area": "Item",
       "status": "feito",
-      "pr": "#243",
-      "flag": "",
-      "validacoes": [
-        {
-          "acao": "Ao passar o mouse sobre um documento, aparece o nome completo dele.",
-          "passos": [
-            "Use um computador (no celular não há \"passar o mouse\").",
-            "Abra um target que tenha um documento de nome longo.",
-            "Pare o mouse sobre o documento por um segundo."
-          ],
-          "esperado": "Aparece um balão com o nome inteiro, sem ser cortado pela borda do cartão.",
-          "estado": "a_validar",
-          "nota": ""
-        }
-      ]
+      "desc": "Ao passar o mouse sobre um documento, aparece o nome completo dele.",
+      "passos": [
+        "Use um computador (no celular não há \"passar o mouse\").",
+        "Abra um target que tenha um documento de nome longo.",
+        "Pare o mouse sobre o documento por um segundo."
+      ],
+      "esperado": "Aparece um balão com o nome inteiro, sem ser cortado pela borda do cartão."
     },
     {
       "id": "#3",
       "titulo": "Participantes em dois cartões: Administradores e Membros",
-      "area": "Equipe",
       "status": "feito",
-      "pr": "#263",
-      "flag": "",
-      "validacoes": [
-        {
-          "acao": "Na equipe da operação, os administradores (da casa ou convidados) ficam juntos num cartão, e os demais participantes ficam em outro, ao lado.",
-          "passos": [
-            "Abra uma operação de teste que tenha administradores da casa, administradores convidados e membros.",
-            "Clique na aba \"Equipe\"."
-          ],
-          "esperado": "Há um cartão \"Admins\" com todos os administradores, da casa e convidados, e um cartão \"Membros\" ao lado com os demais.",
-          "estado": "a_validar",
-          "nota": ""
-        }
-      ]
+      "desc": "Na equipe da operação, os administradores (da casa ou convidados) ficam juntos num cartão, e os demais participantes ficam em outro, ao lado.",
+      "passos": [
+        "Abra uma operação de teste que tenha administradores da casa, administradores convidados e membros.",
+        "Clique na aba \"Equipe\"."
+      ],
+      "esperado": "Há um cartão \"Admins\" com todos os administradores, da casa e convidados, e um cartão \"Membros\" ao lado com os demais."
     },
     {
       "id": "#17",
       "titulo": "Nome completo do item sempre visível",
-      "area": "Item",
       "status": "feito",
-      "pr": "#264",
-      "flag": "",
-      "validacoes": [
-        {
-          "acao": "Nomes longos de itens aparecem inteiros, sem reticências (\"...\").",
-          "passos": [
-            "Abra um target que tenha um item de nome longo.",
-            "Olhe o nome no cartão do item.",
-            "Abra uma janela desse item (por exemplo, a de anexar) e confira o nome lá também."
-          ],
-          "esperado": "O nome aparece completo, quebrando em mais de uma linha se precisar, sem ser cortado.",
-          "estado": "a_validar",
-          "nota": ""
-        }
-      ]
+      "desc": "Nomes longos de itens aparecem inteiros, sem reticências (\"...\").",
+      "passos": [
+        "Abra um target que tenha um item de nome longo.",
+        "Olhe o nome no cartão do item.",
+        "Abra uma janela desse item (por exemplo, a de anexar) e confira o nome lá também."
+      ],
+      "esperado": "O nome aparece completo, quebrando em mais de uma linha se precisar, sem ser cortado."
     },
     {
       "id": "Layout",
       "titulo": "Telas usam toda a largura disponível",
-      "area": "Visual",
       "status": "feito",
-      "pr": "#236",
-      "flag": "",
-      "validacoes": [
-        {
-          "acao": "O conteúdo das telas ocupa toda a largura ao lado do menu, em vez de ficar numa coluna estreita no meio.",
-          "passos": [
-            "Use um computador com a janela do navegador maximizada.",
-            "Abra a lista de operações e depois uma operação."
-          ],
-          "esperado": "O conteúdo vai do menu até a borda direita, sem grandes faixas vazias dos lados.",
-          "estado": "a_validar",
-          "nota": ""
-        }
-      ]
+      "desc": "O conteúdo das telas ocupa toda a largura ao lado do menu, em vez de ficar numa coluna estreita no meio.",
+      "passos": [
+        "Use um computador com a janela do navegador maximizada.",
+        "Abra a lista de operações e depois uma operação."
+      ],
+      "esperado": "O conteúdo vai do menu até a borda direita, sem grandes faixas vazias dos lados."
     },
     {
       "id": "Interno",
       "titulo": "Melhorias internas de qualidade (sem mudança na tela)",
-      "area": "Bastidores",
       "status": "feito",
-      "pr": "#240 · #241 · #262",
-      "flag": "",
-      "validacoes": []
+      "desc": "Melhoria interna, sem mudança na tela.",
+      "passos": [],
+      "esperado": "Nada muda na tela. Pode pular este cartão."
     },
     {
       "id": "#15 · B2",
       "titulo": "Selos da \"Análise da IA\" com visual padronizado",
-      "area": "Análise da IA",
-      "status": "pendente",
-      "pr": "",
-      "flag": "",
-      "validacoes": []
+      "status": "a_fazer"
     },
     {
       "id": "#24 · #29 · A3",
       "titulo": "Notificações de volta, com abas \"Gerais\" e \"Pessoais\" (protótipo)",
-      "area": "Notificações",
-      "status": "pendente",
-      "pr": "",
-      "flag": "",
-      "validacoes": []
+      "status": "a_fazer"
     },
     {
       "id": "#28 · B3",
       "titulo": "\"Remover target\" vai para o fim da lista; a busca fica no lugar dele",
-      "area": "Target",
-      "status": "pendente",
-      "pr": "",
-      "flag": "",
-      "validacoes": []
+      "status": "a_fazer"
     },
     {
       "id": "A1",
       "titulo": "Painel de controle da plataforma mais simples (protótipo)",
-      "area": "Plataforma",
-      "status": "pendente",
-      "pr": "",
-      "flag": "",
-      "validacoes": []
+      "status": "a_fazer"
     },
     {
       "id": "A2",
       "titulo": "Extrato com colunas padronizadas: Data, Target, Item, Ação, Quem fez, Ações (protótipo)",
-      "area": "Extrato",
-      "status": "pendente",
-      "pr": "",
-      "flag": "",
-      "validacoes": []
+      "status": "a_fazer"
     },
     {
       "id": "A4",
       "titulo": "Apontamentos com contador e sempre abertos (protótipo)",
-      "area": "Item",
-      "status": "pendente",
-      "pr": "",
-      "flag": "",
-      "validacoes": []
+      "status": "a_fazer"
     },
     {
       "id": "B1",
       "titulo": "Topo da operação: \"Progresso\" e \"Documentos anexados\"",
-      "area": "Operação",
-      "status": "pendente",
-      "pr": "",
-      "flag": "",
-      "validacoes": []
+      "status": "a_fazer"
     },
     {
       "id": "B4",
       "titulo": "Dados do target mais enxutos (só os campos principais)",
-      "area": "Target",
-      "status": "pendente",
-      "pr": "",
-      "flag": "",
-      "validacoes": []
+      "status": "a_fazer"
     },
     {
       "id": "C1",
       "titulo": "Fim da ordenação manual dos itens",
-      "area": "Item",
-      "status": "pendente",
-      "pr": "",
-      "flag": "",
-      "validacoes": []
+      "status": "a_fazer"
     },
     {
       "id": "C3",
       "titulo": "Membros não veem a análise da IA",
-      "area": "Permissões",
-      "status": "pendente",
-      "pr": "",
-      "flag": "",
-      "validacoes": []
+      "status": "a_fazer"
     },
     {
       "id": "C4",
       "titulo": "Análise de documentos com um modelo de IA mais forte",
-      "area": "Análise da IA",
-      "status": "pendente",
-      "pr": "",
-      "flag": "",
-      "validacoes": []
+      "status": "a_fazer"
     },
     {
       "id": "#9",
       "titulo": "Apontamentos aparecem no Extrato (criar, anexar, responder e remover)",
-      "area": "Extrato",
-      "status": "pendente",
-      "pr": "",
-      "flag": "",
-      "validacoes": []
+      "status": "a_fazer"
     },
     {
       "id": "#12",
       "titulo": "Guardar as análises da IA para consulta futura",
-      "area": "Análise da IA",
-      "status": "pendente",
-      "pr": "",
-      "flag": "",
-      "validacoes": []
+      "status": "a_fazer"
     },
     {
       "id": "#7",
       "titulo": "Responder um apontamento com texto, não só com PDF",
-      "area": "Item",
-      "status": "pendente",
-      "pr": "",
-      "flag": "",
-      "validacoes": []
+      "status": "a_fazer"
     }
   ]
 }

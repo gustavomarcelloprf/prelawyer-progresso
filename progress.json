@@ -277,7 +277,17 @@
     {
       "id": "A2",
       "titulo": "Extrato com colunas padronizadas: Data, Target, Item, Ação, Quem fez, Ações (protótipo)",
-      "status": "a_fazer"
+      "status": "feito",
+      "desc": "Desenho (protótipo em HTML, ainda não está no sistema) da aba \"Extrato\" com seis colunas sempre iguais: Data, Target, Item, Ação realizada, Quem executou e Ações. Os botões de baixar e visualizar só aparecem nas linhas que têm um arquivo. Funciona nos temas claro e escuro.",
+      "passos": [
+        "Abra as imagens de tela que a equipe enviou (há 4: tema claro e escuro, com e sem filtro).",
+        "Confira a ordem das colunas no topo da tabela: Data, Target, Item, Ação realizada, Quem executou, Ações.",
+        "Procure uma linha de \"PDF anexado\" ou \"Imagem anexada\": ela deve ter os dois ícones (baixar e visualizar) na última coluna.",
+        "Procure uma linha de \"PDF removido\", \"Item removido\" ou \"Status alterado\": a última coluna deve estar vazia.",
+        "Procure as linhas \"Target adicionado\" e \"Target removido\": a coluna Item deve mostrar só um traço.",
+        "Veja que os filtros de antes (busca, ordenar, \"Mais recentes\" e as fichas Adição/Remoção/Edição e Documento/Item/Target) continuam acima da tabela."
+      ],
+      "esperado": "A tabela tem sempre as mesmas seis colunas, na mesma ordem, nos dois temas. Só linhas com arquivo mostram os ícones de baixar e visualizar. Linhas de target ficam sem item. Os filtros antigos continuam funcionando acima da tabela."
     },
     {
       "id": "A4",

@@ -392,17 +392,19 @@
     {
       "id": "C1",
       "titulo": "Fim da ordenação manual dos itens",
-      "status": "validado",
-      "desc": "Os itens de cada target (pessoa, empresa ou imóvel) aparecem <b>sempre na ordem do número</b> (#1, #2, #3…), que é a ordem do checklist original. Não dá mais para arrastar os itens para mudar a posição. Por enquanto isso vale só nas contas em que a regra for ligada (teste controlado); nas outras, tudo segue como hoje.",
+      "status": "feito",
+      "desc": "Os itens de cada target (pessoa, empresa ou imóvel) aparecem <b>sempre na ordem do número</b> (#1, #2, #3…), que é a ordem do checklist original, <b>numa lista única</b>: as divisões por categoria (os cabeçalhos \"FEDERAIS\", \"CARTÓRIOS\", \"OUTRAS\"…) somem, e a etiqueta de categoria continua em cada item. Não dá mais para arrastar os itens para mudar a posição. Por enquanto isso vale só nas contas em que a regra for ligada (teste controlado); nas outras, tudo segue como hoje (itens agrupados por categoria, com arrastar).",
       "passos": [
         "Peça ao coordenador para ligar a regra \"Ordem por número\" na conta de teste.",
-        "Entre no app e abra uma operação que tenha targets com vários itens.",
-        "Clique em um target e olhe a lista de itens: confira que os números à esquerda (#1, #2, #3…) estão em ordem crescente, de cima para baixo.",
+        "Entre no app e abra uma operação que tenha targets com vários itens de categorias diferentes (por exemplo, um item federal e um de cartório).",
+        "Clique em um target e olhe a lista de itens: confira que os números à esquerda (#1, #2, #3…) estão em ordem crescente, de cima para baixo, do primeiro ao último item, sem nenhum cabeçalho de categoria separando a lista em blocos.",
+        "Confira que um item de número menor nunca aparece abaixo de um de número maior só por ser de outra categoria (por exemplo, o #1 fica acima do #7 mesmo que o #7 seja \"FEDERAIS\" e o #1 seja \"OUTRAS\").",
+        "Olhe a etiqueta pequena embaixo do número de cada item (FEDERAIS, CARTÓRIOS, FISCAL…): ela continua lá, em cada item.",
         "Passe o mouse sobre um item: não deve aparecer nenhuma alça de arrastar (o ícone de seis pontinhos à esquerda do número).",
         "Tente arrastar um item para cima ou para baixo segurando o mouse: nada deve se mover.",
-        "Se puder, abra outra conta em que a regra NÃO foi ligada: lá a alça de arrastar continua aparecendo e arrastar continua funcionando."
+        "Se puder, abra outra conta em que a regra NÃO foi ligada: lá os itens continuam agrupados por categoria, com os cabeçalhos, e a alça de arrastar continua funcionando."
       ],
-      "esperado": "Na conta com a regra ligada, os itens ficam sempre na ordem do número e não há como arrastar. Itens sem número (adicionados à mão) ficam no fim da lista. Na conta sem a regra, nada muda."
+      "esperado": "Na conta com a regra ligada, a lista do target é uma só, na ordem do número do início ao fim, sem cabeçalhos de categoria, com a etiqueta de categoria em cada item e sem como arrastar. Itens sem número (adicionados à mão) ficam no fim da lista. Na conta sem a regra, nada muda: itens agrupados por categoria e arrastar funcionando."
     },
     {
       "id": "C3",

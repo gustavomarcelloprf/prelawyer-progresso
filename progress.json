@@ -323,7 +323,19 @@
     {
       "id": "B4",
       "titulo": "Dados do target mais enxutos (só os campos principais)",
-      "status": "a_fazer"
+      "status": "feito",
+      "desc": "Na tela de um target (pessoa ou empresa), a faixa <b>Dados do target</b> mostra só os dados de identidade que importam: <b>pessoa física</b> = Nome, CPF, RG, Nascimento e Nome da mãe; <b>empresa</b> = Razão social e CNPJ. Os outros campos (estado civil, endereço, título de eleitor, nacionalidade, profissão, nome do pai, regime de bens, cônjuge, e-mail, telefone) deixam de aparecer, e o botão \"Ver todos\" some. <b>Nada é apagado</b>: o que já estava preenchido continua guardado e volta a aparecer se a regra for desligada. Imóveis não mudam. Por enquanto isso vale só nas contas em que a regra for ligada (teste controlado); nas outras, tudo segue como hoje.",
+      "passos": [
+        "Peça ao coordenador para ligar a regra \"Dados do target enxutos\" na conta de teste (a regra \"Ficha do target\" também precisa estar ligada, senão a faixa de dados nem aparece).",
+        "Entre no app, abra uma operação e clique em um target que seja <b>pessoa física</b>.",
+        "Logo abaixo do nome e do CPF, olhe a faixa \"Dados do target\": devem aparecer só três campos — RG, Nascimento e Nome da mãe.",
+        "Confira que NÃO aparecem: Estado civil, Endereço, Título de eleitor, Nacionalidade, Profissão, Nome do pai, Regime de bens, Cônjuge, E-mail, Telefone. E que não existe mais o botão \"Ver todos\".",
+        "Volte e abra um target que seja <b>empresa</b>: a faixa deve mostrar só Razão social e CNPJ.",
+        "Se puder, abra um target de <b>imóvel</b>: ali nada muda (seis campos e o botão \"Ver todos\" continuam).",
+        "Teste que nada foi apagado: peça ao coordenador para desligar a regra na conta de teste, recarregue a página do target de pessoa física e confira que os campos escondidos voltaram com os valores que tinham antes.",
+        "Se puder, abra outra conta em que a regra NÃO foi ligada: lá a faixa continua completa, com seis campos e o botão \"Ver todos\"."
+      ],
+      "esperado": "Na conta com a regra ligada: pessoa física mostra só RG, Nascimento e Nome da mãe (além do nome e CPF no topo); empresa mostra só Razão social e CNPJ; sem botão \"Ver todos\"; imóvel igual a hoje. Ao desligar a regra, todos os campos voltam com os valores preservados. Na conta sem a regra, nada muda."
     },
     {
       "id": "C1",

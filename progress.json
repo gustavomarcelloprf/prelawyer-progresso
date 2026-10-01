@@ -325,8 +325,8 @@
     },
     {
       "id": "A4",
-      "titulo": "Apontamentos com contador e sempre abertos (protótipo)",
-      "status": "a_fazer"
+      "titulo": "Contador de apontamentos em aberto no item",
+      "status": "em_andamento"
     },
     {
       "id": "B1",

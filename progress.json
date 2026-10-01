@@ -82,14 +82,14 @@
       "id": "#25",
       "titulo": "Data de emissão e validade lidas pela IA",
       "status": "validado",
-      "desc": "Cada documento mostra quando foi emitido e se ainda está válido. Quando o documento não tem data, o sistema não inventa uma.",
+      "desc": "Cada documento mostra quando foi emitido e se ainda está válido. Quando o documento não tem data, o sistema não inventa uma. <b>Nota (1º/10):</b> a situação da validade passou a mostrar a data: \"Válido até dd/mm/aaaa\", \"Vence em X dias · dd/mm\" (amarelo) ou \"Vencido há X dias\" (vermelho). Sem data legível continua \"Validade indeterminada\".",
       "passos": [
         "Abra um target de uma operação de teste que tenha documentos anexados.",
         "Olhe as informações de cada documento.",
         "Anexe, num item de teste, um documento que não tenha data de emissão escrita.",
         "Aguarde a análise terminar e olhe a validade desse documento."
       ],
-      "esperado": "Aparece a data de emissão e a situação da validade (por exemplo, \"Válido\" ou \"Vencido há X dias\"), batendo com o que está escrito no próprio documento. A validade aparece como \"indeterminada\", nunca com uma data errada."
+      "esperado": "Aparece a data de emissão e a situação da validade com a data (por exemplo, \"Válido até 28/11/2026\", \"Vence em 3 dias · 04/10\" ou \"Vencido há 12 dias\"), batendo com o que está escrito no próprio documento. A validade aparece como \"indeterminada\", nunca com uma data errada."
     },
     {
       "id": "#11",
@@ -326,7 +326,15 @@
     {
       "id": "A4",
       "titulo": "Contador de apontamentos em aberto no item",
-      "status": "em_andamento"
+      "status": "feito",
+      "desc": "Quando um item tem apontamentos ainda sem resposta, aparece uma bolinha vermelha com a quantidade, ao lado do texto \"APONTAMENTOS\" no rodapé do item. Assim dá pra ver de longe onde ainda falta responder, sem precisar abrir cada item.",
+      "passos": [
+        "Abra um target de uma operação de teste que tenha itens com apontamentos.",
+        "Olhe o rodapé de um item que tenha apontamento ainda sem resposta (sem PDF e sem texto).",
+        "Clique em \"APONTAMENTOS\" para abrir a lista e responda um apontamento (anexe um PDF ou escreva a resposta em texto).",
+        "Repare na bolinha depois de responder."
+      ],
+      "esperado": "A bolinha vermelha mostra só a quantidade de apontamentos que AINDA estão em aberto (por exemplo, \"APONTAMENTOS 1/3\" com bolinha \"2\"). Quando o último é respondido, a bolinha some. A lista continua fechada até você clicar, como antes."
     },
     {
       "id": "B1",

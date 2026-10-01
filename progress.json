@@ -270,7 +270,19 @@
     {
       "id": "#24 · #29 · A3",
       "titulo": "Notificações de volta, com abas \"Gerais\" e \"Pessoais\"",
-      "status": "em_andamento"
+      "status": "feito",
+      "desc": "Voltou o sininho de notificações, agora no canto superior direito de todas as telas. Ele mostra quantas novidades você ainda não viu. Ao clicar, abre um painel com duas abas: \"Gerais\" (o que aconteceu nas operações de que você participa: documento anexado, target adicionado, apontamento criado, resultado da IA, alguém entrou, operação finalizada) e \"Pessoais\" (o que é só com você: alguém te mencionou com @ num comentário, te convidou para uma operação ou respondeu um apontamento seu). Por enquanto fica ligado só na conta de teste que avisarmos.",
+      "passos": [
+        "Entre no ambiente de teste com a conta que avisarmos que está com as notificações ligadas.",
+        "Olhe o canto superior direito: deve haver um sininho. Se outra pessoa já tiver feito algo nas suas operações, aparece um número laranja em cima dele.",
+        "Clique no sininho. Abre um painel do lado direito com as abas \"Gerais\" e \"Pessoais\".",
+        "Na aba \"Gerais\", veja a lista agrupada por operação. Se você estiver dentro de uma operação, ela aparece primeiro, com a marca \"esta operação\". Clique em \"Só esta operação\" para filtrar só ela, e clique de novo para voltar a ver todas.",
+        "Passe o mouse em cima de uma notificação com a bolinha laranja e clique em \"marcar como lida\". A bolinha some e o número do sininho diminui.",
+        "Peça para outra pessoa da equipe escrever um comentário com @ e o seu nome num item de uma operação em que vocês dois estão. Abra o sininho de novo: na aba \"Pessoais\" deve aparecer a menção, com o trecho do comentário. Clique em \"Abrir comentário\" para ir direto ao item.",
+        "No rodapé do painel, clique em \"Ver todas\". Abre uma página inteira com as mesmas abas, um filtro por operação e a opção \"Só não lidas\". Teste o botão \"Marcar todas como lidas\".",
+        "Entre com outra conta que NÃO está com a função ligada: o sininho não deve aparecer."
+      ],
+      "esperado": "O sininho aparece em todas as telas com o número certo de novidades não lidas. O que você mesmo fez não aparece como novidade para você. Marcar como lida some só para você (a outra pessoa continua vendo como nova). Clicar numa notificação leva ao lugar certo (o item ou a operação). Na conta sem a função ligada, nada muda em relação a hoje."
     },
     {
       "id": "#28 · B3",

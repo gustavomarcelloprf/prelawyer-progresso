@@ -419,7 +419,18 @@
     {
       "id": "#7",
       "titulo": "Responder um apontamento com texto, não só com PDF",
-      "status": "em_andamento"
+      "status": "feito",
+      "desc": "Um apontamento (pendência dentro de um documento) agora pode ser resolvido escrevendo uma resposta em texto, e não só anexando um PDF. O texto fica guardado com quem respondeu e quando.",
+      "passos": [
+        "Entre no sistema com o seu usuário de teste.",
+        "No menu à esquerda, clique em \"Operações\" e abra uma operação de teste.",
+        "Na aba \"Targets\", clique em um target (pessoa, empresa ou imóvel).",
+        "Em um documento da lista, abra a área \"Apontamentos\" (se não houver nenhum, crie um pelo campo \"Novo apontamento…\").",
+        "Em um apontamento em aberto, clique em \"Responder em texto\", escreva uma frase (ex.: \"Protesto cancelado em 12/08\") e clique em \"Enviar resposta\".",
+        "Depois clique em \"Substituir resposta\", mude o texto e clique em \"Salvar resposta\".",
+        "Recarregue a página e confira se o texto continua lá."
+      ],
+      "esperado": "Ao enviar o texto, o apontamento passa de \"Aberto\" para \"Resolvido\" sem precisar de PDF, e aparece uma faixa com o texto, o seu nome e a data/hora. O botão \"Substituir resposta\" deixa trocar o texto (ou anexar um PDF no lugar). O contador de apontamentos resolvidos do documento sobe junto. Quem só pode ler não vê o botão."
     }
   ]
 }

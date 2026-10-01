@@ -327,14 +327,16 @@
       "id": "A4",
       "titulo": "Contador de apontamentos em aberto no item",
       "status": "feito",
-      "desc": "Quando um item tem apontamentos ainda sem resposta, aparece uma bolinha vermelha com a quantidade, ao lado do texto \"APONTAMENTOS\" no rodapé do item. Assim dá pra ver de longe onde ainda falta responder, sem precisar abrir cada item.",
+      "desc": "Quando um item tem apontamentos ainda sem resposta, aparece uma bolinha vermelha com a quantidade, logo depois do texto \"APONTAMENTOS\" no rodapé do item. Quando todos já foram respondidos, no lugar da bolinha aparece um ✓ verde discreto. Se o item não tem apontamento nenhum, fica só o texto \"APONTAMENTOS\". O rodapé não mostra mais a contagem \"respondidos/total\" (ela continua dentro da lista, na aba Apontamentos). Assim dá pra ver de longe onde ainda falta responder, sem precisar abrir cada item.",
       "passos": [
         "Abra um target de uma operação de teste que tenha itens com apontamentos.",
-        "Olhe o rodapé de um item que tenha apontamento ainda sem resposta (sem PDF e sem texto).",
-        "Clique em \"APONTAMENTOS\" para abrir a lista e responda um apontamento (anexe um PDF ou escreva a resposta em texto).",
-        "Repare na bolinha depois de responder."
+        "Olhe o rodapé de um item que tenha apontamento ainda sem resposta (sem PDF e sem texto): deve estar escrito \"APONTAMENTOS\" e, logo ao lado, uma bolinha vermelha com um número. Não deve aparecer nenhuma contagem do tipo \"1/3\".",
+        "Clique em \"APONTAMENTOS\" para abrir a lista e responda um apontamento (anexe um PDF ou escreva a resposta em texto). Dentro da lista, na aba Apontamentos, a contagem \"respondidos/total\" continua aparecendo.",
+        "Repare na bolinha depois de responder: o número diminui.",
+        "Responda o último apontamento que faltava e olhe o rodapé de novo: a bolinha some e aparece um ✓ verde pequeno ao lado de \"APONTAMENTOS\".",
+        "Olhe um item que não tenha apontamento nenhum: o rodapé mostra só \"APONTAMENTOS\", sem bolinha, sem ✓ e sem número."
       ],
-      "esperado": "A bolinha vermelha mostra só a quantidade de apontamentos que AINDA estão em aberto (por exemplo, \"APONTAMENTOS 1/3\" com bolinha \"2\"). Quando o último é respondido, a bolinha some. A lista continua fechada até você clicar, como antes."
+      "esperado": "Com apontamentos em aberto: \"APONTAMENTOS\" + bolinha vermelha só com a quantidade que AINDA falta responder. Com todos respondidos: \"APONTAMENTOS ✓\" (verde discreto, sem bolinha). Sem apontamentos: só \"APONTAMENTOS\". Em nenhum caso o rodapé mostra \"respondidos/total\". A lista continua fechada até você clicar, como antes."
     },
     {
       "id": "B1",

@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "1º de outubro de 2026",
+  "atualizado_em": "1 de outubro de 2026",
   "itens": [
     {
       "id": "#23",
@@ -296,7 +296,20 @@
     {
       "id": "A2",
       "titulo": "Extrato com colunas padronizadas: Data, Target, Item, Ação, Quem fez, Ações",
-      "status": "em_andamento"
+      "status": "feito",
+      "desc": "A aba <b>Extrato</b> da operação ganhou uma tabela com seis colunas fixas: <b>Data</b>, <b>Target</b> (pessoa, empresa ou imóvel), <b>Item</b>, <b>Ação realizada</b>, <b>Quem executou</b> e <b>Ações</b>. Os botões de baixar e visualizar só aparecem nas linhas que têm um arquivo de verdade (PDF ou imagem); uma resposta escrita mostra só o \"visualizar\"; as outras linhas (remoção, renomeio, mudança de status, target) ficam sem botão. A <b>mudança de status</b> de um item (ex.: de Pendente para Concluída) agora também aparece no Extrato, mostrando o status anterior e o novo. Os filtros que já existiam (busca, ordenar por data, Adição/Remoção/Edição, Documento/Item/Target) continuam acima da tabela. Por enquanto isso vale só nas contas em que a regra for ligada (teste controlado); nas outras, a aba segue como hoje.",
+      "passos": [
+        "Peça ao coordenador para ligar a regra \"Extrato em tabela\" na conta de teste.",
+        "Entre no app, abra uma operação que já tenha documentos anexados e clique na aba \"Extrato\".",
+        "Confira o cabeçalho da tabela: devem existir exatamente seis colunas, nesta ordem: Data, Target, Item, Ação realizada, Quem executou, Ações.",
+        "Em uma linha de documento anexado (PDF ou imagem), confira que há dois botõezinhos à direita: baixar (seta para baixo) e visualizar (olho). Clique no olho: o documento abre numa janela por cima da tela.",
+        "Em uma linha de \"Target adicionado\" ou \"Documento removido\", confira que a coluna Ações está vazia e, na de target, a coluna Item mostra só um traço (—).",
+        "Volte à aba Targets, abra um target e mude o status de um item (ex.: de Pendente para Concluída). Volte ao Extrato: deve aparecer uma linha nova \"Status alterado\" com o status anterior e o novo, e o seu nome em \"Quem executou\".",
+        "Se algum item tiver resposta escrita (sem arquivo), confira que a linha mostra só um botão (ícone de documento) e que, ao clicar, o texto da resposta aparece numa janela.",
+        "Use os filtros acima da tabela: clique em \"Edição\" e confira que só sobram as linhas de renomeio e de mudança de status; digite o nome de uma pessoa na busca e confira que só sobram as linhas feitas por ela; clique em \"Limpar filtros\".",
+        "Se puder, abra outra conta em que a regra NÃO foi ligada: lá a aba Extrato continua com as quatro colunas de hoje (Data, Target, Atividade, Ação)."
+      ],
+      "esperado": "Na conta com a regra ligada, o Extrato é uma tabela de seis colunas; botões de baixar/visualizar só nas linhas com arquivo; resposta escrita só com \"visualizar\"; a mudança de status aparece como linha nova com \"antes → depois\" e quem fez; os filtros continuam funcionando. Na conta sem a regra, nada muda."
     },
     {
       "id": "A4",

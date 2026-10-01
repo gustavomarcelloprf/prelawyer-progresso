@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "1 de outubro de 2026",
+  "atualizado_em": "1º de outubro de 2026",
   "itens": [
     {
       "id": "#23",
@@ -257,7 +257,7 @@
     {
       "id": "#15 · B2",
       "titulo": "Selos da \"Análise da IA\" com visual padronizado",
-      "status": "feito",
+      "status": "validado",
       "desc": "No documento de um target, o quadro \"Análise da IA\" mostra quatro selos: Item correto, Target correto, Dentro da validade e Apontamentos. Agora os quatro têm o mesmo visual: ✓ verde quando está tudo certo, ✗ vermelho quando falhou (amarelo no caso de apontamentos) e um círculo cinza com traço quando não se aplica. O texto \"Sem apontamentos\" sumiu — o selo se chama sempre \"Apontamentos\" e é o símbolo que diz se está ok.",
       "passos": [
         "Entre em uma operação e abra um target que tenha documentos já analisados pela IA (com o botão \"IA: aprovado\", \"IA: reprovado\" ou \"IA: apontamento\" ao lado do nome).",

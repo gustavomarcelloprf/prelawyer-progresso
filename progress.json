@@ -339,6 +339,23 @@
       "esperado": "Com apontamentos em aberto: \"APONTAMENTOS\" + bolinha vermelha só com a quantidade que AINDA falta responder. Com todos respondidos: \"APONTAMENTOS ✓\" (verde discreto, sem bolinha). Sem apontamentos: só \"APONTAMENTOS\". Em nenhum caso o rodapé mostra \"respondidos/total\". A lista continua fechada até você clicar, como antes."
     },
     {
+      "id": "A4 · comentários",
+      "titulo": "Bolinha azul no balão de comentários: só o que você ainda não leu",
+      "status": "feito",
+      "desc": "No rodapé de cada item, ao lado do texto \"APONTAMENTOS\", existe um balão de comentário. Agora ele segue a mesma lógica da bolinha vermelha dos apontamentos: quando há comentários de outras pessoas que você ainda não leu, aparece uma bolinha azul com a quantidade. Quando você já leu tudo, a bolinha some e fica só o total de comentários em cinza. Se o item não tem comentário nenhum, fica só o balão. Cada pessoa tem a sua própria contagem: ler os comentários zera a sua bolinha, mas não a dos colegas. Vale só nas contas em que a área de comentários (abas Apontamentos | Comentários) está ligada.",
+      "passos": [
+        "Peça para outra pessoa da equipe escrever um comentário num item de uma operação em que vocês dois estão (ou use dois usuários de teste em navegadores diferentes).",
+        "Abra o target desse item. No rodapé do item, ao lado do balão de comentário, deve aparecer uma bolinha azul com o número de comentários novos (por exemplo \"1\"). Não deve aparecer o total em cinza nesse momento.",
+        "Clique em \"APONTAMENTOS\" para abrir a área do item. A lista abre na aba Apontamentos e a bolinha azul continua lá.",
+        "Clique na aba \"Comentários\". A bolinha azul some na hora e, no lugar dela, aparece o total de comentários em cinza. Dentro da lista, os comentários novos ainda mostram a marca \"NOVO\" até você recarregar a página.",
+        "Recarregue a página: a bolinha azul não volta (você já leu). Peça para a outra pessoa comentar de novo: a bolinha azul reaparece com \"1\".",
+        "Escreva você um comentário: o total em cinza sobe, mas nenhuma bolinha azul aparece (o que você mesmo escreve nunca conta como não lido).",
+        "Olhe um item sem nenhum comentário: só o balão, sem número e sem bolinha.",
+        "Se puder, entre com o usuário da outra pessoa: a bolinha azul dela é independente da sua (ler os seus não zera os dela)."
+      ],
+      "esperado": "Comentários de outras pessoas que você ainda não leu aparecem como uma bolinha azul com a quantidade, no balão do rodapé do item. Abrir a aba \"Comentários\" do item zera a bolinha (e ela não volta ao recarregar). Sem novidades, o balão mostra o total em cinza; sem comentários, só o balão. Os seus próprios comentários nunca contam. A bolinha vermelha e o ✓ dos apontamentos continuam exatamente como antes."
+    },
+    {
       "id": "B1",
       "titulo": "Topo da operação: \"Progresso\" e \"Documentos anexados\"",
       "status": "validado",

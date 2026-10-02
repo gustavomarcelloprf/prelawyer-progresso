@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "1º de outubro de 2026",
+  "atualizado_em": "2 de outubro de 2026",
   "itens": [
     {
       "id": "#23",
@@ -32,14 +32,16 @@
     {
       "id": "#4",
       "titulo": "Cores diferentes para cada situação do documento",
-      "status": "validado",
-      "desc": "Cada uma das 4 situações possíveis de um documento tem uma cor própria.",
+      "status": "feito",
+      "desc": "Cada uma das 4 situações possíveis de um documento tem uma cor própria. A barra fina colorida na borda esquerda do cartão do documento também segue essa cor (antes ela seguia o resultado da análise da IA, o que confundia).",
       "passos": [
         "Abra um target de uma operação de teste.",
         "Em um documento, clique na caixa que mostra a situação dele.",
-        "Escolha cada uma das 4 opções, uma de cada vez."
+        "Escolha cada uma das 4 opções, uma de cada vez.",
+        "Repare na barra fina colorida na borda esquerda do cartão desse documento a cada troca.",
+        "Procure um documento em que a IA tenha marcado \"IA: reprovado\" e marque a situação dele como \"Concluída\"."
       ],
-      "esperado": "A cada troca, a cor muda. As 4 situações têm cores diferentes e fáceis de distinguir."
+      "esperado": "A cada troca, a cor muda. As 4 situações têm cores diferentes e fáceis de distinguir. A barra da borda esquerda muda junto, na mesma cor da situação (cinza em \"Pendente\", amarela em \"Parcial\", verde em \"Concluída\", cinza apagado em \"Não aplicável\"). No documento com \"IA: reprovado\" marcado como \"Concluída\", a barra fica verde, não vermelha — a etiqueta \"IA: reprovado\" continua aparecendo."
     },
     {
       "id": "#26",
@@ -397,6 +399,7 @@
       "passos": [
         "Peça ao coordenador para ligar a regra \"Ordem por número\" na conta de teste.",
         "Entre no app e abra uma operação que tenha targets com vários itens de categorias diferentes (por exemplo, um item federal e um de cartório).",
+        "Se a lista ainda aparecer dividida por categoria (com cabeçalhos \"FEDERAIS\", \"CARTÓRIOS\"…), recarregue a página (tecla F5 ou Cmd+R) antes de conferir: a tela pode estar com a versão antiga carregada.",
         "Clique em um target e olhe a lista de itens: confira que os números à esquerda (#1, #2, #3…) estão em ordem crescente, de cima para baixo, do primeiro ao último item, sem nenhum cabeçalho de categoria separando a lista em blocos.",
         "Confira que um item de número menor nunca aparece abaixo de um de número maior só por ser de outra categoria (por exemplo, o #1 fica acima do #7 mesmo que o #7 seja \"FEDERAIS\" e o #1 seja \"OUTRAS\").",
         "Olhe a etiqueta pequena embaixo do número de cada item (FEDERAIS, CARTÓRIOS, FISCAL…): ela continua lá, em cada item.",

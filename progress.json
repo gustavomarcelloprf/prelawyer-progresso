@@ -485,6 +485,25 @@
         "Recarregue a página e confira se o texto continua lá."
       ],
       "esperado": "Ao enviar o texto, o apontamento passa de \"Aberto\" para \"Resolvido\" sem precisar de PDF, e aparece uma faixa com o texto, o seu nome e a data/hora. O botão \"Substituir resposta\" deixa trocar o texto (ou anexar um PDF no lugar). O contador de apontamentos resolvidos do documento sobe junto. Quem só pode ler não vê o botão."
+    },
+    {
+      "id": "Densidade",
+      "titulo": "Telas do app um pouco menores por padrão (equivale a 90% de zoom)",
+      "status": "feito",
+      "desc": "Dentro do sistema (depois de entrar), tudo ficou cerca de 10% menor: textos, botões, espaços e o menu da esquerda. É o mesmo efeito de apertar <b>Cmd + −</b> (ou Ctrl + −) uma vez no navegador, só que já vem assim, sem você precisar mexer no zoom. Cabe mais informação na tela sem rolar. As telas de entrada (login, termos e privacidade) continuam do tamanho de sempre. Nada mudou de lugar: é só o tamanho.",
+      "passos": [
+        "Antes de entrar, confira que o zoom do navegador está em 100% (no Chrome: menu ⋮ → Zoom, ou aperte Cmd + 0 / Ctrl + 0).",
+        "Olhe a tela de login: ela deve estar do tamanho de sempre.",
+        "Entre no app. A lista de operações, o menu da esquerda e os textos devem aparecer um pouco menores do que antes, como se a página estivesse em 90%.",
+        "Confira que o menu da esquerda vai até o fim da tela (sem sobrar uma faixa em branco embaixo) e que o rodapé fica colado no fim da janela.",
+        "Clique no sininho de notificações, no canto superior direito: o painel deve abrir colado na borda direita e ocupar a altura toda da tela.",
+        "Abra um target e passe o mouse sobre o nome de um documento (onde aparece \"2 PDFs\" ou um nome cortado): o balão com o nome completo deve aparecer logo acima, alinhado ao canto direito do texto.",
+        "No mesmo item, abra o seletor de status (Pendente / Parcial / Concluída…): a lista deve abrir normalmente e a troca deve funcionar.",
+        "Clique em \"+ Nova operação\": a tela de criação deve aparecer inteira, com a caixa de texto no meio.",
+        "Dê Cmd + − (Ctrl + −) uma vez e depois Cmd + 0: o app encolhe e volta normalmente — o ajuste do navegador continua funcionando por cima do padrão novo.",
+        "Saia do app: a tela de login volta ao tamanho normal."
+      ],
+      "esperado": "Dentro do app tudo fica ~10% menor do que era, sem nada cortado, sem faixas em branco embaixo do menu ou acima do rodapé, e com os painéis (notificações, balão do nome do documento, seletor de status, nova operação) abrindo no lugar certo. Login, termos e privacidade ficam do tamanho de sempre."
     }
   ]
 }

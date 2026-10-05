@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2 de outubro de 2026",
+  "atualizado_em": "5 de outubro de 2026",
   "itens": [
     {
       "id": "#23",
@@ -360,8 +360,8 @@
     {
       "id": "B1",
       "titulo": "Topo da operação: \"Progresso\" e \"Documentos anexados\"",
-      "status": "validado",
-      "desc": "No topo da tela de uma operação, os dois cartões de resumo mudaram. O cartão <b>\"Itens emitidos\"</b> virou <b>\"Progresso\"</b> e agora mostra <b>exatamente o mesmo número da aba Dashboard</b>: quantos itens já foram marcados como <i>Concluída</i>, de quantos itens estão no escopo (itens marcados como <i>Não aplicável</i> ficam de fora). O cartão <b>\"Targets\"</b> (que mostrava 3 targets · 1 PJ · 2 PF…) virou <b>\"Documentos anexados\"</b>: quantos itens já têm pelo menos um arquivo anexado. Um item com vários PDFs conta uma vez só. Ter documento não significa estar concluído — são dois cartões independentes.",
+      "status": "feito",
+      "desc": "No topo da tela de uma operação, os dois cartões de resumo mudaram. O cartão <b>\"Itens emitidos\"</b> virou <b>\"Progresso\"</b> e agora mostra <b>exatamente o mesmo número da aba Dashboard</b>: quantos itens já foram marcados como <i>Concluída</i>, de quantos itens estão no escopo (itens marcados como <i>Não aplicável</i> ficam de fora). O cartão <b>\"Targets\"</b> (que mostrava 3 targets · 1 PJ · 2 PF…) virou <b>\"Documentos anexados\"</b>: quantos itens já têm pelo menos um arquivo anexado. Um item com vários PDFs conta uma vez só. Ter documento não significa estar concluído — são dois cartões independentes. <br><br><b>Correção (5 de outubro):</b> o \"Progresso\" também aparece em mais dois lugares — na coluna <b>\"Progresso\"</b> da lista de targets (dentro da operação) e no quadro <b>\"Progresso geral\"</b> ao abrir um target. Esses dois contavam de outro jeito (itens com arquivo anexado) e por isso podiam mostrar 0 / 3 enquanto o cartão da operação mostrava 1 / 3. Agora os três lugares usam a mesma conta: itens marcados como <i>Concluída</i>, de quantos estão no escopo. O cartão \"Documentos anexados\" não mudou.",
       "passos": [
         "Entre no app e abra uma operação que já tenha itens com documentos anexados e alguns itens marcados como \"Concluída\".",
         "Olhe os dois cartões logo abaixo do nome da operação: o da esquerda deve se chamar \"Documentos anexados\" e o da direita \"Progresso\". Os nomes antigos (\"Targets\" e \"Itens emitidos\") não devem mais aparecer.",
@@ -370,9 +370,15 @@
         "Volte para a aba \"Targets\" e conte, à mão, quantos itens têm documento anexado (o item que tem arquivo mostra o botão de abrir/ver o PDF). Compare com o cartão \"Documentos anexados\".",
         "Teste um item com mais de um PDF (aqueles que aparecem agrupados): ele deve contar como 1 no cartão, não como 2.",
         "Marque um item que já tem PDF como \"Concluída\" (no seletor de status do item) e volte ao topo: \"Progresso\" sobe em 1; \"Documentos anexados\" não muda.",
-        "Anexe um PDF novo em um item que ainda não tinha arquivo e volte ao topo: \"Documentos anexados\" sobe em 1; \"Progresso\" só muda se você também marcar o item como \"Concluída\"."
+        "Anexe um PDF novo em um item que ainda não tinha arquivo e volte ao topo: \"Documentos anexados\" sobe em 1; \"Progresso\" só muda se você também marcar o item como \"Concluída\".",
+        "Correção de 5 de outubro — crie (ou use) uma operação com um target de 3 itens SEM nenhum arquivo anexado e marque só 1 deles como \"Concluída\".",
+        "No topo da operação, o cartão \"Progresso\" deve mostrar 1 / 3.",
+        "Na lista de targets (aba \"Targets\"), a coluna \"Progresso\" desse target deve mostrar \"1 / 3 itens\" — e não \"0 / 3\".",
+        "Clique no target. No quadro \"Progresso geral\", o contador deve mostrar 1 / 3, com a barra em um terço.",
+        "Marque um segundo item como \"Concluída\" e volte à operação: os três lugares (cartão, lista e quadro do target) devem mostrar 2 / 3 ao mesmo tempo.",
+        "Marque um item como \"Não aplicável\": ele sai do total nos três lugares (por exemplo, 2 / 2), sempre com o mesmo número nos três."
       ],
-      "esperado": "O cartão \"Progresso\" mostra sempre o mesmo número e a mesma porcentagem da aba Dashboard. O cartão \"Documentos anexados\" mostra quantos itens têm pelo menos um arquivo (vários PDFs no mesmo item contam uma vez), sem depender do status. Um item respondido só por texto, sem arquivo, não conta como documento anexado."
+      "esperado": "O cartão \"Progresso\" mostra sempre o mesmo número e a mesma porcentagem da aba Dashboard. O cartão \"Documentos anexados\" mostra quantos itens têm pelo menos um arquivo (vários PDFs no mesmo item contam uma vez), sem depender do status. Um item respondido só por texto, sem arquivo, não conta como documento anexado. O \"Progresso\" na lista de targets e no quadro \"Progresso geral\" do target mostra sempre o mesmo número do cartão da operação — nunca três números diferentes para a mesma situação."
     },
     {
       "id": "B4",

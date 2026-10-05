@@ -288,19 +288,20 @@
     },
     {
       "id": "A3 · ajuste",
-      "titulo": "Aba \"Pessoais\" das notificações = só quando alguém te marca com @",
+      "titulo": "Notificações: frase explicando cada aba e filtro \"Só esta operação\" nas duas abas",
       "status": "feito",
-      "desc": "Ajuste no sininho de notificações. A aba \"Pessoais\" agora mostra só uma coisa: comentários em que alguém te marcou com @ (por exemplo \"@Ana Ribeiro\"). Tudo o mais que acontece nas operações de que você participa fica na aba \"Gerais\": documento anexado, target adicionado, apontamento criado, resultado da IA, alguém entrou na operação, operação finalizada e também o convite que você recebeu e a resposta a um apontamento seu (esses dois antes ficavam em \"Pessoais\"). Embaixo das abas aparece uma frase curta dizendo o que cada aba mostra. O botão \"Só esta operação\" (no painel) e o seletor \"Operação\" (na página \"Ver todas\") continuam existindo, mas são um filtro de onde olhar, que vale para as duas abas, e não o significado da aba \"Pessoais\".",
+      "desc": "Ajuste no sininho de notificações. Ficou decidido o que cada aba mostra. \"Pessoais\" é o que envolve você diretamente: comentários em que alguém te marcou com @ (por exemplo \"@Ana Ribeiro\"), convites que você recebeu para uma operação e respostas (PDF) de outra pessoa a um apontamento que VOCÊ criou. \"Gerais\" é a atividade das operações de que você participa: documento anexado, target adicionado, apontamento criado, resultado da IA, alguém entrou, operação finalizada (sem repetir convite e resposta ao seu apontamento). Embaixo das abas aparece uma frase curta dizendo o que cada aba mostra. O botão \"Só esta operação\" (no painel) e o seletor \"Operação\" (na página \"Ver todas\") são um filtro de onde olhar, que vale para as duas abas.",
       "passos": [
         "Peça para outra pessoa da equipe escrever um comentário num item de uma operação em que vocês dois estão, marcando você com @ (digite @ e escolha o seu nome).",
         "Peça para essa mesma pessoa anexar um PDF em qualquer item da operação (ou criar um apontamento).",
-        "Clique no sininho no canto superior direito. Abra a aba \"Pessoais\": deve aparecer só o comentário em que você foi marcado, com a frase \"Só menções @você em comentários\" logo abaixo das abas. O PDF anexado NÃO aparece aqui.",
+        "Clique no sininho no canto superior direito. Abra a aba \"Pessoais\": deve aparecer o comentário em que você foi marcado, com a frase \"Menções @você, convites e respostas aos seus apontamentos\" logo abaixo das abas. O PDF anexado NÃO aparece aqui.",
         "Abra a aba \"Gerais\": o PDF anexado (ou o apontamento) aparece aqui, com a frase \"Eventos das operações de que você participa\" abaixo das abas. O comentário com @ NÃO aparece aqui.",
-        "Se alguém te convidou para uma operação recentemente, procure o convite: ele agora está em \"Gerais\", não em \"Pessoais\".",
-        "Estando dentro de uma operação, clique em \"Só esta operação\" no painel: ele filtra as duas abas (inclusive \"Pessoais\") para mostrar só o que é daquela operação. Clique de novo para voltar a ver todas.",
+        "Se alguém te convidou para uma operação recentemente, procure o convite: ele está em \"Pessoais\" (e não em \"Gerais\").",
+        "Crie um apontamento num item e peça para outra pessoa responder anexando um PDF nesse apontamento. A resposta aparece em \"Pessoais\" para você. Se a outra pessoa responder um apontamento criado por um terceiro, você não é avisado.",
+        "Estando dentro de uma operação, clique em \"Só esta operação\" no painel: ele filtra as duas abas (inclusive \"Pessoais\") para mostrar só o que é daquela operação; a frase abaixo das abas ganha \"· só esta operação\". Clique de novo para voltar a ver todas.",
         "Clique em \"Ver todas\" e repita na página: a frase abaixo das abas muda conforme a aba, e o seletor \"Operação\" filtra as duas abas do mesmo jeito."
       ],
-      "esperado": "\"Pessoais\" lista só os comentários em que você foi marcado com @. Qualquer outro evento (anexo, target, apontamento, IA, convite, resposta ao seu apontamento, alguém entrou, operação finalizada) fica só em \"Gerais\". A frase abaixo das abas explica cada uma. \"Só esta operação\" e o seletor \"Operação\" são filtros que valem para as duas abas; não são a definição de \"Pessoais\"."
+      "esperado": "\"Pessoais\" lista menções com @, convites para você e respostas aos apontamentos que você criou. Os demais eventos (anexo, target, apontamento, IA, alguém entrou, operação finalizada) ficam só em \"Gerais\", e convite/resposta ao seu apontamento NÃO se repetem lá. A frase abaixo das abas explica cada uma. \"Só esta operação\" e o seletor \"Operação\" são filtros que valem para as duas abas."
     },
     {
       "id": "#28 · B3",

@@ -241,12 +241,13 @@
       "id": "Layout",
       "titulo": "Telas usam toda a largura disponível",
       "status": "feito",
-      "desc": "O conteúdo das telas ocupa toda a largura ao lado do menu, em vez de ficar numa coluna estreita no meio.",
+      "desc": "O conteúdo das telas ocupa a largura ao lado do menu, em vez de ficar numa coluna estreita no meio. Em monitores muito largos ele para num limite confortável (cerca de 1440 pontos), para as linhas não ficarem longas demais.",
       "passos": [
         "Use um computador com a janela do navegador maximizada.",
-        "Abra a lista de operações e depois uma operação."
+        "Abra a lista de operações e depois uma operação.",
+        "Se o seu monitor for grande (acima de 1600 pontos de largura), repare onde o conteúdo termina à direita."
       ],
-      "esperado": "O conteúdo vai do menu até a borda direita, sem grandes faixas vazias dos lados."
+      "esperado": "Em telas de notebook o conteúdo vai do menu até a borda direita. Em monitores muito largos ele para num limite fixo, alinhado à esquerda, e a lista, a operação, a Equipe e as Configurações terminam todas no mesmo ponto."
     },
     {
       "id": "Interno",

@@ -505,6 +505,20 @@
         "Saia do app: a tela de login volta ao tamanho normal."
       ],
       "esperado": "Dentro do app tudo fica ~10% menor do que era, sem nada cortado, sem faixas em branco embaixo do menu ou acima do rodapé, e com os painéis (notificações, balão do nome do documento, seletor de status, nova operação) abrindo no lugar certo. Login, termos e privacidade ficam do tamanho de sempre."
+    },
+    {
+      "id": "Polimento 1",
+      "titulo": "Contador da aba Extrato bate com a lista + nome do item não quebra letra a letra em janela estreita",
+      "status": "feito",
+      "desc": "Dois acertos pequenos. <b>1)</b> O numerozinho ao lado da aba <b>Extrato</b> mostrava 0 (ou só a quantidade de PDFs anexados) mesmo com a lista cheia de acontecimentos — mudança de status, item renomeado, resposta em texto. Agora ele mostra exatamente quantas linhas a aba lista. <b>2)</b> Com a janela do navegador estreita (por exemplo, duas janelas lado a lado), o nome do item na tela do target quebrava uma letra por linha, formando uma coluna fininha. Agora quebra por palavra, e os botões da direita descem pra linha de baixo quando não cabem ao lado.",
+      "passos": [
+        "Abra uma operação que tenha movimentação (status alterado, item renomeado, PDF anexado) e olhe a aba <b>Extrato</b> no topo: o número ao lado dela deve ser igual à quantidade de linhas que aparecem quando você clica na aba.",
+        "Mude o status de um item (na tela do target) e volte pra operação: o número da aba Extrato deve ter subido 1.",
+        "Na tela de um target, deixe a janela do navegador mais estreita (arraste a borda até mais ou menos metade da tela, ou coloque duas janelas lado a lado).",
+        "Olhe um item com nome comprido: o nome deve quebrar por palavra (várias palavras por linha), nunca uma letra por linha. Os botões (status, Anexar) podem descer pra linha de baixo, alinhados à direita.",
+        "Volte a janela pro tamanho normal: nome, selo da IA e botões voltam pra mesma linha, como antes."
+      ],
+      "esperado": "Número da aba Extrato = linhas listadas na aba (inclusive status alterado e renomeações). Nome do item sempre em palavras inteiras, mesmo com a janela estreita, sem nada vazando pra fora do cartão."
     }
   ]
 }

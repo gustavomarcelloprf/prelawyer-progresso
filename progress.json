@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "5 de outubro de 2026",
+  "atualizado_em": "6 de outubro de 2026",
   "itens": [
     {
       "id": "#23",
@@ -520,6 +520,23 @@
         "Volte a janela pro tamanho normal: nome, selo da IA e botões voltam pra mesma linha, como antes."
       ],
       "esperado": "Número da aba Extrato = linhas listadas na aba (inclusive status alterado e renomeações). Nome do item sempre em palavras inteiras, mesmo com a janela estreita, sem nada vazando pra fora do cartão."
+    },
+    {
+      "id": "P1",
+      "titulo": "Aviso quando um PDF enviado contém código embutido (JavaScript)",
+      "status": "feito",
+      "desc": "Alguns PDFs podem carregar código escondido (JavaScript) que roda ao abrir o arquivo — raro em certidão verdadeira e um sinal de alerta. Antes o sistema tentava barrar isso procurando palavras soltas dentro do arquivo e errou: recusou uma matrícula legítima porque a sequência de letras apareceu por acaso dentro de uma imagem. Agora a checagem olha a <b>estrutura</b> do PDF (só onde um código executável pode de fato morar), nunca o miolo das imagens, e <b>não bloqueia nada</b>: o PDF entra normalmente e, se tiver código embutido, o sistema mostra um aviso amarelo no item pedindo revisão. Recurso ligado por conta, aos poucos (primeiro na conta de teste).",
+      "passos": [
+        "Peça ao time técnico que ligue o recurso na sua conta de teste e que te mande dois arquivos: um PDF de teste <b>com</b> código embutido e uma certidão/matrícula escaneada comum.",
+        "Entre no sistema, abra uma operação de teste, a aba \"Targets\" e um target.",
+        "Em um item sem documento, clique em \"Anexar\" e envie o PDF de teste <b>com</b> código embutido.",
+        "Confira que o envio termina normalmente (sem mensagem de erro) e que o item passa a mostrar o PDF anexado.",
+        "Olhe o rodapé do item, ao lado do ícone de baixar: deve aparecer um selo amarelo \"JS embutido\". Passe o mouse por cima e leia a dica.",
+        "Clique em baixar/visualizar o PDF: continua funcionando (é só um aviso).",
+        "Em outro item, envie a certidão/matrícula escaneada comum: o envio termina igual e <b>nenhum</b> selo amarelo aparece.",
+        "No item com o selo, clique em \"Remover PDF\" e confira que o selo some junto."
+      ],
+      "esperado": "Nenhum PDF é recusado por essa checagem. Só o PDF com código embutido de verdade ganha o selo amarelo \"JS embutido\" (ou \"Abre programa externo\"), com dica pedindo revisão; a matrícula escaneada comum passa limpa, sem selo. Remover o PDF tira o selo. Com o recurso desligado na conta, tudo fica exatamente como hoje."
     }
   ]
 }

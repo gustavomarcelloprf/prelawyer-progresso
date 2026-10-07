@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "6 de outubro de 2026",
+  "atualizado_em": "7 de outubro de 2026",
   "itens": [
     {
       "id": "#23",
@@ -554,6 +554,22 @@
         "Em outro item, envie uma certidão PDF comum e confira que tudo funciona exatamente como antes."
       ],
       "esperado": "A certidão com assinatura digital é aceita, analisada pela IA e abre na visualização e no download como um PDF comum. A certidão PDF comum continua igual. Se o envelope não tiver PDF dentro, o item mostra \"Envelope assinado sem PDF legível — reenvie o PDF original\". Com o recurso desligado na conta, tudo fica exatamente como hoje."
+    },
+    {
+      "id": "Estatuto A",
+      "titulo": "Análise da IA mais justa: não reprova por dúvida e mostra todas as observações",
+      "status": "feito",
+      "desc": "Primeiro ajuste da análise da IA às regras do novo Estatuto. <b>1)</b> A IA não reprova mais um documento só porque ficou em dúvida: para reprovar, ela precisa apontar algo concreto no documento. <b>2)</b> Se um dado do target não está cadastrado (por exemplo, o CPF/CNPJ em branco), esse dado não é conferido e não reprova o documento. <b>3)</b> O painel \"Análise da IA\" passa a mostrar <b>todas</b> as observações da IA, inclusive as úteis em documentos aprovados (antes só apareciam os motivos de reprovação), sempre com dados concretos (valores, datas, quantidades). <b>4)</b> Documento ilegível (escaneado ruim, página cortada) agora aparece em <b>amarelo, \"leitura comprometida\"</b>, em vez de vermelho \"tipo incorreto\". Vale para as análises feitas a partir de agora; as antigas continuam como estavam até serem reanalisadas.",
+      "passos": [
+        "Entre no sistema, abra uma operação de teste, a aba \"Targets\" e um target.",
+        "Em um item sem documento, anexe uma certidão correta e legível do próprio target.",
+        "Espere alguns segundos e clique no selo \"IA: …\" do item para abrir o painel \"Análise da IA\".",
+        "Confira que, se a IA tiver feito alguma observação, ela aparece na lista abaixo dos 4 indicadores, mesmo com o documento aprovado.",
+        "Em outro item, anexe um documento ilegível (por exemplo, uma foto muito borrada ou uma página em branco).",
+        "Confira que o selo do item fica amarelo com o texto \"IA: leitura comprometida\" (e não vermelho \"reprovado\").",
+        "Abra o painel desse item e confira que os 4 indicadores ficam cinza (nem ✓ nem ✗) e que aparece uma observação explicando o problema de leitura."
+      ],
+      "esperado": "Documento legível e correto continua aprovado (verde), agora com as observações úteis visíveis no painel. Documento ilegível fica amarelo, \"leitura comprometida\", com a explicação. Nenhum documento é reprovado só por falta de um dado que não está cadastrado no target."
     }
   ]
 }

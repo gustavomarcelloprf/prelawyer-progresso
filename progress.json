@@ -570,6 +570,22 @@
         "Abra o painel desse item e confira que os 4 indicadores ficam cinza (nem ✓ nem ✗) e que aparece uma observação explicando o problema de leitura."
       ],
       "esperado": "Documento legível e correto continua aprovado (verde), agora com as observações úteis visíveis no painel. Documento ilegível fica amarelo, \"leitura comprometida\", com a explicação. Nenhum documento é reprovado só por falta de um dado que não está cadastrado no target."
+    },
+    {
+      "id": "Estatuto B",
+      "titulo": "Validade justa: matrícula e contrato social não saem mais \"fora da validade\"",
+      "status": "feito",
+      "desc": "Segundo ajuste da análise da IA ao Estatuto. A IA agora identifica <b>que tipo de validade</b> o documento tem, sem inventar prazo: <b>1)</b> <b>validade impressa</b>: vale até a data escrita no documento; <b>2)</b> <b>sem vencimento</b>: documentos que não se atualizam (por exemplo, contrato social e atos societários) estão sempre dentro da validade; <b>3)</b> <b>validade atribuída</b>: documentos que precisam ser atualizados mas não trazem data de validade (por exemplo, matrícula de imóvel) valem <b>30 dias a partir da emissão</b>. Antes, matrícula e contrato social apareciam como \"fora da validade\" só por não terem data impressa. O painel \"Análise da IA\" sempre traz uma observação de validade dizendo em qual desses casos o documento caiu (ou \"sem data de emissão\", quando não dá para ler a data). O que antes se chamava validade \"assumida\" agora se chama \"atribuída\". Precisa da função \"validade pela IA\" ligada na conta e vale para documentos anexados a partir de agora.",
+      "passos": [
+        "Entre no sistema, abra uma operação de teste, a aba \"Targets\" e um target.",
+        "Em um item sem documento, anexe a matrícula de um imóvel emitida há poucos dias.",
+        "Espere alguns segundos e confira que a linha do item mostra \"Emitido em dd/mm/aaaa\" e o selo \"Validade atribuída\", com a data de 30 dias depois da emissão.",
+        "Clique no selo \"IA: …\" do item e confira que o indicador \"Dentro da validade\" está com ✓ e que há uma observação \"Validade atribuída: 30 dias da emissão…\".",
+        "Em outro item, anexe um contrato social (ou outro ato societário), mesmo que seja antigo.",
+        "Confira que a linha mostra o selo \"Sem vencimento\" e que, no painel \"Análise da IA\", o indicador \"Dentro da validade\" está com ✓ e há a observação \"Sem vencimento: documento de natureza permanente\".",
+        "Em um terceiro item, anexe uma certidão que tenha data de validade escrita e confira que aparece \"Válido até dd/mm/aaaa\" com a data do documento."
+      ],
+      "esperado": "Matrícula recente fica dentro da validade (\"Validade atribuída\", 30 dias da emissão). Contrato social fica dentro da validade (\"Sem vencimento\"). Certidão com data impressa segue a data do documento. Nenhum desses é reprovado por \"falta de data de validade\"."
     }
   ]
 }

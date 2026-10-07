@@ -537,6 +537,23 @@
         "No item com o selo, clique em \"Remover PDF\" e confira que o selo some junto."
       ],
       "esperado": "Nenhum PDF é recusado por essa checagem. Só o PDF com código embutido de verdade ganha o selo amarelo \"JS embutido\" (ou \"Abre programa externo\"), com dica pedindo revisão; a matrícula escaneada comum passa limpa, sem selo. Remover o PDF tira o selo. Com o recurso desligado na conta, tudo fica exatamente como hoje."
+    },
+    {
+      "id": "P2",
+      "titulo": "Certidões com assinatura digital (arquivo .p7s) analisadas automaticamente",
+      "status": "feito",
+      "desc": "Algumas certidões, como as de protesto, chegam num \"envelope\" de assinatura digital: o PDF de verdade vem embrulhado dentro de um arquivo assinado. A IA não conseguia ler esse envelope (o item ficava sem análise, com erro) e a visualização também não abria. Agora o sistema <b>tira o PDF de dentro do envelope</b> sozinho: a IA analisa esse PDF, e é ele que aparece ao visualizar e baixar. O arquivo assinado original é guardado à parte, sem se perder. Se o envelope estiver mesmo danificado, sem PDF dentro, o item mostra uma mensagem clara pedindo o PDF original, em vez de um erro genérico. Os itens que já tinham travado são reprocessados pelo time técnico. Recurso ligado por conta, aos poucos (primeiro na conta de teste).",
+      "passos": [
+        "Peça ao time técnico que ligue o recurso na sua conta de teste e que te mande um arquivo de certidão com assinatura digital (o envelope de teste).",
+        "Entre no sistema, abra uma operação de teste, a aba \"Targets\" e um target.",
+        "Em um item sem documento, clique em \"Anexar\" e envie o arquivo do envelope.",
+        "Confira que o envio termina normalmente, sem mensagem de erro.",
+        "Espere alguns segundos e confira que o item ganha a análise da IA normalmente (sem \"falha\" e sem \"IA indisponível\").",
+        "Clique em visualizar o documento: o PDF abre normalmente na tela.",
+        "Clique em baixar: o arquivo baixado abre como um PDF comum.",
+        "Em outro item, envie uma certidão PDF comum e confira que tudo funciona exatamente como antes."
+      ],
+      "esperado": "A certidão com assinatura digital é aceita, analisada pela IA e abre na visualização e no download como um PDF comum. A certidão PDF comum continua igual. Se o envelope não tiver PDF dentro, o item mostra \"Envelope assinado sem PDF legível — reenvie o PDF original\". Com o recurso desligado na conta, tudo fica exatamente como hoje."
     }
   ]
 }

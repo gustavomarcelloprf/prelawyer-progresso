@@ -600,6 +600,24 @@
         "Em um item com comentários novos, confira que a bolinha azul com o número aparece ao lado de \"COMENTÁRIOS\"."
       ],
       "esperado": "Telas mais estreitas, itens sem a etiqueta de categoria e o rodapé com \"APONTAMENTOS · COMENTÁRIOS\" escritos, com as contagens de antes."
+    },
+    {
+      "id": "P3",
+      "titulo": "Painel da plataforma: ligar e desligar recursos por conta, na tela",
+      "status": "feito",
+      "desc": "Até aqui, para ligar um recurso novo em uma conta (por exemplo, para testar com um cliente antes dos outros), o time técnico precisava fazer isso por fora do sistema. Agora o dono da plataforma faz isso <b>na própria tela da conta</b>, numa seção chamada \"Flags\". Cada recurso aparece com um nome em português, mostra se está ligado ou desligado naquela conta e tem três opções: <b>Ligada</b>, <b>Desligada</b> ou <b>Herdar global</b>. \"Herdar global\" faz a conta seguir o padrão do sistema, que aparece entre parênteses. Também aparece quem mudou e quando. Além disso, a lista de contas deixou de dizer \"Visão só-leitura\", porque o painel também permite fazer alterações.",
+      "passos": [
+        "Entre no sistema com o usuário dono da plataforma.",
+        "Abra o painel da plataforma e confira que o texto no topo da lista de contas não fala mais em \"só-leitura\" e menciona a gestão (nova conta, hosts, convidados e flags).",
+        "Clique na conta de teste.",
+        "Role até o fim da página e encontre a seção \"Flags\", com os grupos \"Produto (interface)\" e \"Backend / IA\".",
+        "Escolha um recurso que esteja em \"Herdar global\" e clique em \"Ligada\".",
+        "Confira que aparece uma mensagem de sucesso, que o estado ao lado passa para \"Ligada\" e que o seu nome aparece com \"agora\".",
+        "Clique em \"Desligada\" no mesmo recurso e confira que o estado passa para \"Desligada\".",
+        "Clique em \"Herdar global\" e confira que volta a mostrar \"Segue o global\".",
+        "Ao terminar, deixe o recurso como estava antes do teste."
+      ],
+      "esperado": "Cada clique mostra uma mensagem de sucesso, e a linha mostra na hora o estado novo e quem alterou. \"Herdar global\" faz a conta voltar ao padrão do sistema. A lista de contas não diz mais \"só-leitura\". Nenhuma outra parte do painel muda."
     }
   ]
 }

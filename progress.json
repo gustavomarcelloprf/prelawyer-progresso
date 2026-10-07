@@ -586,6 +586,20 @@
         "Em um terceiro item, anexe uma certidão que tenha data de validade escrita e confira que aparece \"Válido até dd/mm/aaaa\" com a data do documento."
       ],
       "esperado": "Matrícula recente fica dentro da validade (\"Validade atribuída\", 30 dias da emissão). Contrato social fica dentro da validade (\"Sem vencimento\"). Certidão com data impressa segue a data do documento. Nenhum desses é reprovado por \"falta de data de validade\"."
+    },
+    {
+      "id": "Ajustes de tela 1",
+      "titulo": "Tela mais estreita, sem a etiqueta de categoria no item e \"Comentários\" escrito no rodapé",
+      "status": "feito",
+      "desc": "Três ajustes visuais. <b>1)</b> O conteúdo das telas ficou mais estreito (largura máxima menor), para não esticar até a borda em monitores grandes e ficar mais confortável no notebook. <b>2)</b> A etiqueta de categoria (CARTÓRIO, OUTRAS, AMBIENTAL…) saiu do lado esquerdo de cada item da lista; o número do item continua. A informação de categoria não foi apagada, só deixou de aparecer ali. <b>3)</b> No rodapé de cada item, o desenho do balãozinho de comentários virou a palavra <b>\"COMENTÁRIOS\"</b>, no mesmo estilo de \"APONTAMENTOS\". A contagem e a bolinha azul de comentários não lidos continuam iguais.",
+      "passos": [
+        "Entre no sistema e abra uma operação de teste, a aba \"Targets\" e um target.",
+        "Confira que o conteúdo da página não vai até a borda direita da tela em um monitor grande.",
+        "Olhe a lista de itens: à esquerda de cada item aparece só o número (#1, #2…), sem a etiqueta de categoria embaixo.",
+        "No rodapé de um item, confira que aparece \"APONTAMENTOS\" e, ao lado, a palavra \"COMENTÁRIOS\" (sem o desenho do balão).",
+        "Em um item com comentários novos, confira que a bolinha azul com o número aparece ao lado de \"COMENTÁRIOS\"."
+      ],
+      "esperado": "Telas mais estreitas, itens sem a etiqueta de categoria e o rodapé com \"APONTAMENTOS · COMENTÁRIOS\" escritos, com as contagens de antes."
     }
   ]
 }

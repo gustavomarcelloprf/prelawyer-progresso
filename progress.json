@@ -649,6 +649,18 @@
         "Repita em Plataforma › Acesso externo: abra um convidado e use \"Estender\" ou \"Reativar\" na linha da operação."
       ],
       "esperado": "A janelinha mostra o prazo atual e a data nova (daqui a 365 dias). Depois de confirmar aparece a mensagem \"… reativado/estendido até DD/MM/AAAA\", o botão de um acesso que estava vencido passa de \"Reativar\" para \"Estender\" e a barra de prazo volta a ficar cheia. O convidado que estava vencido volta a conseguir abrir a operação."
+    },
+    {
+      "id": "Largura responsiva",
+      "titulo": "Largura das telas acompanha o tamanho do monitor",
+      "status": "feito",
+      "desc": "O conteúdo das telas agora ocupa cerca de <b>80% da largura da janela</b>, em vez de uma largura fixa. No notebook continua do mesmo tamanho de antes; num monitor grande a tela abre mais e some a faixa branca dos lados.",
+      "passos": [
+        "Abra o app num notebook e entre numa operação: a largura deve parecer igual à de antes.",
+        "Abra a mesma tela num monitor grande (ou deixe a janela do navegador bem larga).",
+        "Repare nas laterais da tela."
+      ],
+      "esperado": "No notebook nada muda. No monitor grande o conteúdo fica bem mais largo e as faixas brancas dos lados ficam pequenas."
     }
   ]
 }

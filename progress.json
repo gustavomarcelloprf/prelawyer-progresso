@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "7 de outubro de 2026",
+  "atualizado_em": "8 de outubro de 2026",
   "itens": [
     {
       "id": "#23",
@@ -618,6 +618,22 @@
         "Ao terminar, deixe o recurso como estava antes do teste."
       ],
       "esperado": "Cada clique mostra uma mensagem de sucesso, e a linha mostra na hora o estado novo e quem alterou. \"Herdar global\" faz a conta voltar ao padrão do sistema. A lista de contas não diz mais \"só-leitura\". Nenhuma outra parte do painel muda."
+    },
+    {
+      "id": "P4",
+      "titulo": "Painel da plataforma: convidados externos mais fáceis de achar e de remover",
+      "status": "feito",
+      "desc": "Na aba <b>Acesso externo</b> agora dá para <b>buscar</b> um convidado, operação ou conta, <b>abrir ou fechar todos</b> de uma vez e ver, sem abrir, o <b>prazo mais apertado</b> de cada convidado e se ele <b>nunca acessou</b>. Há um filtro novo, <b>Expiradas</b>. Na lista de <b>Contas</b> há o filtro <b>Não ativou</b>. Na tela da conta, a seção <b>Convidados externos</b> subiu para logo abaixo dos números do topo. E dá para <b>remover todos os acessos de um convidado</b> de uma vez, com uma caixinha de confirmação.",
+      "passos": [
+        "Entre como dono da plataforma e abra Plataforma › Acesso externo.",
+        "Digite parte do nome de um convidado na busca e veja o contador \"N de M participações\" mudar.",
+        "Clique em \"Expandir tudo\" e depois em \"Recolher tudo\".",
+        "Clique no filtro \"Expiradas\".",
+        "Num convidado de teste, clique em \"Remover todos\", marque a caixinha \"Entendo que…\" e confirme.",
+        "Vá em Plataforma › Contas e clique no filtro \"Não ativou\".",
+        "Abra uma conta que tenha convidados externos."
+      ],
+      "esperado": "A busca e os filtros reduzem a lista e o contador acompanha. Cada convidado mostra embaixo do nome o prazo mais curto (em vermelho se vence em até 7 dias) e \"nunca acessou\" quando for o caso. O botão de remover todos só funciona depois de marcar a caixinha, e o convidado some da lista. \"Não ativou\" mostra só as contas que nunca criaram operação. Na tela da conta, \"Convidados externos\" aparece logo abaixo dos números do topo."
     }
   ]
 }

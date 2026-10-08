@@ -661,6 +661,19 @@
         "Repare nas laterais da tela."
       ],
       "esperado": "No notebook nada muda. No monitor grande o conteúdo fica bem mais largo e as faixas brancas dos lados ficam pequenas."
+    },
+    {
+      "id": "IA forte para todos",
+      "titulo": "Modelo de IA mais forte ligado em todas as contas",
+      "status": "feito",
+      "desc": "A análise de IA mais cuidadosa dos documentos (a mesma testada no item C4) agora vem ligada para <b>todas as contas</b>, e não só na conta de teste. Se alguma conta tiver sido desligada de propósito, ela continua desligada.",
+      "passos": [
+        "Entre no ambiente de teste com qualquer conta (não precisa ser a conta de teste do C4).",
+        "Abra uma operação, entre em um target e anexe um documento a um item (por exemplo, uma certidão).",
+        "Espere alguns segundos até aparecer o resultado da análise da IA no item.",
+        "Abra o resultado e leia a explicação da IA."
+      ],
+      "esperado": "A análise aparece normalmente, sem erro, com a explicação mais detalhada (igual à que se via na conta de teste do C4). Pode demorar um pouco mais que antes."
     }
   ]
 }

@@ -634,6 +634,21 @@
         "Abra uma conta que tenha convidados externos."
       ],
       "esperado": "A busca e os filtros reduzem a lista e o contador acompanha. Cada convidado mostra embaixo do nome o prazo mais curto (em vermelho se vence em até 7 dias) e \"nunca acessou\" quando for o caso. O botão de remover todos só funciona depois de marcar a caixinha, e o convidado some da lista. \"Não ativou\" mostra só as contas que nunca criaram operação. Na tela da conta, \"Convidados externos\" aparece logo abaixo dos números do topo."
+    },
+    {
+      "id": "P5",
+      "titulo": "Painel da plataforma: estender ou reativar o acesso de um convidado",
+      "status": "feito",
+      "desc": "Cada acesso de convidado externo agora tem, ao lado de <b>Remover</b>, o botão <b>Estender</b> (acesso ainda válido) ou <b>Reativar</b> (acesso já vencido). Ele abre uma janelinha mostrando o <b>prazo atual</b> e o <b>novo prazo</b>: mais 365 dias contados a partir de hoje. Na lista de <b>Contas</b>, ao lado do nome, aparecem os avisos <b>“N ≤ 7d”</b> (acessos que vencem nesta semana) e <b>“N expirados”</b>.",
+      "passos": [
+        "Entre como dono da plataforma e abra Plataforma › Contas.",
+        "Veja, ao lado do nome das contas que têm convidados, os avisos \"≤ 7d\" (amarelo) e \"expirados\" (vermelho), quando houver.",
+        "Abra uma conta com convidados externos.",
+        "Num convidado de teste com acesso vencido, clique em \"Reativar\", confira o prazo atual e o novo prazo e confirme.",
+        "Num convidado com acesso válido, clique em \"Estender\" e confirme.",
+        "Repita em Plataforma › Acesso externo: abra um convidado e use \"Estender\" ou \"Reativar\" na linha da operação."
+      ],
+      "esperado": "A janelinha mostra o prazo atual e a data nova (daqui a 365 dias). Depois de confirmar aparece a mensagem \"… reativado/estendido até DD/MM/AAAA\", o botão de um acesso que estava vencido passa de \"Reativar\" para \"Estender\" e a barra de prazo volta a ficar cheia. O convidado que estava vencido volta a conseguir abrir a operação."
     }
   ]
 }

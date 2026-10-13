@@ -687,6 +687,20 @@
         "Leia o texto de cada card: Admins e Membros têm uma frase cada."
       ],
       "esperado": "Admins: \"Equipe do escritório que conduz esta operação. Acesso completo.\" Membros: \"Convidados externos. Veem só esta operação, enviam documentos, respondem apontamentos e comentam.\" Nenhuma caixinha de escolher papel no card Membros."
+    },
+    {
+      "id": "Validade · 5 dias",
+      "titulo": "Aviso de vencimento só nos últimos 5 dias",
+      "status": "feito",
+      "desc": "O aviso amarelo \"Vence em N dias\" agora só aparece quando faltam 5 dias ou menos para o documento vencer. Antes aparecia com até 30 dias. A faixa de aviso no topo da página do target e o botão \"Ver\" usam a mesma regra de 5 dias.",
+      "passos": [
+        "Abra uma operação e entre num target que tenha documentos com data de validade.",
+        "Procure um documento que vence daqui a 6 dias ou mais: a etiqueta dele é verde, \"Válido até dd/mm/aaaa\".",
+        "Procure um documento que vence daqui a 5 dias ou menos: a etiqueta é amarela, \"Vence em N dias\".",
+        "Veja a faixa de aviso acima da lista: ela conta os vencidos e os que \"vencem em até 5 dias\".",
+        "Clique em \"Ver\" na faixa: a lista mostra só os vencidos e os que vencem em até 5 dias."
+      ],
+      "esperado": "Documento a 6 dias: verde, fora da faixa de aviso. Documento a 5 dias: amarelo e contado na faixa. Documento vencido: vermelho, \"Vencido há N dias\"."
     }
   ]
 }

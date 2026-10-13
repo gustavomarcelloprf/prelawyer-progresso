@@ -701,6 +701,20 @@
         "Clique em \"Ver\" na faixa: a lista mostra só os vencidos e os que vencem em até 5 dias."
       ],
       "esperado": "Documento a 6 dias: verde, fora da faixa de aviso. Documento a 5 dias: amarelo e contado na faixa. Documento vencido: vermelho, \"Vencido há N dias\"."
+    },
+    {
+      "id": "Comentários · conversa única",
+      "titulo": "Comentários do item viram uma conversa só, sem \"sobre AP-1\"",
+      "status": "feito",
+      "desc": "A aba \"Comentários\" de cada item agora é uma conversa única. Não dá mais para escolher \"Sobre: AP-1\" ao comentar, e os comentários não mostram mais a etiqueta \"sobre AP-1\". O botão \"Comentar\" que ficava dentro de cada apontamento também saiu: para comentar, use a aba Comentários. Comentários antigos continuam lá, só sem a etiqueta.",
+      "passos": [
+        "Abra uma operação, entre num target e abra um item que tenha apontamentos.",
+        "Na aba \"Apontamentos\", veja um apontamento: ele não tem mais o botão \"Comentar\" nem \"N comentários\".",
+        "Clique na aba \"Comentários\".",
+        "Veja os filtros no topo: só aparecem \"Todos\" e \"Menções a você\".",
+        "Escreva um comentário e aperte Enter."
+      ],
+      "esperado": "Nenhum texto \"sobre AP-...\" aparece na aba Comentários. Não existe o seletor \"Sobre:\" ao lado do botão Comentar. O comentário novo aparece no fim da lista, sem etiqueta."
     }
   ]
 }

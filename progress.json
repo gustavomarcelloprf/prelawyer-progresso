@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "8 de outubro de 2026",
+  "atualizado_em": "13 de outubro de 2026",
   "itens": [
     {
       "id": "#23",
@@ -674,6 +674,19 @@
         "Abra o resultado e leia a explicação da IA."
       ],
       "esperado": "A análise aparece normalmente, sem erro, com a explicação mais detalhada (igual à que se via na conta de teste do C4). Pode demorar um pouco mais que antes."
+    },
+    {
+      "id": "Equipe · convite",
+      "titulo": "Aba Equipe mais simples: convite de Membros sem escolher papel e textos curtos",
+      "status": "feito",
+      "desc": "No card Membros, o convite não pede mais pra escolher o papel: todo convidado entra como Membro. Também sumiu a caixinha de trocar o papel em cada pessoa. Os textos dos cards Admins e Membros agora têm uma frase só.",
+      "passos": [
+        "Abra uma operação e clique na aba Equipe.",
+        "Veja o card Membros: ao lado do campo de email existe só o botão Convidar, sem caixinha de papel.",
+        "Nas pessoas listadas, o papel aparece só como etiqueta, sem caixinha pra trocar.",
+        "Leia o texto de cada card: Admins e Membros têm uma frase cada."
+      ],
+      "esperado": "Admins: \"Equipe do escritório que conduz esta operação. Acesso completo.\" Membros: \"Convidados externos. Veem só esta operação, enviam documentos, respondem apontamentos e comentam.\" Nenhuma caixinha de escolher papel no card Membros."
     }
   ]
 }

@@ -715,6 +715,20 @@
         "Escreva um comentário e aperte Enter."
       ],
       "esperado": "Nenhum texto \"sobre AP-...\" aparece na aba Comentários. Não existe o seletor \"Sobre:\" ao lado do botão Comentar. O comentário novo aparece no fim da lista, sem etiqueta."
+    },
+    {
+      "id": "Item 2 · uploads",
+      "titulo": "Vários documentos no mesmo item não se apagam mais",
+      "status": "feito",
+      "desc": "Antes, ao anexar mais de um documento num item que aceita vários arquivos, o segundo <b>tomava o lugar</b> do primeiro. Isso acontecia em dois casos: <b>1)</b> anexando um depois do outro sem fechar a janela; <b>2)</b> fechando e reabrindo a janela logo depois do primeiro envio, enquanto a IA ainda analisava. Agora cada arquivo vira <b>um documento a mais</b> no item. O botão \"Substituir\" aparece só nos itens que aceitam um único documento.",
+      "passos": [
+        "Entre no ambiente de teste, abra uma operação e entre em um target.",
+        "Escolha um item que aceite vários documentos (por exemplo, um item que você mesmo adicionou com \"Outro item\") e clique em \"Anexar\".",
+        "Na janela, escolha um primeiro PDF e clique em \"Anexar PDF\". A janela continua aberta.",
+        "Escolha um segundo PDF e clique de novo em \"Anexar PDF\". Depois clique em \"Concluir\".",
+        "Agora clique no botão \"Anexar outro\" do mesmo item, logo em seguida (sem esperar a análise da IA), e anexe um terceiro PDF."
+      ],
+      "esperado": "O item mostra \"3 PDFs\" no rodapé, e o olho abre a lista com os três arquivos. Nenhum deles sumiu. Logo depois do primeiro envio, o botão do item diz \"Anexar outro\", não \"Substituir\"."
     }
   ]
 }

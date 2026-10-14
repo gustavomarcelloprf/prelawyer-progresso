@@ -758,6 +758,21 @@
         "Clique em \"Extrair via IA\" (se houver PDF anexado) e veja quais campos a IA preenche."
       ],
       "esperado": "Aparecem exatamente 7 campos, todos de uma vez, sem o botão \"Ver todos\": Proprietário, Matrícula, Cartório / comarca, CCIR, NIRF / CIB, CAR e Inscrição municipal. Área, Ônus, Localização, Natureza, Aquisição, SIGEF e VTN não aparecem mais. A Matrícula já vem com o número do imóvel quando ele foi cadastrado assim. A IA só preenche esses 7 campos."
+    },
+    {
+      "id": "Item 1 · vários de uma vez",
+      "titulo": "Anexar vários PDFs de uma vez no mesmo item",
+      "status": "feito",
+      "desc": "Nos itens que aceitam vários documentos, agora dá para <b>escolher ou arrastar vários PDFs de uma só vez</b>. Antes era preciso anexar um por um. Cada arquivo vira um documento a mais no item. Se algum arquivo tiver problema, o erro aparece <b>só nele</b> e os outros entram normalmente. Os itens que aceitam um único documento (como CNDT, PGFN e TRT) continuam com um PDF só e o botão \"Substituir\".",
+      "passos": [
+        "Entre no ambiente de teste, abra uma operação e entre em um target.",
+        "Escolha um item que aceite vários documentos (por exemplo, um item que você mesmo adicionou com \"Outro item\") e clique em \"Anexar\".",
+        "Na janela, clique na área pontilhada e selecione 3 PDFs de uma vez (segure Ctrl, ou Cmd no Mac, para marcar mais de um). Os 3 aparecem numa lista.",
+        "Clique em \"Anexar 3 PDFs\" e depois em \"Concluir\".",
+        "Abra outro item que aceite vários documentos e, desta vez, arraste 3 PDFs do seu computador para a área pontilhada. Depois clique em \"Anexar 3 PDFs\".",
+        "Para ver o caso de erro, repita com 2 PDFs bons e 1 arquivo que não seja PDF (por exemplo, um .txt renomeado para .pdf)."
+      ],
+      "esperado": "Nos dois primeiros itens aparece \"3 PDFs\" no rodapé, e o olho abre os três arquivos. A aba Extrato mostra um evento para cada arquivo. No caso de erro, só o arquivo ruim fica na janela, com a mensagem em vermelho embaixo dele, e os outros 2 entram no item. Num item de documento único, como CNDT, só dá para escolher um arquivo."
     }
   ]
 }

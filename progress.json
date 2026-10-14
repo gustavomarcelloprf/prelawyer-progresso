@@ -773,6 +773,21 @@
         "Para ver o caso de erro, repita com 2 PDFs bons e 1 arquivo que não seja PDF (por exemplo, um .txt renomeado para .pdf)."
       ],
       "esperado": "Nos dois primeiros itens aparece \"3 PDFs\" no rodapé, e o olho abre os três arquivos. A aba Extrato mostra um evento para cada arquivo. No caso de erro, só o arquivo ruim fica na janela, com a mensagem em vermelho embaixo dele, e os outros 2 entram no item. Num item de documento único, como CNDT, só dá para escolher um arquivo."
+    },
+    {
+      "id": "Item 3 · responder apontamento",
+      "titulo": "Responder um apontamento com vários PDFs e o texto, de uma vez só",
+      "status": "feito",
+      "desc": "O cartão do apontamento agora tem um botão <b>\"Responder\"</b>. Ele abre a mesma janela usada para anexar documentos no item. Nela dá para <b>arrastar ou escolher vários PDFs</b> e <b>escrever a resposta</b>, e tudo é enviado num clique só. A resposta vira uma <b>lista de documentos</b>, cada um com o nome de quem enviou. Para trocar um documento, o administrador tira esse documento da lista e alguém responde de novo. Cada resposta aparece na aba <b>Extrato</b>, com quem fez e o que foi enviado.",
+      "passos": [
+        "Entre no ambiente de teste, abra uma operação e entre em um target.",
+        "Em um item que tenha apontamentos, abra a área \"Apontamentos e comentários\".",
+        "Num apontamento ainda em aberto, clique em \"Responder\". A janela abre na hora.",
+        "Arraste 2 ou 3 PDFs do seu computador para a área pontilhada e escreva um texto no campo \"Resposta formal\".",
+        "Clique no botão de envio, que mostra quantos PDFs vão (por exemplo, \"Anexar 2 PDFs com resposta\").",
+        "Abra a aba \"Extrato\" da operação."
+      ],
+      "esperado": "A janela fecha e o apontamento fica marcado como resolvido, com todos os PDFs listados (cada um com o nome de quem enviou) e o texto logo abaixo. No Extrato aparece uma linha \"Apontamento respondido com 2 PDFs e texto\" com o seu nome. Se um dos arquivos não for um PDF de verdade, nada é enviado e o erro aparece em vermelho embaixo desse arquivo; é só tirá-lo da lista e enviar de novo."
     }
   ]
 }

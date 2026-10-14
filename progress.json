@@ -744,6 +744,20 @@
         "Volte para a operação e confira que a aba antes chamada \"Equipe\" agora se chama \"Participantes\". Clique nela e veja que a lista de pessoas continua igual."
       ],
       "esperado": "Nenhuma tela de operação mostra status nem número com asteriscos, a busca e o \"Incluir arquivadas\" continuam funcionando, e a aba se chama \"Participantes\"."
+    },
+    {
+      "id": "Ficha do imóvel · 7 campos",
+      "titulo": "Ficha do imóvel só com os 7 dados que importam",
+      "status": "feito",
+      "desc": "A ficha de dados de um imóvel agora mostra só 7 informações, nesta ordem: Proprietário, Matrícula, Cartório / comarca, CCIR, NIRF / CIB, CAR e Inscrição municipal. Matrícula e Inscrição municipal são novas. Saíram Área, Ônus e gravames, Localização, Natureza, Aquisição, Georref. (SIGEF) e VTN (ITR). O que já tinha sido preenchido nesses campos não foi apagado, só não aparece mais. Quando o imóvel foi cadastrado pelo número da matrícula, o campo Matrícula já vem preenchido com esse número.",
+      "passos": [
+        "Abra uma operação que tenha um imóvel.",
+        "Clique no imóvel para abrir a tela dele.",
+        "Olhe o bloco \"Dados do target\" logo abaixo do nome.",
+        "Se o imóvel foi cadastrado pelo número da matrícula, confira o campo Matrícula.",
+        "Clique em \"Extrair via IA\" (se houver PDF anexado) e veja quais campos a IA preenche."
+      ],
+      "esperado": "Aparecem exatamente 7 campos, todos de uma vez, sem o botão \"Ver todos\": Proprietário, Matrícula, Cartório / comarca, CCIR, NIRF / CIB, CAR e Inscrição municipal. Área, Ônus, Localização, Natureza, Aquisição, SIGEF e VTN não aparecem mais. A Matrícula já vem com o número do imóvel quando ele foi cadastrado assim. A IA só preenche esses 7 campos."
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "13 de outubro de 2026",
+  "atualizado_em": "14 de outubro de 2026",
   "itens": [
     {
       "id": "#23",
@@ -734,11 +734,11 @@
       "id": "Itens 10·11·15 · limpeza",
       "titulo": "Telas de operação mais limpas: sem número mascarado, sem status e aba \"Participantes\"",
       "status": "feito",
-      "desc": "Tiramos da tela o que não ajudava. A lista de operações não tem mais a coluna \"Status\" nem o filtro de status. Dentro da operação, sumiram o selo de status ao lado do nome, a coluna \"Status\" da lista de targets e a linha com o CPF/CNPJ escondido por asteriscos (***). Esse número também saiu do topo da tela do target e da pergunta de confirmação ao remover um target. A aba \"Equipe\" da operação passou a se chamar \"Participantes\".",
+      "desc": "Tiramos da tela o que não ajudava. A lista de operações não tem mais a coluna \"Status\" nem o filtro de status. Dentro da operação, sumiu o selo de status ao lado do nome (só fica o selo cinza \"Finalizada\" quando a operação já foi finalizada), a coluna \"Status\" da lista de targets e a linha com o CPF/CNPJ escondido por asteriscos (***). Esse número também saiu do topo da tela do target e da pergunta de confirmação ao remover um target. A aba \"Equipe\" da operação passou a se chamar \"Participantes\".",
       "passos": [
         "No menu à esquerda, clique em \"Operações\".",
         "Confira as colunas da lista: devem ser só Operação, Targets, Progresso e Atualizado. Ao lado da busca deve haver só a caixinha \"Incluir arquivadas\", sem nenhum filtro de status.",
-        "Clique numa operação de teste. Ao lado do nome da operação não deve aparecer nenhum selo de status.",
+        "Clique numa operação de teste. Ao lado do nome da operação não deve aparecer nenhum selo de status. Só uma operação finalizada mostra o selo cinza \"Finalizada\", ao lado do nome e também na lista de operações.",
         "Na aba \"Targets\", confira que cada linha mostra só o nome do target, sem a linha de números com asteriscos (***), e que não existe a coluna \"Status\".",
         "Clique num target. No topo da tela deve aparecer só o nome, sem o número com asteriscos.",
         "Volte para a operação e confira que a aba antes chamada \"Equipe\" agora se chama \"Participantes\". Clique nela e veja que a lista de pessoas continua igual."

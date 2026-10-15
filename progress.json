@@ -1,808 +1,808 @@
 {
- "atualizado_em": "14 de outubro de 2026",
- "itens": [
-  {
-   "id": "#23",
-   "titulo": "Apontamentos e comentários separados em abas",
-   "status": "validado",
-   "desc": "Cada documento tem duas abas: uma para os apontamentos (pendências) e outra para os comentários.",
-   "passos": [
-    "Entre no sistema com o seu usuário de teste.",
-    "No menu à esquerda, clique em \"Operações\" e abra uma operação de teste.",
-    "Na aba \"Targets\", clique em qualquer target (pessoa, empresa ou imóvel).",
-    "Em um documento da lista, procure as abas \"Apontamentos\" e \"Comentários\".",
-    "Clique em \"Comentários\", escreva um comentário curto e envie."
-   ],
-   "esperado": "As duas abas aparecem lado a lado. O comentário enviado aparece na aba \"Comentários\" e continua lá depois de recarregar a página."
-  },
-  {
-   "id": "#13",
-   "titulo": "Ficha com os dados do target, preenchida pela IA",
-   "status": "validado",
-   "desc": "Cada target tem uma ficha de dados que a IA consegue preencher a partir dos documentos.",
-   "passos": [
-    "Entre no sistema com o seu usuário de teste.",
-    "No menu à esquerda, clique em \"Operações\" e abra uma operação de teste.",
-    "Na aba \"Targets\", abra um target que já tenha documentos anexados.",
-    "Logo abaixo do nome do target está a ficha, com os campos e o botão \"Ver todos\".",
-    "Clique em \"Extrair via IA\" e aguarde alguns segundos."
-   ],
-   "esperado": "Os campos da ficha são preenchidos e cada um mostra de onde veio a informação (de qual documento ou se foi digitado à mão)."
-  },
-  {
-   "id": "#4",
-   "titulo": "Cores diferentes para cada situação do documento",
-   "status": "feito",
-   "desc": "Cada uma das 4 situações possíveis de um documento tem uma cor própria. A barra fina colorida na borda esquerda do cartão do documento também segue essa cor (antes ela seguia o resultado da análise da IA, o que confundia).",
-   "passos": [
-    "Abra um target de uma operação de teste.",
-    "Em um documento, clique na caixa que mostra a situação dele.",
-    "Escolha cada uma das 4 opções, uma de cada vez.",
-    "Repare na barra fina colorida na borda esquerda do cartão desse documento a cada troca.",
-    "Procure um documento em que a IA tenha marcado \"IA: reprovado\" e marque a situação dele como \"Concluída\"."
-   ],
-   "esperado": "A cada troca, a cor muda. As 4 situações têm cores diferentes e fáceis de distinguir. A barra da borda esquerda muda junto, na mesma cor da situação (cinza em \"Pendente\", amarela em \"Parcial\", verde em \"Concluída\", cinza apagado em \"Não aplicável\"). No documento com \"IA: reprovado\" marcado como \"Concluída\", a barra fica verde, não vermelha — a etiqueta \"IA: reprovado\" continua aparecendo."
-  },
-  {
-   "id": "#26",
-   "titulo": "Extrato com filtro por tipo de acontecimento e ordem por data",
-   "status": "validado",
-   "desc": "Dá para filtrar o Extrato pelo tipo de acontecimento e escolher se a data vem da mais nova para a mais antiga ou o contrário.",
-   "passos": [
-    "Abra uma operação de teste e clique na aba \"Extrato\".",
-    "Acima da lista de eventos, clique num dos filtros (os botões arredondados) para escolher um tipo de acontecimento.",
-    "Ao lado dos filtros, clique no botão de ordenar por data para inverter a ordem."
-   ],
-   "esperado": "A lista mostra só o tipo escolhido. Ao inverter, as linhas trocam de ordem e fica claro qual é a direção (mais recentes primeiro ou mais antigas primeiro)."
-  },
-  {
-   "id": "#27",
-   "titulo": "Imóvel aparece como \"IM\"",
-   "status": "validado",
-   "desc": "A sigla dos imóveis passou de \"IR\" para \"IM\" em toda a tela.",
-   "passos": [
-    "Abra uma operação de teste que tenha pelo menos um imóvel.",
-    "Olhe o resumo no topo e os filtros da aba \"Targets\"."
-   ],
-   "esperado": "Aparece \"IM\" (nunca \"IR\") junto de \"PF\" e \"PJ\"."
-  },
-  {
-   "id": "#19",
-   "titulo": "\"Finalizar operação\" encerra e trava a operação",
-   "status": "validado",
-   "desc": "O antigo \"Aceitar entrega\" virou \"Finalizar operação\". Depois de finalizada, a operação não pode mais ser alterada. Se precisar, dá para reabrir a operação e ela volta a aceitar alterações.",
-   "passos": [
-    "Abra uma operação de teste que possa ser encerrada.",
-    "Clique em \"Finalizar operação\" e confirme.",
-    "Tente anexar um documento, mudar a situação de um item ou renomear um item.",
-    "Na mesma operação finalizada, clique em \"Reabrir operação\" e confirme.",
-    "Tente de novo anexar um documento ou mudar a situação de um item."
-   ],
-   "esperado": "A operação aparece como \"Finalizada\" e nenhuma alteração é aceita. Depois de reabrir, a operação deixa de aparecer como \"Finalizada\" e as alterações voltam a ser aceitas."
-  },
-  {
-   "id": "#25",
-   "titulo": "Data de emissão e validade lidas pela IA",
-   "status": "validado",
-   "desc": "Cada documento mostra quando foi emitido e se ainda está válido. Quando o documento não tem data, o sistema não inventa uma. <b>Nota (1º/10):</b> a situação da validade passou a mostrar a data: \"Válido até dd/mm/aaaa\", \"Vence em X dias · dd/mm\" (amarelo) ou \"Vencido há X dias\" (vermelho). Sem data legível continua \"Validade indeterminada\".",
-   "passos": [
-    "Abra um target de uma operação de teste que tenha documentos anexados.",
-    "Olhe as informações de cada documento.",
-    "Anexe, num item de teste, um documento que não tenha data de emissão escrita.",
-    "Aguarde a análise terminar e olhe a validade desse documento."
-   ],
-   "esperado": "Aparece a data de emissão e a situação da validade com a data (por exemplo, \"Válido até 28/11/2026\", \"Vence em 3 dias · 04/10\" ou \"Vencido há 12 dias\"), batendo com o que está escrito no próprio documento. A validade aparece como \"indeterminada\", nunca com uma data errada."
-  },
-  {
-   "id": "#11",
-   "titulo": "Convite de participantes com sugestões",
-   "status": "validado",
-   "desc": "Ao criar uma operação, a etapa de participantes tem visual novo e sugere pessoas para convidar.",
-   "passos": [
-    "No menu à esquerda, clique em \"Operações\" e depois em \"+ Nova operação\".",
-    "Preencha a primeira etapa e avance até a etapa dos participantes.",
-    "Veja a lista de sugestões e clique em uma delas."
-   ],
-   "esperado": "A pessoa sugerida entra na lista de participantes com um clique, sem precisar digitar."
-  },
-  {
-   "id": "#14",
-   "titulo": "Enviar fotos (PNG e JPG) além de PDF",
-   "status": "validado",
-   "desc": "Além de PDF, agora dá para anexar imagens, e a IA também analisa as imagens. Arquivos grandes demais são recusados com um aviso claro.",
-   "passos": [
-    "Abra um target de uma operação de teste.",
-    "Em um item, clique em \"Anexar PDF ou imagem\".",
-    "Escolha uma foto ou print de um documento (arquivo PNG ou JPG) e envie.",
-    "Aguarde alguns segundos.",
-    "Olhe a linha do item onde você anexou a imagem.",
-    "Tente anexar uma imagem com mais de 5 MB."
-   ],
-   "esperado": "A imagem fica anexada ao item e a análise da IA aparece para ela, como acontece com um PDF. Na linha do item aparece um selo \"IMG\", mostrando que o anexo é uma imagem. A imagem acima de 5 MB não é aceita, e aparece uma mensagem explicando o motivo."
-  },
-  {
-   "id": "#16",
-   "titulo": "Seta de voltar sempre leva para a tela anterior certa",
-   "status": "feito",
-   "desc": "A seta de voltar, no topo das telas, leva sempre para o nível de cima (e não para a última página visitada).",
-   "passos": [
-    "Abra uma operação e depois um target dentro dela.",
-    "Clique na seta de voltar no topo da tela.",
-    "Repita em outras telas de detalhe (por exemplo, a de uma conta ou da equipe)."
-   ],
-   "esperado": "Do target você volta para a operação. Da operação, volta para a lista de operações. A seta aparece sempre no mesmo lugar."
-  },
-  {
-   "id": "#20",
-   "titulo": "Renomear um item direto na lista",
-   "status": "feito",
-   "desc": "Dá para mudar o nome de um item sem sair da lista.",
-   "passos": [
-    "Abra um target de uma operação de teste.",
-    "Ao lado do nome de um item, clique no ícone de lápis (\"Editar nome\").",
-    "Digite um nome novo e confirme.",
-    "Recarregue a página."
-   ],
-   "esperado": "O novo nome aparece na hora e continua depois de recarregar."
-  },
-  {
-   "id": "#8",
-   "titulo": "Botão para copiar o nome do item",
-   "status": "feito",
-   "desc": "Ao lado do nome de cada item há um ícone que copia o nome inteiro.",
-   "passos": [
-    "Abra um target de uma operação de teste.",
-    "Clique no ícone de copiar (\"Copiar nome\") ao lado do nome de um item.",
-    "Cole o texto em qualquer lugar (por exemplo, num bloco de notas)."
-   ],
-   "esperado": "O ícone confirma a cópia por um instante, e o texto colado é o nome completo do item."
-  },
-  {
-   "id": "#10",
-   "titulo": "\"Baixar PDF\" do Extrato virou um ícone",
-   "status": "feito",
-   "desc": "No Extrato, o botão de texto \"Baixar PDF\" foi trocado por um ícone de download.",
-   "passos": [
-    "Abra uma operação de teste e clique na aba \"Extrato\".",
-    "Numa linha com documento, clique no ícone de download."
-   ],
-   "esperado": "O documento certo daquela linha é baixado ou aberto."
-  },
-  {
-   "id": "#1",
-   "titulo": "\"Expandir tudo\" também abre a análise da IA",
-   "status": "feito",
-   "desc": "O botão \"Expandir tudo\" abre, de uma vez, a análise da IA de todos os documentos.",
-   "passos": [
-    "Abra um target com vários documentos já analisados.",
-    "Clique em \"Expandir tudo\".",
-    "Depois, clique em \"Colapsar tudo\"."
-   ],
-   "esperado": "Todas as análises da IA abrem juntas e depois fecham juntas."
-  },
-  {
-   "id": "#18",
-   "titulo": "\"Exportar CSV\" saiu do menu \"Ações\"",
-   "status": "feito",
-   "desc": "A opção \"Exportar CSV\", que não funcionava, foi retirada do menu \"Ações\" da operação.",
-   "passos": [
-    "Abra uma operação de teste.",
-    "No canto superior direito, clique no menu \"Ações\"."
-   ],
-   "esperado": "A opção \"Exportar CSV\" não aparece mais no menu."
-  },
-  {
-   "id": "#05 · #22 · #6",
-   "titulo": "Aba Extrato mais limpa",
-   "status": "feito",
-   "desc": "Saíram do Extrato o botão \"Convidado externo envia\" e os filtros de Emissor e Categoria.",
-   "passos": [
-    "Abra uma operação de teste e clique na aba \"Extrato\".",
-    "Olhe o topo da tabela e as linhas."
-   ],
-   "esperado": "Não há mais o botão \"Convidado externo envia\" nem os filtros de Emissor e Categoria. A coluna de atividade mostra o nome do documento."
-  },
-  {
-   "id": "#21",
-   "titulo": "Nome completo do documento ao passar o mouse",
-   "status": "feito",
-   "desc": "Ao passar o mouse sobre um documento, aparece o nome completo dele.",
-   "passos": [
-    "Use um computador (no celular não há \"passar o mouse\").",
-    "Abra um target que tenha um documento de nome longo.",
-    "Pare o mouse sobre o documento por um segundo."
-   ],
-   "esperado": "Aparece um balão com o nome inteiro, sem ser cortado pela borda do cartão."
-  },
-  {
-   "id": "#3",
-   "titulo": "Participantes em dois cartões: Administradores e Membros",
-   "status": "feito",
-   "desc": "Na equipe da operação, os administradores (da casa ou convidados) ficam juntos num cartão, e os demais participantes ficam em outro, ao lado.",
-   "passos": [
-    "Abra uma operação de teste que tenha administradores da casa, administradores convidados e membros.",
-    "Clique na aba \"Equipe\"."
-   ],
-   "esperado": "Há um cartão \"Admins\" com todos os administradores, da casa e convidados, e um cartão \"Membros\" ao lado com os demais."
-  },
-  {
-   "id": "#17",
-   "titulo": "Nome completo do item sempre visível",
-   "status": "feito",
-   "desc": "Nomes longos de itens aparecem inteiros, sem reticências (\"...\").",
-   "passos": [
-    "Abra um target que tenha um item de nome longo.",
-    "Olhe o nome no cartão do item.",
-    "Abra uma janela desse item (por exemplo, a de anexar) e confira o nome lá também."
-   ],
-   "esperado": "O nome aparece completo, quebrando em mais de uma linha se precisar, sem ser cortado."
-  },
-  {
-   "id": "Layout",
-   "titulo": "Telas usam toda a largura disponível",
-   "status": "feito",
-   "desc": "O conteúdo das telas ocupa a largura ao lado do menu, em vez de ficar numa coluna estreita no meio. Em monitores muito largos ele para num limite confortável (cerca de 1440 pontos), para as linhas não ficarem longas demais.",
-   "passos": [
-    "Use um computador com a janela do navegador maximizada.",
-    "Abra a lista de operações e depois uma operação.",
-    "Se o seu monitor for grande (acima de 1600 pontos de largura), repare onde o conteúdo termina à direita."
-   ],
-   "esperado": "Em telas de notebook o conteúdo vai do menu até a borda direita. Em monitores muito largos ele para num limite fixo, alinhado à esquerda, e a lista, a operação, a Equipe e as Configurações terminam todas no mesmo ponto."
-  },
-  {
-   "id": "Interno",
-   "titulo": "Melhorias internas de qualidade (sem mudança na tela)",
-   "status": "feito",
-   "desc": "Melhoria interna, sem mudança na tela.",
-   "passos": [],
-   "esperado": "Nada muda na tela. Pode pular este cartão."
-  },
-  {
-   "id": "#15 · B2",
-   "titulo": "Selos da \"Análise da IA\" com visual padronizado",
-   "status": "validado",
-   "desc": "No documento de um target, o quadro \"Análise da IA\" mostra quatro selos: Item correto, Target correto, Dentro da validade e Apontamentos. Agora os quatro têm o mesmo visual: ✓ verde quando está tudo certo, ✗ vermelho quando falhou (amarelo no caso de apontamentos) e um círculo cinza com traço quando não se aplica. O texto \"Sem apontamentos\" sumiu — o selo se chama sempre \"Apontamentos\" e é o símbolo que diz se está ok.",
-   "passos": [
-    "Entre em uma operação e abra um target que tenha documentos já analisados pela IA (com o botão \"IA: aprovado\", \"IA: reprovado\" ou \"IA: apontamento\" ao lado do nome).",
-    "Clique no botão \"IA: …\" de um documento aprovado para abrir o quadro \"Análise da IA\".",
-    "Repita em um documento reprovado e, se houver, em um com apontamentos.",
-    "Compare os quatro selos entre os quadros abertos."
-   ],
-   "esperado": "Nos quatro selos, o símbolo é sempre um círculo do mesmo tamanho: ✓ verde (ok), ✗ vermelho (falhou; amarelo no selo de apontamentos quando há apontamentos) ou círculo cinza com traço (não se aplica). O texto de todos tem o mesmo peso e o mesmo espaço entre símbolo e palavra. O último selo se chama \"Apontamentos\" (ou \"2 apontamentos\" quando há) e em nenhum lugar aparece \"Sem apontamentos\" nem um tracinho solto antes do texto."
-  },
-  {
-   "id": "#24 · #29 · A3",
-   "titulo": "Notificações de volta, com abas \"Gerais\" e \"Pessoais\"",
-   "status": "validado",
-   "desc": "Voltou o sininho de notificações, agora no canto superior direito de todas as telas. Ele mostra quantas novidades você ainda não viu. Ao clicar, abre um painel com duas abas: \"Gerais\" (o que aconteceu nas operações de que você participa: documento anexado, target adicionado, apontamento criado, resultado da IA, alguém entrou, operação finalizada) e \"Pessoais\" (o que é só com você: alguém te mencionou com @ num comentário, te convidou para uma operação ou respondeu um apontamento seu). Por enquanto fica ligado só na conta de teste que avisarmos.",
-   "passos": [
-    "Entre no ambiente de teste com a conta que avisarmos que está com as notificações ligadas.",
-    "Olhe o canto superior direito: deve haver um sininho. Se outra pessoa já tiver feito algo nas suas operações, aparece um número laranja em cima dele.",
-    "Clique no sininho. Abre um painel do lado direito com as abas \"Gerais\" e \"Pessoais\".",
-    "Na aba \"Gerais\", veja a lista agrupada por operação. Se você estiver dentro de uma operação, ela aparece primeiro, com a marca \"esta operação\". Clique em \"Só esta operação\" para filtrar só ela, e clique de novo para voltar a ver todas.",
-    "Passe o mouse em cima de uma notificação com a bolinha laranja e clique em \"marcar como lida\". A bolinha some e o número do sininho diminui.",
-    "Peça para outra pessoa da equipe escrever um comentário com @ e o seu nome num item de uma operação em que vocês dois estão. Abra o sininho de novo: na aba \"Pessoais\" deve aparecer a menção, com o trecho do comentário. Clique em \"Abrir comentário\" para ir direto ao item.",
-    "No rodapé do painel, clique em \"Ver todas\". Abre uma página inteira com as mesmas abas, um filtro por operação e a opção \"Só não lidas\". Teste o botão \"Marcar todas como lidas\".",
-    "Entre com outra conta que NÃO está com a função ligada: o sininho não deve aparecer."
-   ],
-   "esperado": "O sininho aparece em todas as telas com o número certo de novidades não lidas. O que você mesmo fez não aparece como novidade para você. Marcar como lida some só para você (a outra pessoa continua vendo como nova). Clicar numa notificação leva ao lugar certo (o item ou a operação). Na conta sem a função ligada, nada muda em relação a hoje."
-  },
-  {
-   "id": "A3 · ajuste",
-   "titulo": "Notificações: frase explicando cada aba e filtro \"Só esta operação\" nas duas abas",
-   "status": "feito",
-   "desc": "Ajuste no sininho de notificações. Ficou decidido o que cada aba mostra. \"Pessoais\" é o que envolve você diretamente: comentários em que alguém te marcou com @ (por exemplo \"@Ana Ribeiro\"), convites que você recebeu para uma operação e respostas (PDF) de outra pessoa a um apontamento que VOCÊ criou. \"Gerais\" é a atividade das operações de que você participa: documento anexado, target adicionado, apontamento criado, resultado da IA, alguém entrou, operação finalizada (sem repetir convite e resposta ao seu apontamento). Embaixo das abas aparece uma frase curta dizendo o que cada aba mostra. O botão \"Só esta operação\" (no painel) e o seletor \"Operação\" (na página \"Ver todas\") são um filtro de onde olhar, que vale para as duas abas.",
-   "passos": [
-    "Peça para outra pessoa da equipe escrever um comentário num item de uma operação em que vocês dois estão, marcando você com @ (digite @ e escolha o seu nome).",
-    "Peça para essa mesma pessoa anexar um PDF em qualquer item da operação (ou criar um apontamento).",
-    "Clique no sininho no canto superior direito. Abra a aba \"Pessoais\": deve aparecer o comentário em que você foi marcado, com a frase \"Menções @você, convites e respostas aos seus apontamentos\" logo abaixo das abas. O PDF anexado NÃO aparece aqui.",
-    "Abra a aba \"Gerais\": o PDF anexado (ou o apontamento) aparece aqui, com a frase \"Eventos das operações de que você participa\" abaixo das abas. O comentário com @ NÃO aparece aqui.",
-    "Se alguém te convidou para uma operação recentemente, procure o convite: ele está em \"Pessoais\" (e não em \"Gerais\").",
-    "Crie um apontamento num item e peça para outra pessoa responder anexando um PDF nesse apontamento. A resposta aparece em \"Pessoais\" para você. Se a outra pessoa responder um apontamento criado por um terceiro, você não é avisado.",
-    "Estando dentro de uma operação, clique em \"Só esta operação\" no painel: ele filtra as duas abas (inclusive \"Pessoais\") para mostrar só o que é daquela operação; a frase abaixo das abas ganha \"· só esta operação\". Clique de novo para voltar a ver todas.",
-    "Clique em \"Ver todas\" e repita na página: a frase abaixo das abas muda conforme a aba, e o seletor \"Operação\" filtra as duas abas do mesmo jeito."
-   ],
-   "esperado": "\"Pessoais\" lista menções com @, convites para você e respostas aos apontamentos que você criou. Os demais eventos (anexo, target, apontamento, IA, alguém entrou, operação finalizada) ficam só em \"Gerais\", e convite/resposta ao seu apontamento NÃO se repetem lá. A frase abaixo das abas explica cada uma. \"Só esta operação\" e o seletor \"Operação\" são filtros que valem para as duas abas."
-  },
-  {
-   "id": "#28 · B3",
-   "titulo": "\"Remover target\" vai para o fim da lista; a busca fica no lugar dele",
-   "status": "validado",
-   "desc": "Na tela de um target, o botão \"Remover target\" saiu do canto superior direito e foi para o fim da lista de itens, ao lado de \"+ Adicionar item\". No lugar dele entrou um campo de busca (lupa) que filtra os itens pelo nome e também por qualquer palavra que apareça num apontamento.",
-   "passos": [
-    "Abra uma operação e clique em um target que tenha vários itens (de preferência um com apontamentos cadastrados).",
-    "Olhe o canto superior direito, ao lado do nome do target: deve haver um campo de busca com uma lupa, e não mais o botão \"Remover target\".",
-    "Digite parte do nome de um item (por exemplo, \"matr\"). Pode digitar em maiúsculas ou sem acento.",
-    "Apague e digite uma palavra que aparece só dentro de um apontamento de algum item (abra o item antes para ver o texto do apontamento).",
-    "Digite algo que não existe (por exemplo, \"zzzz\").",
-    "Clique no \"x\" dentro do campo para limpar a busca.",
-    "Role até o fim da lista de itens."
-   ],
-   "esperado": "Ao digitar parte do nome, a lista mostra só os itens cujo nome contém o que foi digitado. Ao digitar a palavra do apontamento, aparece o item que tem esse apontamento, mesmo que a palavra não esteja no nome dele. Com algo que não existe, aparece a mensagem \"Nenhum item corresponde a …\" e nenhum item. Ao limpar, todos os itens voltam. No fim da lista, o botão \"Remover target\" aparece ao lado de \"+ Adicionar item\"."
-  },
-  {
-   "id": "A1",
-   "titulo": "Painel de controle da plataforma mais simples (protótipo)",
-   "status": "a_fazer"
-  },
-  {
-   "id": "A2",
-   "titulo": "Extrato com colunas padronizadas: Data, Target, Item, Ação, Quem fez, Ações",
-   "status": "validado",
-   "desc": "A aba <b>Extrato</b> da operação ganhou uma tabela com seis colunas fixas: <b>Data</b>, <b>Target</b> (pessoa, empresa ou imóvel), <b>Item</b>, <b>Ação realizada</b>, <b>Quem executou</b> e <b>Ações</b>. Os botões de baixar e visualizar só aparecem nas linhas que têm um arquivo de verdade (PDF ou imagem); uma resposta escrita mostra só o \"visualizar\"; as outras linhas (remoção, renomeio, mudança de status, target) ficam sem botão. A <b>mudança de status</b> de um item (ex.: de Pendente para Concluída) agora também aparece no Extrato, mostrando o status anterior e o novo. Os filtros que já existiam (busca, ordenar por data, Adição/Remoção/Edição, Documento/Item/Target) continuam acima da tabela. Por enquanto isso vale só nas contas em que a regra for ligada (teste controlado); nas outras, a aba segue como hoje.",
-   "passos": [
-    "Peça ao coordenador para ligar a regra \"Extrato em tabela\" na conta de teste.",
-    "Entre no app, abra uma operação que já tenha documentos anexados e clique na aba \"Extrato\".",
-    "Confira o cabeçalho da tabela: devem existir exatamente seis colunas, nesta ordem: Data, Target, Item, Ação realizada, Quem executou, Ações.",
-    "Em uma linha de documento anexado (PDF ou imagem), confira que há dois botõezinhos à direita: baixar (seta para baixo) e visualizar (olho). Clique no olho: o documento abre numa janela por cima da tela.",
-    "Em uma linha de \"Target adicionado\" ou \"Documento removido\", confira que a coluna Ações está vazia e, na de target, a coluna Item mostra só um traço (—).",
-    "Volte à aba Targets, abra um target e mude o status de um item (ex.: de Pendente para Concluída). Volte ao Extrato: deve aparecer uma linha nova \"Status alterado\" com o status anterior e o novo, e o seu nome em \"Quem executou\".",
-    "Se algum item tiver resposta escrita (sem arquivo), confira que a linha mostra só um botão (ícone de documento) e que, ao clicar, o texto da resposta aparece numa janela.",
-    "Use os filtros acima da tabela: clique em \"Edição\" e confira que só sobram as linhas de renomeio e de mudança de status; digite o nome de uma pessoa na busca e confira que só sobram as linhas feitas por ela; clique em \"Limpar filtros\".",
-    "Se puder, abra outra conta em que a regra NÃO foi ligada: lá a aba Extrato continua com as quatro colunas de hoje (Data, Target, Atividade, Ação)."
-   ],
-   "esperado": "Na conta com a regra ligada, o Extrato é uma tabela de seis colunas; botões de baixar/visualizar só nas linhas com arquivo; resposta escrita só com \"visualizar\"; a mudança de status aparece como linha nova com \"antes → depois\" e quem fez; os filtros continuam funcionando. Na conta sem a regra, nada muda."
-  },
-  {
-   "id": "A4",
-   "titulo": "Contador de apontamentos em aberto no item",
-   "status": "feito",
-   "desc": "Quando um item tem apontamentos ainda sem resposta, aparece uma bolinha vermelha com a quantidade, logo depois do texto \"APONTAMENTOS\" no rodapé do item. Quando todos já foram respondidos, no lugar da bolinha aparece um ✓ verde discreto. Se o item não tem apontamento nenhum, fica só o texto \"APONTAMENTOS\". O rodapé não mostra mais a contagem \"respondidos/total\" (ela continua dentro da lista, na aba Apontamentos). Assim dá pra ver de longe onde ainda falta responder, sem precisar abrir cada item.",
-   "passos": [
-    "Abra um target de uma operação de teste que tenha itens com apontamentos.",
-    "Olhe o rodapé de um item que tenha apontamento ainda sem resposta (sem PDF e sem texto): deve estar escrito \"APONTAMENTOS\" e, logo ao lado, uma bolinha vermelha com um número. Não deve aparecer nenhuma contagem do tipo \"1/3\".",
-    "Clique em \"APONTAMENTOS\" para abrir a lista e responda um apontamento (anexe um PDF ou escreva a resposta em texto). Dentro da lista, na aba Apontamentos, a contagem \"respondidos/total\" continua aparecendo.",
-    "Repare na bolinha depois de responder: o número diminui.",
-    "Responda o último apontamento que faltava e olhe o rodapé de novo: a bolinha some e aparece um ✓ verde pequeno ao lado de \"APONTAMENTOS\".",
-    "Olhe um item que não tenha apontamento nenhum: o rodapé mostra só \"APONTAMENTOS\", sem bolinha, sem ✓ e sem número."
-   ],
-   "esperado": "Com apontamentos em aberto: \"APONTAMENTOS\" + bolinha vermelha só com a quantidade que AINDA falta responder. Com todos respondidos: \"APONTAMENTOS ✓\" (verde discreto, sem bolinha). Sem apontamentos: só \"APONTAMENTOS\". Em nenhum caso o rodapé mostra \"respondidos/total\". A lista continua fechada até você clicar, como antes."
-  },
-  {
-   "id": "A4 · comentários",
-   "titulo": "Bolinha azul no balão de comentários: só o que você ainda não leu",
-   "status": "feito",
-   "desc": "No rodapé de cada item, ao lado do texto \"APONTAMENTOS\", existe um balão de comentário. Agora ele segue a mesma lógica da bolinha vermelha dos apontamentos: quando há comentários de outras pessoas que você ainda não leu, aparece uma bolinha azul com a quantidade. Quando você já leu tudo, a bolinha some e fica só o total de comentários em cinza. Se o item não tem comentário nenhum, fica só o balão. Cada pessoa tem a sua própria contagem: ler os comentários zera a sua bolinha, mas não a dos colegas. Vale só nas contas em que a área de comentários (abas Apontamentos | Comentários) está ligada.",
-   "passos": [
-    "Peça para outra pessoa da equipe escrever um comentário num item de uma operação em que vocês dois estão (ou use dois usuários de teste em navegadores diferentes).",
-    "Abra o target desse item. No rodapé do item, ao lado do balão de comentário, deve aparecer uma bolinha azul com o número de comentários novos (por exemplo \"1\"). Não deve aparecer o total em cinza nesse momento.",
-    "Clique em \"APONTAMENTOS\" para abrir a área do item. A lista abre na aba Apontamentos e a bolinha azul continua lá.",
-    "Clique na aba \"Comentários\". A bolinha azul some na hora e, no lugar dela, aparece o total de comentários em cinza. Dentro da lista, os comentários novos ainda mostram a marca \"NOVO\" até você recarregar a página.",
-    "Recarregue a página: a bolinha azul não volta (você já leu). Peça para a outra pessoa comentar de novo: a bolinha azul reaparece com \"1\".",
-    "Escreva você um comentário: o total em cinza sobe, mas nenhuma bolinha azul aparece (o que você mesmo escreve nunca conta como não lido).",
-    "Olhe um item sem nenhum comentário: só o balão, sem número e sem bolinha.",
-    "Se puder, entre com o usuário da outra pessoa: a bolinha azul dela é independente da sua (ler os seus não zera os dela)."
-   ],
-   "esperado": "Comentários de outras pessoas que você ainda não leu aparecem como uma bolinha azul com a quantidade, no balão do rodapé do item. Abrir a aba \"Comentários\" do item zera a bolinha (e ela não volta ao recarregar). Sem novidades, o balão mostra o total em cinza; sem comentários, só o balão. Os seus próprios comentários nunca contam. A bolinha vermelha e o ✓ dos apontamentos continuam exatamente como antes."
-  },
-  {
-   "id": "B1",
-   "titulo": "Topo da operação: \"Progresso\" e \"Documentos anexados\"",
-   "status": "feito",
-   "desc": "No topo da tela de uma operação, os dois cartões de resumo mudaram. O cartão <b>\"Itens emitidos\"</b> virou <b>\"Progresso\"</b> e agora mostra <b>exatamente o mesmo número da aba Dashboard</b>: quantos itens já foram marcados como <i>Concluída</i>, de quantos itens estão no escopo (itens marcados como <i>Não aplicável</i> ficam de fora). O cartão <b>\"Targets\"</b> (que mostrava 3 targets · 1 PJ · 2 PF…) virou <b>\"Documentos anexados\"</b>: quantos itens já têm pelo menos um arquivo anexado. Um item com vários PDFs conta uma vez só. Ter documento não significa estar concluído — são dois cartões independentes. <br><br><b>Correção (5 de outubro):</b> o \"Progresso\" também aparece em mais dois lugares — na coluna <b>\"Progresso\"</b> da lista de targets (dentro da operação) e no quadro <b>\"Progresso geral\"</b> ao abrir um target. Esses dois contavam de outro jeito (itens com arquivo anexado) e por isso podiam mostrar 0 / 3 enquanto o cartão da operação mostrava 1 / 3. Agora os três lugares usam a mesma conta: itens marcados como <i>Concluída</i>, de quantos estão no escopo. O cartão \"Documentos anexados\" não mudou.",
-   "passos": [
-    "Entre no app e abra uma operação que já tenha itens com documentos anexados e alguns itens marcados como \"Concluída\".",
-    "Olhe os dois cartões logo abaixo do nome da operação: o da esquerda deve se chamar \"Documentos anexados\" e o da direita \"Progresso\". Os nomes antigos (\"Targets\" e \"Itens emitidos\") não devem mais aparecer.",
-    "Anote o número do cartão \"Progresso\" (por exemplo, 4 / 7 e, embaixo, \"57,1% do escopo concluído\").",
-    "Clique na aba \"Dashboard\", logo abaixo dos cartões. No quadro \"Progresso geral\", confira que a porcentagem grande e a frase \"4 de 7 itens no escopo\" trazem os MESMOS números do cartão. Repita em mais de uma operação: os dois nunca podem divergir.",
-    "Volte para a aba \"Targets\" e conte, à mão, quantos itens têm documento anexado (o item que tem arquivo mostra o botão de abrir/ver o PDF). Compare com o cartão \"Documentos anexados\".",
-    "Teste um item com mais de um PDF (aqueles que aparecem agrupados): ele deve contar como 1 no cartão, não como 2.",
-    "Marque um item que já tem PDF como \"Concluída\" (no seletor de status do item) e volte ao topo: \"Progresso\" sobe em 1; \"Documentos anexados\" não muda.",
-    "Anexe um PDF novo em um item que ainda não tinha arquivo e volte ao topo: \"Documentos anexados\" sobe em 1; \"Progresso\" só muda se você também marcar o item como \"Concluída\".",
-    "Correção de 5 de outubro — crie (ou use) uma operação com um target de 3 itens SEM nenhum arquivo anexado e marque só 1 deles como \"Concluída\".",
-    "No topo da operação, o cartão \"Progresso\" deve mostrar 1 / 3.",
-    "Na lista de targets (aba \"Targets\"), a coluna \"Progresso\" desse target deve mostrar \"1 / 3 itens\" — e não \"0 / 3\".",
-    "Clique no target. No quadro \"Progresso geral\", o contador deve mostrar 1 / 3, com a barra em um terço.",
-    "Marque um segundo item como \"Concluída\" e volte à operação: os três lugares (cartão, lista e quadro do target) devem mostrar 2 / 3 ao mesmo tempo.",
-    "Marque um item como \"Não aplicável\": ele sai do total nos três lugares (por exemplo, 2 / 2), sempre com o mesmo número nos três."
-   ],
-   "esperado": "O cartão \"Progresso\" mostra sempre o mesmo número e a mesma porcentagem da aba Dashboard. O cartão \"Documentos anexados\" mostra quantos itens têm pelo menos um arquivo (vários PDFs no mesmo item contam uma vez), sem depender do status. Um item respondido só por texto, sem arquivo, não conta como documento anexado. O \"Progresso\" na lista de targets e no quadro \"Progresso geral\" do target mostra sempre o mesmo número do cartão da operação — nunca três números diferentes para a mesma situação."
-  },
-  {
-   "id": "B4",
-   "titulo": "Dados do target mais enxutos (só os campos principais)",
-   "status": "validado",
-   "desc": "Na tela de um target (pessoa ou empresa), a faixa <b>Dados do target</b> mostra só os dados de identidade que importam: <b>pessoa física</b> = Nome, CPF, RG, Nascimento e Nome da mãe; <b>empresa</b> = Razão social e CNPJ. Os outros campos (estado civil, endereço, título de eleitor, nacionalidade, profissão, nome do pai, regime de bens, cônjuge, e-mail, telefone) deixam de aparecer, e o botão \"Ver todos\" some. <b>Nada é apagado</b>: o que já estava preenchido continua guardado e volta a aparecer se a regra for desligada. Imóveis não mudam. Por enquanto isso vale só nas contas em que a regra for ligada (teste controlado); nas outras, tudo segue como hoje.",
-   "passos": [
-    "Peça ao coordenador para ligar a regra \"Dados do target enxutos\" na conta de teste (a regra \"Ficha do target\" também precisa estar ligada, senão a faixa de dados nem aparece).",
-    "Entre no app, abra uma operação e clique em um target que seja <b>pessoa física</b>.",
-    "Logo abaixo do nome e do CPF, olhe a faixa \"Dados do target\": devem aparecer só três campos — RG, Nascimento e Nome da mãe.",
-    "Confira que NÃO aparecem: Estado civil, Endereço, Título de eleitor, Nacionalidade, Profissão, Nome do pai, Regime de bens, Cônjuge, E-mail, Telefone. E que não existe mais o botão \"Ver todos\".",
-    "Volte e abra um target que seja <b>empresa</b>: a faixa deve mostrar só Razão social e CNPJ.",
-    "Se puder, abra um target de <b>imóvel</b>: ali nada muda (seis campos e o botão \"Ver todos\" continuam).",
-    "Teste que nada foi apagado: peça ao coordenador para desligar a regra na conta de teste, recarregue a página do target de pessoa física e confira que os campos escondidos voltaram com os valores que tinham antes.",
-    "Se puder, abra outra conta em que a regra NÃO foi ligada: lá a faixa continua completa, com seis campos e o botão \"Ver todos\"."
-   ],
-   "esperado": "Na conta com a regra ligada: pessoa física mostra só RG, Nascimento e Nome da mãe (além do nome e CPF no topo); empresa mostra só Razão social e CNPJ; sem botão \"Ver todos\"; imóvel igual a hoje. Ao desligar a regra, todos os campos voltam com os valores preservados. Na conta sem a regra, nada muda."
-  },
-  {
-   "id": "C1",
-   "titulo": "Fim da ordenação manual dos itens",
-   "status": "feito",
-   "desc": "Os itens de cada target (pessoa, empresa ou imóvel) aparecem <b>sempre na ordem do número</b> (#1, #2, #3…), que é a ordem do checklist original, <b>numa lista única</b>: as divisões por categoria (os cabeçalhos \"FEDERAIS\", \"CARTÓRIOS\", \"OUTRAS\"…) somem, e a etiqueta de categoria continua em cada item. Não dá mais para arrastar os itens para mudar a posição. Por enquanto isso vale só nas contas em que a regra for ligada (teste controlado); nas outras, tudo segue como hoje (itens agrupados por categoria, com arrastar).",
-   "passos": [
-    "Peça ao coordenador para ligar a regra \"Ordem por número\" na conta de teste.",
-    "Entre no app e abra uma operação que tenha targets com vários itens de categorias diferentes (por exemplo, um item federal e um de cartório).",
-    "Se a lista ainda aparecer dividida por categoria (com cabeçalhos \"FEDERAIS\", \"CARTÓRIOS\"…), recarregue a página (tecla F5 ou Cmd+R) antes de conferir: a tela pode estar com a versão antiga carregada.",
-    "Clique em um target e olhe a lista de itens: confira que os números à esquerda (#1, #2, #3…) estão em ordem crescente, de cima para baixo, do primeiro ao último item, sem nenhum cabeçalho de categoria separando a lista em blocos.",
-    "Confira que um item de número menor nunca aparece abaixo de um de número maior só por ser de outra categoria (por exemplo, o #1 fica acima do #7 mesmo que o #7 seja \"FEDERAIS\" e o #1 seja \"OUTRAS\").",
-    "Olhe a etiqueta pequena embaixo do número de cada item (FEDERAIS, CARTÓRIOS, FISCAL…): ela continua lá, em cada item.",
-    "Passe o mouse sobre um item: não deve aparecer nenhuma alça de arrastar (o ícone de seis pontinhos à esquerda do número).",
-    "Tente arrastar um item para cima ou para baixo segurando o mouse: nada deve se mover.",
-    "Se puder, abra outra conta em que a regra NÃO foi ligada: lá os itens continuam agrupados por categoria, com os cabeçalhos, e a alça de arrastar continua funcionando."
-   ],
-   "esperado": "Na conta com a regra ligada, a lista do target é uma só, na ordem do número do início ao fim, sem cabeçalhos de categoria, com a etiqueta de categoria em cada item e sem como arrastar. Itens sem número (adicionados à mão) ficam no fim da lista. Na conta sem a regra, nada muda: itens agrupados por categoria e arrastar funcionando."
-  },
-  {
-   "id": "C3",
-   "titulo": "Membros não veem a análise da IA",
-   "status": "validado",
-   "desc": "Quem entra numa operação como <b>Membro</b> deixa de ver qualquer coisa feita pela IA: o selo \"IA: aprovado/reprovado\", o quadro \"Análise da IA\", a cor na lateral do item, o \"Aguardando análise\", as datas de validade lidas pela IA e as sugestões da IA nos dados do target. Quem é <b>Admin</b> da operação continua vendo tudo. Por enquanto isso vale só nas contas em que a regra for ligada (teste controlado).",
-   "passos": [
-    "Peça ao coordenador para ligar a regra \"Membro sem IA\" na conta de teste.",
-    "Entre no app com um usuário que seja <b>Membro</b> de uma operação que já tenha documentos anexados.",
-    "Abra a operação e clique em um dos targets (pessoa, empresa ou imóvel).",
-    "Olhe a lista de itens: confira que não aparece nenhum selo \"IA: aprovado\" ou \"IA: reprovado\", nenhum \"Aguardando análise\" e nenhuma data \"Válido / Vence em / Vencido\".",
-    "Saia e entre de novo com um usuário que seja <b>Admin</b> da mesma operação.",
-    "Abra o mesmo target e confira que os selos da IA e as datas de validade aparecem normalmente."
-   ],
-   "esperado": "Como Membro, a análise de IA não aparece em lugar nenhum da tela do target (os documentos, os status e os comentários continuam lá). Como Admin, tudo aparece como antes. Nas contas em que a regra não foi ligada, nada muda para ninguém."
-  },
-  {
-   "id": "C4",
-   "titulo": "Análise de documentos com um modelo de IA mais forte",
-   "status": "validado",
-   "desc": "A análise de IA dos documentos anexados passa a usar um modelo mais forte, que lê o documento com mais cuidado. Por enquanto ela fica ligada só na conta de teste que avisarmos, para comparar antes de ligar para todos.",
-   "passos": [
-    "Entre no ambiente de teste com a conta que avisarmos que está com a análise nova ligada.",
-    "Abra uma operação, entre em um target e anexe um documento a um item (por exemplo, uma certidão).",
-    "Espere alguns segundos até aparecer o resultado da análise da IA no item.",
-    "Abra o resultado e leia a explicação da IA.",
-    "Se puder, anexe também um documento com problema (de outra pessoa, de outro tipo ou vencido) e veja o que a IA diz."
-   ],
-   "esperado": "A análise aparece normalmente, sem erro. A explicação fica mais precisa e aponta certo quando o documento é de outra pessoa, de outro tipo ou está vencido. Pode demorar um pouco mais que antes."
-  },
-  {
-   "id": "#9",
-   "titulo": "Apontamentos aparecem no Extrato (criar, anexar, responder e remover)",
-   "status": "a_fazer"
-  },
-  {
-   "id": "#12",
-   "titulo": "Guardar as análises da IA para consulta futura",
-   "status": "a_fazer"
-  },
-  {
-   "id": "#7",
-   "titulo": "Responder um apontamento com texto, não só com PDF",
-   "status": "feito",
-   "desc": "Um apontamento (pendência dentro de um documento) agora pode ser resolvido escrevendo uma resposta em texto, e não só anexando um PDF. O texto fica guardado com quem respondeu e quando.",
-   "passos": [
-    "Entre no sistema com o seu usuário de teste.",
-    "No menu à esquerda, clique em \"Operações\" e abra uma operação de teste.",
-    "Na aba \"Targets\", clique em um target (pessoa, empresa ou imóvel).",
-    "Em um documento da lista, abra a área \"Apontamentos\" (se não houver nenhum, crie um pelo campo \"Novo apontamento…\").",
-    "Em um apontamento em aberto, clique em \"Responder em texto\", escreva uma frase (ex.: \"Protesto cancelado em 12/08\") e clique em \"Enviar resposta\".",
-    "Depois clique em \"Substituir resposta\", mude o texto e clique em \"Salvar resposta\".",
-    "Recarregue a página e confira se o texto continua lá."
-   ],
-   "esperado": "Ao enviar o texto, o apontamento passa de \"Aberto\" para \"Resolvido\" sem precisar de PDF, e aparece uma faixa com o texto, o seu nome e a data/hora. O botão \"Substituir resposta\" deixa trocar o texto (ou anexar um PDF no lugar). O contador de apontamentos resolvidos do documento sobe junto. Quem só pode ler não vê o botão."
-  },
-  {
-   "id": "Densidade",
-   "titulo": "Telas do app um pouco menores por padrão (equivale a 90% de zoom)",
-   "status": "feito",
-   "desc": "Dentro do sistema (depois de entrar), tudo ficou cerca de 10% menor: textos, botões, espaços e o menu da esquerda. É o mesmo efeito de apertar <b>Cmd + −</b> (ou Ctrl + −) uma vez no navegador, só que já vem assim, sem você precisar mexer no zoom. Cabe mais informação na tela sem rolar. As telas de entrada (login, termos e privacidade) continuam do tamanho de sempre. Nada mudou de lugar: é só o tamanho.",
-   "passos": [
-    "Antes de entrar, confira que o zoom do navegador está em 100% (no Chrome: menu ⋮ → Zoom, ou aperte Cmd + 0 / Ctrl + 0).",
-    "Olhe a tela de login: ela deve estar do tamanho de sempre.",
-    "Entre no app. A lista de operações, o menu da esquerda e os textos devem aparecer um pouco menores do que antes, como se a página estivesse em 90%.",
-    "Confira que o menu da esquerda vai até o fim da tela (sem sobrar uma faixa em branco embaixo) e que o rodapé fica colado no fim da janela.",
-    "Clique no sininho de notificações, no canto superior direito: o painel deve abrir colado na borda direita e ocupar a altura toda da tela.",
-    "Abra um target e passe o mouse sobre o nome de um documento (onde aparece \"2 PDFs\" ou um nome cortado): o balão com o nome completo deve aparecer logo acima, alinhado ao canto direito do texto.",
-    "No mesmo item, abra o seletor de status (Pendente / Parcial / Concluída…): a lista deve abrir normalmente e a troca deve funcionar.",
-    "Clique em \"+ Nova operação\": a tela de criação deve aparecer inteira, com a caixa de texto no meio.",
-    "Dê Cmd + − (Ctrl + −) uma vez e depois Cmd + 0: o app encolhe e volta normalmente — o ajuste do navegador continua funcionando por cima do padrão novo.",
-    "Saia do app: a tela de login volta ao tamanho normal."
-   ],
-   "esperado": "Dentro do app tudo fica ~10% menor do que era, sem nada cortado, sem faixas em branco embaixo do menu ou acima do rodapé, e com os painéis (notificações, balão do nome do documento, seletor de status, nova operação) abrindo no lugar certo. Login, termos e privacidade ficam do tamanho de sempre."
-  },
-  {
-   "id": "Polimento 1",
-   "titulo": "Contador da aba Extrato bate com a lista + nome do item não quebra letra a letra em janela estreita",
-   "status": "feito",
-   "desc": "Dois acertos pequenos. <b>1)</b> O numerozinho ao lado da aba <b>Extrato</b> mostrava 0 (ou só a quantidade de PDFs anexados) mesmo com a lista cheia de acontecimentos — mudança de status, item renomeado, resposta em texto. Agora ele mostra exatamente quantas linhas a aba lista. <b>2)</b> Com a janela do navegador estreita (por exemplo, duas janelas lado a lado), o nome do item na tela do target quebrava uma letra por linha, formando uma coluna fininha. Agora quebra por palavra, e os botões da direita descem pra linha de baixo quando não cabem ao lado.",
-   "passos": [
-    "Abra uma operação que tenha movimentação (status alterado, item renomeado, PDF anexado) e olhe a aba <b>Extrato</b> no topo: o número ao lado dela deve ser igual à quantidade de linhas que aparecem quando você clica na aba.",
-    "Mude o status de um item (na tela do target) e volte pra operação: o número da aba Extrato deve ter subido 1.",
-    "Na tela de um target, deixe a janela do navegador mais estreita (arraste a borda até mais ou menos metade da tela, ou coloque duas janelas lado a lado).",
-    "Olhe um item com nome comprido: o nome deve quebrar por palavra (várias palavras por linha), nunca uma letra por linha. Os botões (status, Anexar) podem descer pra linha de baixo, alinhados à direita.",
-    "Volte a janela pro tamanho normal: nome, selo da IA e botões voltam pra mesma linha, como antes."
-   ],
-   "esperado": "Número da aba Extrato = linhas listadas na aba (inclusive status alterado e renomeações). Nome do item sempre em palavras inteiras, mesmo com a janela estreita, sem nada vazando pra fora do cartão."
-  },
-  {
-   "id": "P1",
-   "titulo": "Aviso quando um PDF enviado contém código embutido (JavaScript)",
-   "status": "feito",
-   "desc": "Alguns PDFs podem carregar código escondido (JavaScript) que roda ao abrir o arquivo — raro em certidão verdadeira e um sinal de alerta. Antes o sistema tentava barrar isso procurando palavras soltas dentro do arquivo e errou: recusou uma matrícula legítima porque a sequência de letras apareceu por acaso dentro de uma imagem. Agora a checagem olha a <b>estrutura</b> do PDF (só onde um código executável pode de fato morar), nunca o miolo das imagens, e <b>não bloqueia nada</b>: o PDF entra normalmente e, se tiver código embutido, o sistema mostra um aviso amarelo no item pedindo revisão. Recurso ligado por conta, aos poucos (primeiro na conta de teste).",
-   "passos": [
-    "Peça ao time técnico que ligue o recurso na sua conta de teste e que te mande dois arquivos: um PDF de teste <b>com</b> código embutido e uma certidão/matrícula escaneada comum.",
-    "Entre no sistema, abra uma operação de teste, a aba \"Targets\" e um target.",
-    "Em um item sem documento, clique em \"Anexar\" e envie o PDF de teste <b>com</b> código embutido.",
-    "Confira que o envio termina normalmente (sem mensagem de erro) e que o item passa a mostrar o PDF anexado.",
-    "Olhe o rodapé do item, ao lado do ícone de baixar: deve aparecer um selo amarelo \"JS embutido\". Passe o mouse por cima e leia a dica.",
-    "Clique em baixar/visualizar o PDF: continua funcionando (é só um aviso).",
-    "Em outro item, envie a certidão/matrícula escaneada comum: o envio termina igual e <b>nenhum</b> selo amarelo aparece.",
-    "No item com o selo, clique em \"Remover PDF\" e confira que o selo some junto."
-   ],
-   "esperado": "Nenhum PDF é recusado por essa checagem. Só o PDF com código embutido de verdade ganha o selo amarelo \"JS embutido\" (ou \"Abre programa externo\"), com dica pedindo revisão; a matrícula escaneada comum passa limpa, sem selo. Remover o PDF tira o selo. Com o recurso desligado na conta, tudo fica exatamente como hoje."
-  },
-  {
-   "id": "P2",
-   "titulo": "Certidões com assinatura digital (arquivo .p7s) analisadas automaticamente",
-   "status": "feito",
-   "desc": "Algumas certidões, como as de protesto, chegam num \"envelope\" de assinatura digital: o PDF de verdade vem embrulhado dentro de um arquivo assinado. A IA não conseguia ler esse envelope (o item ficava sem análise, com erro) e a visualização também não abria. Agora o sistema <b>tira o PDF de dentro do envelope</b> sozinho: a IA analisa esse PDF, e é ele que aparece ao visualizar e baixar. O arquivo assinado original é guardado à parte, sem se perder. Se o envelope estiver mesmo danificado, sem PDF dentro, o item mostra uma mensagem clara pedindo o PDF original, em vez de um erro genérico. Os itens que já tinham travado são reprocessados pelo time técnico. Recurso ligado por conta, aos poucos (primeiro na conta de teste).",
-   "passos": [
-    "Peça ao time técnico que ligue o recurso na sua conta de teste e que te mande um arquivo de certidão com assinatura digital (o envelope de teste).",
-    "Entre no sistema, abra uma operação de teste, a aba \"Targets\" e um target.",
-    "Em um item sem documento, clique em \"Anexar\" e envie o arquivo do envelope.",
-    "Confira que o envio termina normalmente, sem mensagem de erro.",
-    "Espere alguns segundos e confira que o item ganha a análise da IA normalmente (sem \"falha\" e sem \"IA indisponível\").",
-    "Clique em visualizar o documento: o PDF abre normalmente na tela.",
-    "Clique em baixar: o arquivo baixado abre como um PDF comum.",
-    "Em outro item, envie uma certidão PDF comum e confira que tudo funciona exatamente como antes."
-   ],
-   "esperado": "A certidão com assinatura digital é aceita, analisada pela IA e abre na visualização e no download como um PDF comum. A certidão PDF comum continua igual. Se o envelope não tiver PDF dentro, o item mostra \"Envelope assinado sem PDF legível — reenvie o PDF original\". Com o recurso desligado na conta, tudo fica exatamente como hoje."
-  },
-  {
-   "id": "Estatuto A",
-   "titulo": "Análise da IA mais justa: não reprova por dúvida e mostra todas as observações",
-   "status": "feito",
-   "desc": "Primeiro ajuste da análise da IA às regras do novo Estatuto. <b>1)</b> A IA não reprova mais um documento só porque ficou em dúvida: para reprovar, ela precisa apontar algo concreto no documento. <b>2)</b> Se um dado do target não está cadastrado (por exemplo, o CPF/CNPJ em branco), esse dado não é conferido e não reprova o documento. <b>3)</b> O painel \"Análise da IA\" passa a mostrar <b>todas</b> as observações da IA, inclusive as úteis em documentos aprovados (antes só apareciam os motivos de reprovação), sempre com dados concretos (valores, datas, quantidades). <b>4)</b> Documento ilegível (escaneado ruim, página cortada) agora aparece em <b>amarelo, \"leitura comprometida\"</b>, em vez de vermelho \"tipo incorreto\". Vale para as análises feitas a partir de agora; as antigas continuam como estavam até serem reanalisadas.",
-   "passos": [
-    "Entre no sistema, abra uma operação de teste, a aba \"Targets\" e um target.",
-    "Em um item sem documento, anexe uma certidão correta e legível do próprio target.",
-    "Espere alguns segundos e clique no selo \"IA: …\" do item para abrir o painel \"Análise da IA\".",
-    "Confira que, se a IA tiver feito alguma observação, ela aparece na lista abaixo dos 4 indicadores, mesmo com o documento aprovado.",
-    "Em outro item, anexe um documento ilegível (por exemplo, uma foto muito borrada ou uma página em branco).",
-    "Confira que o selo do item fica amarelo com o texto \"IA: leitura comprometida\" (e não vermelho \"reprovado\").",
-    "Abra o painel desse item e confira que os 4 indicadores ficam cinza (nem ✓ nem ✗) e que aparece uma observação explicando o problema de leitura."
-   ],
-   "esperado": "Documento legível e correto continua aprovado (verde), agora com as observações úteis visíveis no painel. Documento ilegível fica amarelo, \"leitura comprometida\", com a explicação. Nenhum documento é reprovado só por falta de um dado que não está cadastrado no target."
-  },
-  {
-   "id": "Estatuto B",
-   "titulo": "Validade justa: matrícula e contrato social não saem mais \"fora da validade\"",
-   "status": "feito",
-   "desc": "Segundo ajuste da análise da IA ao Estatuto. A IA agora identifica <b>que tipo de validade</b> o documento tem, sem inventar prazo: <b>1)</b> <b>validade impressa</b>: vale até a data escrita no documento; <b>2)</b> <b>sem vencimento</b>: documentos que não se atualizam (por exemplo, contrato social e atos societários) estão sempre dentro da validade; <b>3)</b> <b>validade atribuída</b>: documentos que precisam ser atualizados mas não trazem data de validade (por exemplo, matrícula de imóvel) valem <b>30 dias a partir da emissão</b>. Antes, matrícula e contrato social apareciam como \"fora da validade\" só por não terem data impressa. O painel \"Análise da IA\" sempre traz uma observação de validade dizendo em qual desses casos o documento caiu (ou \"sem data de emissão\", quando não dá para ler a data). O que antes se chamava validade \"assumida\" agora se chama \"atribuída\". Precisa da função \"validade pela IA\" ligada na conta e vale para documentos anexados a partir de agora.",
-   "passos": [
-    "Entre no sistema, abra uma operação de teste, a aba \"Targets\" e um target.",
-    "Em um item sem documento, anexe a matrícula de um imóvel emitida há poucos dias.",
-    "Espere alguns segundos e confira que a linha do item mostra \"Emitido em dd/mm/aaaa\" e o selo \"Validade atribuída\", com a data de 30 dias depois da emissão.",
-    "Clique no selo \"IA: …\" do item e confira que o indicador \"Dentro da validade\" está com ✓ e que há uma observação \"Validade atribuída: 30 dias da emissão…\".",
-    "Em outro item, anexe um contrato social (ou outro ato societário), mesmo que seja antigo.",
-    "Confira que a linha mostra o selo \"Sem vencimento\" e que, no painel \"Análise da IA\", o indicador \"Dentro da validade\" está com ✓ e há a observação \"Sem vencimento: documento de natureza permanente\".",
-    "Em um terceiro item, anexe uma certidão que tenha data de validade escrita e confira que aparece \"Válido até dd/mm/aaaa\" com a data do documento."
-   ],
-   "esperado": "Matrícula recente fica dentro da validade (\"Validade atribuída\", 30 dias da emissão). Contrato social fica dentro da validade (\"Sem vencimento\"). Certidão com data impressa segue a data do documento. Nenhum desses é reprovado por \"falta de data de validade\"."
-  },
-  {
-   "id": "Ajustes de tela 1",
-   "titulo": "Tela mais estreita, sem a etiqueta de categoria no item e \"Comentários\" escrito no rodapé",
-   "status": "feito",
-   "desc": "Três ajustes visuais. <b>1)</b> O conteúdo das telas ficou mais estreito (largura máxima menor), para não esticar até a borda em monitores grandes e ficar mais confortável no notebook. <b>2)</b> A etiqueta de categoria (CARTÓRIO, OUTRAS, AMBIENTAL…) saiu do lado esquerdo de cada item da lista; o número do item continua. A informação de categoria não foi apagada, só deixou de aparecer ali. <b>3)</b> No rodapé de cada item, o desenho do balãozinho de comentários virou a palavra <b>\"COMENTÁRIOS\"</b>, no mesmo estilo de \"APONTAMENTOS\". A contagem e a bolinha azul de comentários não lidos continuam iguais.",
-   "passos": [
-    "Entre no sistema e abra uma operação de teste, a aba \"Targets\" e um target.",
-    "Confira que o conteúdo da página não vai até a borda direita da tela em um monitor grande.",
-    "Olhe a lista de itens: à esquerda de cada item aparece só o número (#1, #2…), sem a etiqueta de categoria embaixo.",
-    "No rodapé de um item, confira que aparece \"APONTAMENTOS\" e, ao lado, a palavra \"COMENTÁRIOS\" (sem o desenho do balão).",
-    "Em um item com comentários novos, confira que a bolinha azul com o número aparece ao lado de \"COMENTÁRIOS\"."
-   ],
-   "esperado": "Telas mais estreitas, itens sem a etiqueta de categoria e o rodapé com \"APONTAMENTOS · COMENTÁRIOS\" escritos, com as contagens de antes."
-  },
-  {
-   "id": "P3",
-   "titulo": "Painel da plataforma: ligar e desligar recursos por conta, na tela",
-   "status": "feito",
-   "desc": "Até aqui, para ligar um recurso novo em uma conta (por exemplo, para testar com um cliente antes dos outros), o time técnico precisava fazer isso por fora do sistema. Agora o dono da plataforma faz isso <b>na própria tela da conta</b>, numa seção chamada \"Flags\". Cada recurso aparece com um nome em português, mostra se está ligado ou desligado naquela conta e tem três opções: <b>Ligada</b>, <b>Desligada</b> ou <b>Herdar global</b>. \"Herdar global\" faz a conta seguir o padrão do sistema, que aparece entre parênteses. Também aparece quem mudou e quando. Além disso, a lista de contas deixou de dizer \"Visão só-leitura\", porque o painel também permite fazer alterações.",
-   "passos": [
-    "Entre no sistema com o usuário dono da plataforma.",
-    "Abra o painel da plataforma e confira que o texto no topo da lista de contas não fala mais em \"só-leitura\" e menciona a gestão (nova conta, hosts, convidados e flags).",
-    "Clique na conta de teste.",
-    "Role até o fim da página e encontre a seção \"Flags\", com os grupos \"Produto (interface)\" e \"Backend / IA\".",
-    "Escolha um recurso que esteja em \"Herdar global\" e clique em \"Ligada\".",
-    "Confira que aparece uma mensagem de sucesso, que o estado ao lado passa para \"Ligada\" e que o seu nome aparece com \"agora\".",
-    "Clique em \"Desligada\" no mesmo recurso e confira que o estado passa para \"Desligada\".",
-    "Clique em \"Herdar global\" e confira que volta a mostrar \"Segue o global\".",
-    "Ao terminar, deixe o recurso como estava antes do teste."
-   ],
-   "esperado": "Cada clique mostra uma mensagem de sucesso, e a linha mostra na hora o estado novo e quem alterou. \"Herdar global\" faz a conta voltar ao padrão do sistema. A lista de contas não diz mais \"só-leitura\". Nenhuma outra parte do painel muda."
-  },
-  {
-   "id": "P4",
-   "titulo": "Painel da plataforma: convidados externos mais fáceis de achar e de remover",
-   "status": "feito",
-   "desc": "Na aba <b>Acesso externo</b> agora dá para <b>buscar</b> um convidado, operação ou conta, <b>abrir ou fechar todos</b> de uma vez e ver, sem abrir, o <b>prazo mais apertado</b> de cada convidado e se ele <b>nunca acessou</b>. Há um filtro novo, <b>Expiradas</b>. Na lista de <b>Contas</b> há o filtro <b>Não ativou</b>. Na tela da conta, a seção <b>Convidados externos</b> subiu para logo abaixo dos números do topo. E dá para <b>remover todos os acessos de um convidado</b> de uma vez, com uma caixinha de confirmação.",
-   "passos": [
-    "Entre como dono da plataforma e abra Plataforma › Acesso externo.",
-    "Digite parte do nome de um convidado na busca e veja o contador \"N de M participações\" mudar.",
-    "Clique em \"Expandir tudo\" e depois em \"Recolher tudo\".",
-    "Clique no filtro \"Expiradas\".",
-    "Num convidado de teste, clique em \"Remover todos\", marque a caixinha \"Entendo que…\" e confirme.",
-    "Vá em Plataforma › Contas e clique no filtro \"Não ativou\".",
-    "Abra uma conta que tenha convidados externos."
-   ],
-   "esperado": "A busca e os filtros reduzem a lista e o contador acompanha. Cada convidado mostra embaixo do nome o prazo mais curto (em vermelho se vence em até 7 dias) e \"nunca acessou\" quando for o caso. O botão de remover todos só funciona depois de marcar a caixinha, e o convidado some da lista. \"Não ativou\" mostra só as contas que nunca criaram operação. Na tela da conta, \"Convidados externos\" aparece logo abaixo dos números do topo."
-  },
-  {
-   "id": "P5",
-   "titulo": "Painel da plataforma: estender ou reativar o acesso de um convidado",
-   "status": "feito",
-   "desc": "Cada acesso de convidado externo agora tem, ao lado de <b>Remover</b>, o botão <b>Estender</b> (acesso ainda válido) ou <b>Reativar</b> (acesso já vencido). Ele abre uma janelinha mostrando o <b>prazo atual</b> e o <b>novo prazo</b>: mais 365 dias contados a partir de hoje. Na lista de <b>Contas</b>, ao lado do nome, aparecem os avisos <b>“N ≤ 7d”</b> (acessos que vencem nesta semana) e <b>“N expirados”</b>.",
-   "passos": [
-    "Entre como dono da plataforma e abra Plataforma › Contas.",
-    "Veja, ao lado do nome das contas que têm convidados, os avisos \"≤ 7d\" (amarelo) e \"expirados\" (vermelho), quando houver.",
-    "Abra uma conta com convidados externos.",
-    "Num convidado de teste com acesso vencido, clique em \"Reativar\", confira o prazo atual e o novo prazo e confirme.",
-    "Num convidado com acesso válido, clique em \"Estender\" e confirme.",
-    "Repita em Plataforma › Acesso externo: abra um convidado e use \"Estender\" ou \"Reativar\" na linha da operação."
-   ],
-   "esperado": "A janelinha mostra o prazo atual e a data nova (daqui a 365 dias). Depois de confirmar aparece a mensagem \"… reativado/estendido até DD/MM/AAAA\", o botão de um acesso que estava vencido passa de \"Reativar\" para \"Estender\" e a barra de prazo volta a ficar cheia. O convidado que estava vencido volta a conseguir abrir a operação."
-  },
-  {
-   "id": "Largura responsiva",
-   "titulo": "Largura das telas acompanha o tamanho do monitor",
-   "status": "feito",
-   "desc": "O conteúdo das telas agora ocupa cerca de <b>80% da largura da janela</b>, em vez de uma largura fixa. No notebook continua do mesmo tamanho de antes; num monitor grande a tela abre mais e some a faixa branca dos lados.",
-   "passos": [
-    "Abra o app num notebook e entre numa operação: a largura deve parecer igual à de antes.",
-    "Abra a mesma tela num monitor grande (ou deixe a janela do navegador bem larga).",
-    "Repare nas laterais da tela."
-   ],
-   "esperado": "No notebook nada muda. No monitor grande o conteúdo fica bem mais largo e as faixas brancas dos lados ficam pequenas."
-  },
-  {
-   "id": "IA forte para todos",
-   "titulo": "Modelo de IA mais forte ligado em todas as contas",
-   "status": "feito",
-   "desc": "A análise de IA mais cuidadosa dos documentos (a mesma testada no item C4) agora vem ligada para <b>todas as contas</b>, e não só na conta de teste. Se alguma conta tiver sido desligada de propósito, ela continua desligada.",
-   "passos": [
-    "Entre no ambiente de teste com qualquer conta (não precisa ser a conta de teste do C4).",
-    "Abra uma operação, entre em um target e anexe um documento a um item (por exemplo, uma certidão).",
-    "Espere alguns segundos até aparecer o resultado da análise da IA no item.",
-    "Abra o resultado e leia a explicação da IA."
-   ],
-   "esperado": "A análise aparece normalmente, sem erro, com a explicação mais detalhada (igual à que se via na conta de teste do C4). Pode demorar um pouco mais que antes."
-  },
-  {
-   "id": "Equipe · convite",
-   "titulo": "Aba Equipe mais simples: convite de Membros sem escolher papel e textos curtos",
-   "status": "feito",
-   "desc": "No card Membros, o convite não pede mais pra escolher o papel: todo convidado entra como Membro. Também sumiu a caixinha de trocar o papel em cada pessoa. Os textos dos cards Admins e Membros agora têm uma frase só.",
-   "passos": [
-    "Abra uma operação e clique na aba Equipe.",
-    "Veja o card Membros: ao lado do campo de email existe só o botão Convidar, sem caixinha de papel.",
-    "Nas pessoas listadas, o papel aparece só como etiqueta, sem caixinha pra trocar.",
-    "Leia o texto de cada card: Admins e Membros têm uma frase cada."
-   ],
-   "esperado": "Admins: \"Equipe do escritório que conduz esta operação. Acesso completo.\" Membros: \"Convidados externos. Veem só esta operação, enviam documentos, respondem apontamentos e comentam.\" Nenhuma caixinha de escolher papel no card Membros."
-  },
-  {
-   "id": "Validade · 5 dias",
-   "titulo": "Aviso de vencimento só nos últimos 5 dias",
-   "status": "feito",
-   "desc": "O aviso amarelo \"Vence em N dias\" agora só aparece quando faltam 5 dias ou menos para o documento vencer. Antes aparecia com até 30 dias. A faixa de aviso no topo da página do target e o botão \"Ver\" usam a mesma regra de 5 dias.",
-   "passos": [
-    "Abra uma operação e entre num target que tenha documentos com data de validade.",
-    "Procure um documento que vence daqui a 6 dias ou mais: a etiqueta dele é verde, \"Válido até dd/mm/aaaa\".",
-    "Procure um documento que vence daqui a 5 dias ou menos: a etiqueta é amarela, \"Vence em N dias\".",
-    "Veja a faixa de aviso acima da lista: ela conta os vencidos e os que \"vencem em até 5 dias\".",
-    "Clique em \"Ver\" na faixa: a lista mostra só os vencidos e os que vencem em até 5 dias."
-   ],
-   "esperado": "Documento a 6 dias: verde, fora da faixa de aviso. Documento a 5 dias: amarelo e contado na faixa. Documento vencido: vermelho, \"Vencido há N dias\"."
-  },
-  {
-   "id": "Comentários · conversa única",
-   "titulo": "Comentários do item viram uma conversa só, sem \"sobre AP-1\"",
-   "status": "feito",
-   "desc": "A aba \"Comentários\" de cada item agora é uma conversa única. Não dá mais para escolher \"Sobre: AP-1\" ao comentar, e os comentários não mostram mais a etiqueta \"sobre AP-1\". O botão \"Comentar\" que ficava dentro de cada apontamento também saiu: para comentar, use a aba Comentários. Comentários antigos continuam lá, só sem a etiqueta.",
-   "passos": [
-    "Abra uma operação, entre num target e abra um item que tenha apontamentos.",
-    "Na aba \"Apontamentos\", veja um apontamento: ele não tem mais o botão \"Comentar\" nem \"N comentários\".",
-    "Clique na aba \"Comentários\".",
-    "Veja os filtros no topo: só aparecem \"Todos\" e \"Menções a você\".",
-    "Escreva um comentário e aperte Enter."
-   ],
-   "esperado": "Nenhum texto \"sobre AP-...\" aparece na aba Comentários. Não existe o seletor \"Sobre:\" ao lado do botão Comentar. O comentário novo aparece no fim da lista, sem etiqueta."
-  },
-  {
-   "id": "Item 2 · uploads",
-   "titulo": "Vários documentos no mesmo item não se apagam mais",
-   "status": "feito",
-   "desc": "Antes, ao anexar mais de um documento num item que aceita vários arquivos, o segundo <b>tomava o lugar</b> do primeiro. Isso acontecia em dois casos: <b>1)</b> anexando um depois do outro sem fechar a janela; <b>2)</b> fechando e reabrindo a janela logo depois do primeiro envio, enquanto a IA ainda analisava. Agora cada arquivo vira <b>um documento a mais</b> no item. O botão \"Substituir\" aparece só nos itens que aceitam um único documento.",
-   "passos": [
-    "Entre no ambiente de teste, abra uma operação e entre em um target.",
-    "Escolha um item que aceite vários documentos (por exemplo, um item que você mesmo adicionou com \"Outro item\") e clique em \"Anexar\".",
-    "Na janela, escolha um primeiro PDF e clique em \"Anexar PDF\". A janela continua aberta.",
-    "Escolha um segundo PDF e clique de novo em \"Anexar PDF\". Depois clique em \"Concluir\".",
-    "Agora clique no botão \"Anexar outro\" do mesmo item, logo em seguida (sem esperar a análise da IA), e anexe um terceiro PDF."
-   ],
-   "esperado": "O item mostra \"3 PDFs\" no rodapé, e o olho abre a lista com os três arquivos. Nenhum deles sumiu. Logo depois do primeiro envio, o botão do item diz \"Anexar outro\", não \"Substituir\"."
-  },
-  {
-   "id": "Itens 10·11·15 · limpeza",
-   "titulo": "Telas de operação mais limpas: sem número mascarado, sem status e aba \"Participantes\"",
-   "status": "feito",
-   "desc": "Tiramos da tela o que não ajudava. A lista de operações não tem mais a coluna \"Status\" nem o filtro de status. Dentro da operação, sumiu o selo de status ao lado do nome (só fica o selo cinza \"Finalizada\" quando a operação já foi finalizada), a coluna \"Status\" da lista de targets e a linha com o CPF/CNPJ escondido por asteriscos (***). Esse número também saiu do topo da tela do target e da pergunta de confirmação ao remover um target. A aba \"Equipe\" da operação passou a se chamar \"Participantes\".",
-   "passos": [
-    "No menu à esquerda, clique em \"Operações\".",
-    "Confira as colunas da lista: devem ser só Operação, Targets, Progresso e Atualizado. Ao lado da busca deve haver só a caixinha \"Incluir arquivadas\", sem nenhum filtro de status.",
-    "Clique numa operação de teste. Ao lado do nome da operação não deve aparecer nenhum selo de status. Só uma operação finalizada mostra o selo cinza \"Finalizada\", ao lado do nome e também na lista de operações.",
-    "Na aba \"Targets\", confira que cada linha mostra só o nome do target, sem a linha de números com asteriscos (***), e que não existe a coluna \"Status\".",
-    "Clique num target. No topo da tela deve aparecer só o nome, sem o número com asteriscos.",
-    "Volte para a operação e confira que a aba antes chamada \"Equipe\" agora se chama \"Participantes\". Clique nela e veja que a lista de pessoas continua igual."
-   ],
-   "esperado": "Nenhuma tela de operação mostra status nem número com asteriscos, a busca e o \"Incluir arquivadas\" continuam funcionando, e a aba se chama \"Participantes\"."
-  },
-  {
-   "id": "Ficha do imóvel · 7 campos",
-   "titulo": "Ficha do imóvel só com os 7 dados que importam",
-   "status": "feito",
-   "desc": "A ficha de dados de um imóvel agora mostra só 7 informações, nesta ordem: Proprietário, Matrícula, Cartório / comarca, CCIR, NIRF / CIB, CAR e Inscrição municipal. Matrícula e Inscrição municipal são novas. Saíram Área, Ônus e gravames, Localização, Natureza, Aquisição, Georref. (SIGEF) e VTN (ITR). O que já tinha sido preenchido nesses campos não foi apagado, só não aparece mais. Quando o imóvel foi cadastrado pelo número da matrícula, o campo Matrícula já vem preenchido com esse número.",
-   "passos": [
-    "Abra uma operação que tenha um imóvel.",
-    "Clique no imóvel para abrir a tela dele.",
-    "Olhe o bloco \"Dados do target\" logo abaixo do nome.",
-    "Se o imóvel foi cadastrado pelo número da matrícula, confira o campo Matrícula.",
-    "Clique em \"Extrair via IA\" (se houver PDF anexado) e veja quais campos a IA preenche."
-   ],
-   "esperado": "Aparecem exatamente 7 campos, todos de uma vez, sem o botão \"Ver todos\": Proprietário, Matrícula, Cartório / comarca, CCIR, NIRF / CIB, CAR e Inscrição municipal. Área, Ônus, Localização, Natureza, Aquisição, SIGEF e VTN não aparecem mais. A Matrícula já vem com o número do imóvel quando ele foi cadastrado assim. A IA só preenche esses 7 campos."
-  },
-  {
-   "id": "Item 1 · vários de uma vez",
-   "titulo": "Anexar vários PDFs de uma vez no mesmo item",
-   "status": "feito",
-   "desc": "Nos itens que aceitam vários documentos, agora dá para <b>escolher ou arrastar vários PDFs de uma só vez</b>. Antes era preciso anexar um por um. Cada arquivo vira um documento a mais no item. Se algum arquivo tiver problema, o erro aparece <b>só nele</b> e os outros entram normalmente. Os itens que aceitam um único documento (como CNDT, PGFN e TRT) continuam com um PDF só e o botão \"Substituir\".",
-   "passos": [
-    "Entre no ambiente de teste, abra uma operação e entre em um target.",
-    "Escolha um item que aceite vários documentos (por exemplo, um item que você mesmo adicionou com \"Outro item\") e clique em \"Anexar\".",
-    "Na janela, clique na área pontilhada e selecione 3 PDFs de uma vez (segure Ctrl, ou Cmd no Mac, para marcar mais de um). Os 3 aparecem numa lista.",
-    "Clique em \"Anexar 3 PDFs\" e depois em \"Concluir\".",
-    "Abra outro item que aceite vários documentos e, desta vez, arraste 3 PDFs do seu computador para a área pontilhada. Depois clique em \"Anexar 3 PDFs\".",
-    "Para ver o caso de erro, repita com 2 PDFs bons e 1 arquivo que não seja PDF (por exemplo, um .txt renomeado para .pdf)."
-   ],
-   "esperado": "Nos dois primeiros itens aparece \"3 PDFs\" no rodapé, e o olho abre os três arquivos. A aba Extrato mostra um evento para cada arquivo. No caso de erro, só o arquivo ruim fica na janela, com a mensagem em vermelho embaixo dele, e os outros 2 entram no item. Num item de documento único, como CNDT, só dá para escolher um arquivo."
-  },
-  {
-   "id": "Item 3 · responder apontamento",
-   "titulo": "Responder um apontamento com vários PDFs e o texto, de uma vez só",
-   "status": "feito",
-   "desc": "O cartão do apontamento agora tem um botão <b>\"Responder\"</b>. Ele abre a mesma janela usada para anexar documentos no item. Nela dá para <b>arrastar ou escolher vários PDFs</b> e <b>escrever a resposta</b>, e tudo é enviado num clique só. A resposta vira uma <b>lista de documentos</b>, cada um com o nome de quem enviou. Para trocar um documento, o administrador tira esse documento da lista e alguém responde de novo. Cada resposta aparece na aba <b>Extrato</b>, com quem fez e o que foi enviado.",
-   "passos": [
-    "Entre no ambiente de teste, abra uma operação e entre em um target.",
-    "Em um item que tenha apontamentos, abra a área \"Apontamentos e comentários\".",
-    "Num apontamento ainda em aberto, clique em \"Responder\". A janela abre na hora.",
-    "Arraste 2 ou 3 PDFs do seu computador para a área pontilhada e escreva um texto no campo \"Resposta formal\".",
-    "Clique no botão de envio, que mostra quantos PDFs vão (por exemplo, \"Anexar 2 PDFs com resposta\").",
-    "Abra a aba \"Extrato\" da operação."
-   ],
-   "esperado": "A janela fecha e o apontamento fica marcado como resolvido, com todos os PDFs listados (cada um com o nome de quem enviou) e o texto logo abaixo. No Extrato aparece uma linha \"Apontamento respondido com 2 PDFs e texto\" com o seu nome. Se um dos arquivos não for um PDF de verdade, nada é enviado e o erro aparece em vermelho embaixo desse arquivo; é só tirá-lo da lista e enviar de novo."
-  },
-  {
-   "id": "Itens 4·6·8 · farol da IA",
-   "titulo": "Análise da IA com três cores: Aprovado, Atenção e Reprovado",
-   "status": "feito",
-   "desc": "A análise da IA de cada documento agora segue o Estatuto. A <b>própria IA escolhe a cor</b> lendo o conteúdo: <b>Aprovado</b> (verde, sem ressalva), <b>Atenção</b> (amarelo, ressalva sem risco imediato) ou <b>Reprovado</b> (vermelho, risco para a operação). A IA julga pela <b>função</b> do documento, não pelo título: uma certidão que cobre o que o item pede é aceita mesmo com outro nome. Documento sem data de validade impressa vale <b>30 dias</b> a partir da emissão e não é mais reprovado só por isso. Documento ilegível vira <b>Atenção</b> com a explicação, e o selo \"leitura comprometida\" deixou de existir. O quadro da análise mostra <b>três verificações</b> (Item, Target, Validade) e, abaixo, <b>tópicos curtos</b> com um título em negrito e o dado concreto, sempre com um tópico de <b>Validade</b>. Documentos analisados antes desta mudança continuam com a análise antiga até serem enviados de novo.",
-   "passos": [
-    "Entre no ambiente de teste, abra uma operação e entre em um target.",
-    "Num item, anexe uma certidão negativa (\"nada consta\") do próprio target e espere alguns segundos.",
-    "Veja o selo ao lado do item e clique nele para abrir a \"Análise da IA\".",
-    "Em outro item, anexe uma certidão com algum apontamento (por exemplo, protesto ou débito) ou uma certidão de outra empresa.",
-    "Em outro item, anexe uma matrícula de imóvel emitida há mais de 30 dias.",
-    "Abra a \"Análise da IA\" de cada um."
-   ],
-   "esperado": "A certidão negativa aparece como \"IA: Aprovado\" (verde), com as três verificações marcadas e o tópico \"Validade\" dizendo até quando vale. A certidão com apontamento ou de outra empresa aparece como \"IA: Reprovado\" (vermelho), com um tópico em negrito que diz o que foi encontrado (por exemplo, \"Protestos identificados: 2 protestos, somando R$ ...\" ou o CNPJ de outra empresa). A matrícula antiga aparece como \"IA: Reprovado\", com o tópico \"Validade\" dizendo que venceu. Nenhum selo diz \"leitura comprometida\"."
-  }
- ]
+  "atualizado_em": "14 de outubro de 2026",
+  "itens": [
+    {
+      "id": "#23",
+      "titulo": "Apontamentos e comentários separados em abas",
+      "status": "validado",
+      "desc": "Cada documento tem duas abas: uma para os apontamentos (pendências) e outra para os comentários.",
+      "passos": [
+        "Entre no sistema com o seu usuário de teste.",
+        "No menu à esquerda, clique em \"Operações\" e abra uma operação de teste.",
+        "Na aba \"Targets\", clique em qualquer target (pessoa, empresa ou imóvel).",
+        "Em um documento da lista, procure as abas \"Apontamentos\" e \"Comentários\".",
+        "Clique em \"Comentários\", escreva um comentário curto e envie."
+      ],
+      "esperado": "As duas abas aparecem lado a lado. O comentário enviado aparece na aba \"Comentários\" e continua lá depois de recarregar a página."
+    },
+    {
+      "id": "#13",
+      "titulo": "Ficha com os dados do target, preenchida pela IA",
+      "status": "validado",
+      "desc": "Cada target tem uma ficha de dados que a IA consegue preencher a partir dos documentos.",
+      "passos": [
+        "Entre no sistema com o seu usuário de teste.",
+        "No menu à esquerda, clique em \"Operações\" e abra uma operação de teste.",
+        "Na aba \"Targets\", abra um target que já tenha documentos anexados.",
+        "Logo abaixo do nome do target está a ficha, com os campos e o botão \"Ver todos\".",
+        "Clique em \"Extrair via IA\" e aguarde alguns segundos."
+      ],
+      "esperado": "Os campos da ficha são preenchidos e cada um mostra de onde veio a informação (de qual documento ou se foi digitado à mão)."
+    },
+    {
+      "id": "#4",
+      "titulo": "Cores diferentes para cada situação do documento",
+      "status": "feito",
+      "desc": "Cada uma das 4 situações possíveis de um documento tem uma cor própria. A barra fina colorida na borda esquerda do cartão do documento também segue essa cor (antes ela seguia o resultado da análise da IA, o que confundia).",
+      "passos": [
+        "Abra um target de uma operação de teste.",
+        "Em um documento, clique na caixa que mostra a situação dele.",
+        "Escolha cada uma das 4 opções, uma de cada vez.",
+        "Repare na barra fina colorida na borda esquerda do cartão desse documento a cada troca.",
+        "Procure um documento em que a IA tenha marcado \"IA: reprovado\" e marque a situação dele como \"Concluída\"."
+      ],
+      "esperado": "A cada troca, a cor muda. As 4 situações têm cores diferentes e fáceis de distinguir. A barra da borda esquerda muda junto, na mesma cor da situação (cinza em \"Pendente\", amarela em \"Parcial\", verde em \"Concluída\", cinza apagado em \"Não aplicável\"). No documento com \"IA: reprovado\" marcado como \"Concluída\", a barra fica verde, não vermelha — a etiqueta \"IA: reprovado\" continua aparecendo."
+    },
+    {
+      "id": "#26",
+      "titulo": "Extrato com filtro por tipo de acontecimento e ordem por data",
+      "status": "validado",
+      "desc": "Dá para filtrar o Extrato pelo tipo de acontecimento e escolher se a data vem da mais nova para a mais antiga ou o contrário.",
+      "passos": [
+        "Abra uma operação de teste e clique na aba \"Extrato\".",
+        "Acima da lista de eventos, clique num dos filtros (os botões arredondados) para escolher um tipo de acontecimento.",
+        "Ao lado dos filtros, clique no botão de ordenar por data para inverter a ordem."
+      ],
+      "esperado": "A lista mostra só o tipo escolhido. Ao inverter, as linhas trocam de ordem e fica claro qual é a direção (mais recentes primeiro ou mais antigas primeiro)."
+    },
+    {
+      "id": "#27",
+      "titulo": "Imóvel aparece como \"IM\"",
+      "status": "validado",
+      "desc": "A sigla dos imóveis passou de \"IR\" para \"IM\" em toda a tela.",
+      "passos": [
+        "Abra uma operação de teste que tenha pelo menos um imóvel.",
+        "Olhe o resumo no topo e os filtros da aba \"Targets\"."
+      ],
+      "esperado": "Aparece \"IM\" (nunca \"IR\") junto de \"PF\" e \"PJ\"."
+    },
+    {
+      "id": "#19",
+      "titulo": "\"Finalizar operação\" encerra e trava a operação",
+      "status": "validado",
+      "desc": "O antigo \"Aceitar entrega\" virou \"Finalizar operação\". Depois de finalizada, a operação não pode mais ser alterada. Se precisar, dá para reabrir a operação e ela volta a aceitar alterações.",
+      "passos": [
+        "Abra uma operação de teste que possa ser encerrada.",
+        "Clique em \"Finalizar operação\" e confirme.",
+        "Tente anexar um documento, mudar a situação de um item ou renomear um item.",
+        "Na mesma operação finalizada, clique em \"Reabrir operação\" e confirme.",
+        "Tente de novo anexar um documento ou mudar a situação de um item."
+      ],
+      "esperado": "A operação aparece como \"Finalizada\" e nenhuma alteração é aceita. Depois de reabrir, a operação deixa de aparecer como \"Finalizada\" e as alterações voltam a ser aceitas."
+    },
+    {
+      "id": "#25",
+      "titulo": "Data de emissão e validade lidas pela IA",
+      "status": "validado",
+      "desc": "Cada documento mostra quando foi emitido e se ainda está válido. Quando o documento não tem data, o sistema não inventa uma. <b>Nota (1º/10):</b> a situação da validade passou a mostrar a data: \"Válido até dd/mm/aaaa\", \"Vence em X dias · dd/mm\" (amarelo) ou \"Vencido há X dias\" (vermelho). Sem data legível continua \"Validade indeterminada\".",
+      "passos": [
+        "Abra um target de uma operação de teste que tenha documentos anexados.",
+        "Olhe as informações de cada documento.",
+        "Anexe, num item de teste, um documento que não tenha data de emissão escrita.",
+        "Aguarde a análise terminar e olhe a validade desse documento."
+      ],
+      "esperado": "Aparece a data de emissão e a situação da validade com a data (por exemplo, \"Válido até 28/11/2026\", \"Vence em 3 dias · 04/10\" ou \"Vencido há 12 dias\"), batendo com o que está escrito no próprio documento. A validade aparece como \"indeterminada\", nunca com uma data errada."
+    },
+    {
+      "id": "#11",
+      "titulo": "Convite de participantes com sugestões",
+      "status": "validado",
+      "desc": "Ao criar uma operação, a etapa de participantes tem visual novo e sugere pessoas para convidar.",
+      "passos": [
+        "No menu à esquerda, clique em \"Operações\" e depois em \"+ Nova operação\".",
+        "Preencha a primeira etapa e avance até a etapa dos participantes.",
+        "Veja a lista de sugestões e clique em uma delas."
+      ],
+      "esperado": "A pessoa sugerida entra na lista de participantes com um clique, sem precisar digitar."
+    },
+    {
+      "id": "#14",
+      "titulo": "Enviar fotos (PNG e JPG) além de PDF",
+      "status": "validado",
+      "desc": "Além de PDF, agora dá para anexar imagens, e a IA também analisa as imagens. Arquivos grandes demais são recusados com um aviso claro.",
+      "passos": [
+        "Abra um target de uma operação de teste.",
+        "Em um item, clique em \"Anexar PDF ou imagem\".",
+        "Escolha uma foto ou print de um documento (arquivo PNG ou JPG) e envie.",
+        "Aguarde alguns segundos.",
+        "Olhe a linha do item onde você anexou a imagem.",
+        "Tente anexar uma imagem com mais de 5 MB."
+      ],
+      "esperado": "A imagem fica anexada ao item e a análise da IA aparece para ela, como acontece com um PDF. Na linha do item aparece um selo \"IMG\", mostrando que o anexo é uma imagem. A imagem acima de 5 MB não é aceita, e aparece uma mensagem explicando o motivo."
+    },
+    {
+      "id": "#16",
+      "titulo": "Seta de voltar sempre leva para a tela anterior certa",
+      "status": "feito",
+      "desc": "A seta de voltar, no topo das telas, leva sempre para o nível de cima (e não para a última página visitada).",
+      "passos": [
+        "Abra uma operação e depois um target dentro dela.",
+        "Clique na seta de voltar no topo da tela.",
+        "Repita em outras telas de detalhe (por exemplo, a de uma conta ou da equipe)."
+      ],
+      "esperado": "Do target você volta para a operação. Da operação, volta para a lista de operações. A seta aparece sempre no mesmo lugar."
+    },
+    {
+      "id": "#20",
+      "titulo": "Renomear um item direto na lista",
+      "status": "feito",
+      "desc": "Dá para mudar o nome de um item sem sair da lista.",
+      "passos": [
+        "Abra um target de uma operação de teste.",
+        "Ao lado do nome de um item, clique no ícone de lápis (\"Editar nome\").",
+        "Digite um nome novo e confirme.",
+        "Recarregue a página."
+      ],
+      "esperado": "O novo nome aparece na hora e continua depois de recarregar."
+    },
+    {
+      "id": "#8",
+      "titulo": "Botão para copiar o nome do item",
+      "status": "feito",
+      "desc": "Ao lado do nome de cada item há um ícone que copia o nome inteiro.",
+      "passos": [
+        "Abra um target de uma operação de teste.",
+        "Clique no ícone de copiar (\"Copiar nome\") ao lado do nome de um item.",
+        "Cole o texto em qualquer lugar (por exemplo, num bloco de notas)."
+      ],
+      "esperado": "O ícone confirma a cópia por um instante, e o texto colado é o nome completo do item."
+    },
+    {
+      "id": "#10",
+      "titulo": "\"Baixar PDF\" do Extrato virou um ícone",
+      "status": "feito",
+      "desc": "No Extrato, o botão de texto \"Baixar PDF\" foi trocado por um ícone de download.",
+      "passos": [
+        "Abra uma operação de teste e clique na aba \"Extrato\".",
+        "Numa linha com documento, clique no ícone de download."
+      ],
+      "esperado": "O documento certo daquela linha é baixado ou aberto."
+    },
+    {
+      "id": "#1",
+      "titulo": "\"Expandir tudo\" também abre a análise da IA",
+      "status": "feito",
+      "desc": "O botão \"Expandir tudo\" abre, de uma vez, a análise da IA de todos os documentos.",
+      "passos": [
+        "Abra um target com vários documentos já analisados.",
+        "Clique em \"Expandir tudo\".",
+        "Depois, clique em \"Colapsar tudo\"."
+      ],
+      "esperado": "Todas as análises da IA abrem juntas e depois fecham juntas."
+    },
+    {
+      "id": "#18",
+      "titulo": "\"Exportar CSV\" saiu do menu \"Ações\"",
+      "status": "feito",
+      "desc": "A opção \"Exportar CSV\", que não funcionava, foi retirada do menu \"Ações\" da operação.",
+      "passos": [
+        "Abra uma operação de teste.",
+        "No canto superior direito, clique no menu \"Ações\"."
+      ],
+      "esperado": "A opção \"Exportar CSV\" não aparece mais no menu."
+    },
+    {
+      "id": "#05 · #22 · #6",
+      "titulo": "Aba Extrato mais limpa",
+      "status": "feito",
+      "desc": "Saíram do Extrato o botão \"Convidado externo envia\" e os filtros de Emissor e Categoria.",
+      "passos": [
+        "Abra uma operação de teste e clique na aba \"Extrato\".",
+        "Olhe o topo da tabela e as linhas."
+      ],
+      "esperado": "Não há mais o botão \"Convidado externo envia\" nem os filtros de Emissor e Categoria. A coluna de atividade mostra o nome do documento."
+    },
+    {
+      "id": "#21",
+      "titulo": "Nome completo do documento ao passar o mouse",
+      "status": "feito",
+      "desc": "Ao passar o mouse sobre um documento, aparece o nome completo dele.",
+      "passos": [
+        "Use um computador (no celular não há \"passar o mouse\").",
+        "Abra um target que tenha um documento de nome longo.",
+        "Pare o mouse sobre o documento por um segundo."
+      ],
+      "esperado": "Aparece um balão com o nome inteiro, sem ser cortado pela borda do cartão."
+    },
+    {
+      "id": "#3",
+      "titulo": "Participantes em dois cartões: Administradores e Membros",
+      "status": "feito",
+      "desc": "Na equipe da operação, os administradores (da casa ou convidados) ficam juntos num cartão, e os demais participantes ficam em outro, ao lado.",
+      "passos": [
+        "Abra uma operação de teste que tenha administradores da casa, administradores convidados e membros.",
+        "Clique na aba \"Equipe\"."
+      ],
+      "esperado": "Há um cartão \"Admins\" com todos os administradores, da casa e convidados, e um cartão \"Membros\" ao lado com os demais."
+    },
+    {
+      "id": "#17",
+      "titulo": "Nome completo do item sempre visível",
+      "status": "feito",
+      "desc": "Nomes longos de itens aparecem inteiros, sem reticências (\"...\").",
+      "passos": [
+        "Abra um target que tenha um item de nome longo.",
+        "Olhe o nome no cartão do item.",
+        "Abra uma janela desse item (por exemplo, a de anexar) e confira o nome lá também."
+      ],
+      "esperado": "O nome aparece completo, quebrando em mais de uma linha se precisar, sem ser cortado."
+    },
+    {
+      "id": "Layout",
+      "titulo": "Telas usam toda a largura disponível",
+      "status": "feito",
+      "desc": "O conteúdo das telas ocupa a largura ao lado do menu, em vez de ficar numa coluna estreita no meio. Em monitores muito largos ele para num limite confortável (cerca de 1440 pontos), para as linhas não ficarem longas demais.",
+      "passos": [
+        "Use um computador com a janela do navegador maximizada.",
+        "Abra a lista de operações e depois uma operação.",
+        "Se o seu monitor for grande (acima de 1600 pontos de largura), repare onde o conteúdo termina à direita."
+      ],
+      "esperado": "Em telas de notebook o conteúdo vai do menu até a borda direita. Em monitores muito largos ele para num limite fixo, alinhado à esquerda, e a lista, a operação, a Equipe e as Configurações terminam todas no mesmo ponto."
+    },
+    {
+      "id": "Interno",
+      "titulo": "Melhorias internas de qualidade (sem mudança na tela)",
+      "status": "feito",
+      "desc": "Melhoria interna, sem mudança na tela.",
+      "passos": [],
+      "esperado": "Nada muda na tela. Pode pular este cartão."
+    },
+    {
+      "id": "#15 · B2",
+      "titulo": "Selos da \"Análise da IA\" com visual padronizado",
+      "status": "validado",
+      "desc": "No documento de um target, o quadro \"Análise da IA\" mostra quatro selos: Item correto, Target correto, Dentro da validade e Apontamentos. Agora os quatro têm o mesmo visual: ✓ verde quando está tudo certo, ✗ vermelho quando falhou (amarelo no caso de apontamentos) e um círculo cinza com traço quando não se aplica. O texto \"Sem apontamentos\" sumiu — o selo se chama sempre \"Apontamentos\" e é o símbolo que diz se está ok.",
+      "passos": [
+        "Entre em uma operação e abra um target que tenha documentos já analisados pela IA (com o botão \"IA: aprovado\", \"IA: reprovado\" ou \"IA: apontamento\" ao lado do nome).",
+        "Clique no botão \"IA: …\" de um documento aprovado para abrir o quadro \"Análise da IA\".",
+        "Repita em um documento reprovado e, se houver, em um com apontamentos.",
+        "Compare os quatro selos entre os quadros abertos."
+      ],
+      "esperado": "Nos quatro selos, o símbolo é sempre um círculo do mesmo tamanho: ✓ verde (ok), ✗ vermelho (falhou; amarelo no selo de apontamentos quando há apontamentos) ou círculo cinza com traço (não se aplica). O texto de todos tem o mesmo peso e o mesmo espaço entre símbolo e palavra. O último selo se chama \"Apontamentos\" (ou \"2 apontamentos\" quando há) e em nenhum lugar aparece \"Sem apontamentos\" nem um tracinho solto antes do texto."
+    },
+    {
+      "id": "#24 · #29 · A3",
+      "titulo": "Notificações de volta, com abas \"Gerais\" e \"Pessoais\"",
+      "status": "validado",
+      "desc": "Voltou o sininho de notificações, agora no canto superior direito de todas as telas. Ele mostra quantas novidades você ainda não viu. Ao clicar, abre um painel com duas abas: \"Gerais\" (o que aconteceu nas operações de que você participa: documento anexado, target adicionado, apontamento criado, resultado da IA, alguém entrou, operação finalizada) e \"Pessoais\" (o que é só com você: alguém te mencionou com @ num comentário, te convidou para uma operação ou respondeu um apontamento seu). Por enquanto fica ligado só na conta de teste que avisarmos.",
+      "passos": [
+        "Entre no ambiente de teste com a conta que avisarmos que está com as notificações ligadas.",
+        "Olhe o canto superior direito: deve haver um sininho. Se outra pessoa já tiver feito algo nas suas operações, aparece um número laranja em cima dele.",
+        "Clique no sininho. Abre um painel do lado direito com as abas \"Gerais\" e \"Pessoais\".",
+        "Na aba \"Gerais\", veja a lista agrupada por operação. Se você estiver dentro de uma operação, ela aparece primeiro, com a marca \"esta operação\". Clique em \"Só esta operação\" para filtrar só ela, e clique de novo para voltar a ver todas.",
+        "Passe o mouse em cima de uma notificação com a bolinha laranja e clique em \"marcar como lida\". A bolinha some e o número do sininho diminui.",
+        "Peça para outra pessoa da equipe escrever um comentário com @ e o seu nome num item de uma operação em que vocês dois estão. Abra o sininho de novo: na aba \"Pessoais\" deve aparecer a menção, com o trecho do comentário. Clique em \"Abrir comentário\" para ir direto ao item.",
+        "No rodapé do painel, clique em \"Ver todas\". Abre uma página inteira com as mesmas abas, um filtro por operação e a opção \"Só não lidas\". Teste o botão \"Marcar todas como lidas\".",
+        "Entre com outra conta que NÃO está com a função ligada: o sininho não deve aparecer."
+      ],
+      "esperado": "O sininho aparece em todas as telas com o número certo de novidades não lidas. O que você mesmo fez não aparece como novidade para você. Marcar como lida some só para você (a outra pessoa continua vendo como nova). Clicar numa notificação leva ao lugar certo (o item ou a operação). Na conta sem a função ligada, nada muda em relação a hoje."
+    },
+    {
+      "id": "A3 · ajuste",
+      "titulo": "Notificações: frase explicando cada aba e filtro \"Só esta operação\" nas duas abas",
+      "status": "feito",
+      "desc": "Ajuste no sininho de notificações. Ficou decidido o que cada aba mostra. \"Pessoais\" é o que envolve você diretamente: comentários em que alguém te marcou com @ (por exemplo \"@Ana Ribeiro\"), convites que você recebeu para uma operação e respostas (PDF) de outra pessoa a um apontamento que VOCÊ criou. \"Gerais\" é a atividade das operações de que você participa: documento anexado, target adicionado, apontamento criado, resultado da IA, alguém entrou, operação finalizada (sem repetir convite e resposta ao seu apontamento). Embaixo das abas aparece uma frase curta dizendo o que cada aba mostra. O botão \"Só esta operação\" (no painel) e o seletor \"Operação\" (na página \"Ver todas\") são um filtro de onde olhar, que vale para as duas abas.",
+      "passos": [
+        "Peça para outra pessoa da equipe escrever um comentário num item de uma operação em que vocês dois estão, marcando você com @ (digite @ e escolha o seu nome).",
+        "Peça para essa mesma pessoa anexar um PDF em qualquer item da operação (ou criar um apontamento).",
+        "Clique no sininho no canto superior direito. Abra a aba \"Pessoais\": deve aparecer o comentário em que você foi marcado, com a frase \"Menções @você, convites e respostas aos seus apontamentos\" logo abaixo das abas. O PDF anexado NÃO aparece aqui.",
+        "Abra a aba \"Gerais\": o PDF anexado (ou o apontamento) aparece aqui, com a frase \"Eventos das operações de que você participa\" abaixo das abas. O comentário com @ NÃO aparece aqui.",
+        "Se alguém te convidou para uma operação recentemente, procure o convite: ele está em \"Pessoais\" (e não em \"Gerais\").",
+        "Crie um apontamento num item e peça para outra pessoa responder anexando um PDF nesse apontamento. A resposta aparece em \"Pessoais\" para você. Se a outra pessoa responder um apontamento criado por um terceiro, você não é avisado.",
+        "Estando dentro de uma operação, clique em \"Só esta operação\" no painel: ele filtra as duas abas (inclusive \"Pessoais\") para mostrar só o que é daquela operação; a frase abaixo das abas ganha \"· só esta operação\". Clique de novo para voltar a ver todas.",
+        "Clique em \"Ver todas\" e repita na página: a frase abaixo das abas muda conforme a aba, e o seletor \"Operação\" filtra as duas abas do mesmo jeito."
+      ],
+      "esperado": "\"Pessoais\" lista menções com @, convites para você e respostas aos apontamentos que você criou. Os demais eventos (anexo, target, apontamento, IA, alguém entrou, operação finalizada) ficam só em \"Gerais\", e convite/resposta ao seu apontamento NÃO se repetem lá. A frase abaixo das abas explica cada uma. \"Só esta operação\" e o seletor \"Operação\" são filtros que valem para as duas abas."
+    },
+    {
+      "id": "#28 · B3",
+      "titulo": "\"Remover target\" vai para o fim da lista; a busca fica no lugar dele",
+      "status": "validado",
+      "desc": "Na tela de um target, o botão \"Remover target\" saiu do canto superior direito e foi para o fim da lista de itens, ao lado de \"+ Adicionar item\". No lugar dele entrou um campo de busca (lupa) que filtra os itens pelo nome e também por qualquer palavra que apareça num apontamento.",
+      "passos": [
+        "Abra uma operação e clique em um target que tenha vários itens (de preferência um com apontamentos cadastrados).",
+        "Olhe o canto superior direito, ao lado do nome do target: deve haver um campo de busca com uma lupa, e não mais o botão \"Remover target\".",
+        "Digite parte do nome de um item (por exemplo, \"matr\"). Pode digitar em maiúsculas ou sem acento.",
+        "Apague e digite uma palavra que aparece só dentro de um apontamento de algum item (abra o item antes para ver o texto do apontamento).",
+        "Digite algo que não existe (por exemplo, \"zzzz\").",
+        "Clique no \"x\" dentro do campo para limpar a busca.",
+        "Role até o fim da lista de itens."
+      ],
+      "esperado": "Ao digitar parte do nome, a lista mostra só os itens cujo nome contém o que foi digitado. Ao digitar a palavra do apontamento, aparece o item que tem esse apontamento, mesmo que a palavra não esteja no nome dele. Com algo que não existe, aparece a mensagem \"Nenhum item corresponde a …\" e nenhum item. Ao limpar, todos os itens voltam. No fim da lista, o botão \"Remover target\" aparece ao lado de \"+ Adicionar item\"."
+    },
+    {
+      "id": "A1",
+      "titulo": "Painel de controle da plataforma mais simples (protótipo)",
+      "status": "a_fazer"
+    },
+    {
+      "id": "A2",
+      "titulo": "Extrato com colunas padronizadas: Data, Target, Item, Ação, Quem fez, Ações",
+      "status": "validado",
+      "desc": "A aba <b>Extrato</b> da operação ganhou uma tabela com seis colunas fixas: <b>Data</b>, <b>Target</b> (pessoa, empresa ou imóvel), <b>Item</b>, <b>Ação realizada</b>, <b>Quem executou</b> e <b>Ações</b>. Os botões de baixar e visualizar só aparecem nas linhas que têm um arquivo de verdade (PDF ou imagem); uma resposta escrita mostra só o \"visualizar\"; as outras linhas (remoção, renomeio, mudança de status, target) ficam sem botão. A <b>mudança de status</b> de um item (ex.: de Pendente para Concluída) agora também aparece no Extrato, mostrando o status anterior e o novo. Os filtros que já existiam (busca, ordenar por data, Adição/Remoção/Edição, Documento/Item/Target) continuam acima da tabela. Por enquanto isso vale só nas contas em que a regra for ligada (teste controlado); nas outras, a aba segue como hoje.",
+      "passos": [
+        "Peça ao coordenador para ligar a regra \"Extrato em tabela\" na conta de teste.",
+        "Entre no app, abra uma operação que já tenha documentos anexados e clique na aba \"Extrato\".",
+        "Confira o cabeçalho da tabela: devem existir exatamente seis colunas, nesta ordem: Data, Target, Item, Ação realizada, Quem executou, Ações.",
+        "Em uma linha de documento anexado (PDF ou imagem), confira que há dois botõezinhos à direita: baixar (seta para baixo) e visualizar (olho). Clique no olho: o documento abre numa janela por cima da tela.",
+        "Em uma linha de \"Target adicionado\" ou \"Documento removido\", confira que a coluna Ações está vazia e, na de target, a coluna Item mostra só um traço (—).",
+        "Volte à aba Targets, abra um target e mude o status de um item (ex.: de Pendente para Concluída). Volte ao Extrato: deve aparecer uma linha nova \"Status alterado\" com o status anterior e o novo, e o seu nome em \"Quem executou\".",
+        "Se algum item tiver resposta escrita (sem arquivo), confira que a linha mostra só um botão (ícone de documento) e que, ao clicar, o texto da resposta aparece numa janela.",
+        "Use os filtros acima da tabela: clique em \"Edição\" e confira que só sobram as linhas de renomeio e de mudança de status; digite o nome de uma pessoa na busca e confira que só sobram as linhas feitas por ela; clique em \"Limpar filtros\".",
+        "Se puder, abra outra conta em que a regra NÃO foi ligada: lá a aba Extrato continua com as quatro colunas de hoje (Data, Target, Atividade, Ação)."
+      ],
+      "esperado": "Na conta com a regra ligada, o Extrato é uma tabela de seis colunas; botões de baixar/visualizar só nas linhas com arquivo; resposta escrita só com \"visualizar\"; a mudança de status aparece como linha nova com \"antes → depois\" e quem fez; os filtros continuam funcionando. Na conta sem a regra, nada muda."
+    },
+    {
+      "id": "A4",
+      "titulo": "Contador de apontamentos em aberto no item",
+      "status": "feito",
+      "desc": "Quando um item tem apontamentos ainda sem resposta, aparece uma bolinha vermelha com a quantidade, logo depois do texto \"APONTAMENTOS\" no rodapé do item. Quando todos já foram respondidos, no lugar da bolinha aparece um ✓ verde discreto. Se o item não tem apontamento nenhum, fica só o texto \"APONTAMENTOS\". O rodapé não mostra mais a contagem \"respondidos/total\" (ela continua dentro da lista, na aba Apontamentos). Assim dá pra ver de longe onde ainda falta responder, sem precisar abrir cada item.",
+      "passos": [
+        "Abra um target de uma operação de teste que tenha itens com apontamentos.",
+        "Olhe o rodapé de um item que tenha apontamento ainda sem resposta (sem PDF e sem texto): deve estar escrito \"APONTAMENTOS\" e, logo ao lado, uma bolinha vermelha com um número. Não deve aparecer nenhuma contagem do tipo \"1/3\".",
+        "Clique em \"APONTAMENTOS\" para abrir a lista e responda um apontamento (anexe um PDF ou escreva a resposta em texto). Dentro da lista, na aba Apontamentos, a contagem \"respondidos/total\" continua aparecendo.",
+        "Repare na bolinha depois de responder: o número diminui.",
+        "Responda o último apontamento que faltava e olhe o rodapé de novo: a bolinha some e aparece um ✓ verde pequeno ao lado de \"APONTAMENTOS\".",
+        "Olhe um item que não tenha apontamento nenhum: o rodapé mostra só \"APONTAMENTOS\", sem bolinha, sem ✓ e sem número."
+      ],
+      "esperado": "Com apontamentos em aberto: \"APONTAMENTOS\" + bolinha vermelha só com a quantidade que AINDA falta responder. Com todos respondidos: \"APONTAMENTOS ✓\" (verde discreto, sem bolinha). Sem apontamentos: só \"APONTAMENTOS\". Em nenhum caso o rodapé mostra \"respondidos/total\". A lista continua fechada até você clicar, como antes."
+    },
+    {
+      "id": "A4 · comentários",
+      "titulo": "Bolinha azul no balão de comentários: só o que você ainda não leu",
+      "status": "feito",
+      "desc": "No rodapé de cada item, ao lado do texto \"APONTAMENTOS\", existe um balão de comentário. Agora ele segue a mesma lógica da bolinha vermelha dos apontamentos: quando há comentários de outras pessoas que você ainda não leu, aparece uma bolinha azul com a quantidade. Quando você já leu tudo, a bolinha some e fica só o total de comentários em cinza. Se o item não tem comentário nenhum, fica só o balão. Cada pessoa tem a sua própria contagem: ler os comentários zera a sua bolinha, mas não a dos colegas. Vale só nas contas em que a área de comentários (abas Apontamentos | Comentários) está ligada.",
+      "passos": [
+        "Peça para outra pessoa da equipe escrever um comentário num item de uma operação em que vocês dois estão (ou use dois usuários de teste em navegadores diferentes).",
+        "Abra o target desse item. No rodapé do item, ao lado do balão de comentário, deve aparecer uma bolinha azul com o número de comentários novos (por exemplo \"1\"). Não deve aparecer o total em cinza nesse momento.",
+        "Clique em \"APONTAMENTOS\" para abrir a área do item. A lista abre na aba Apontamentos e a bolinha azul continua lá.",
+        "Clique na aba \"Comentários\". A bolinha azul some na hora e, no lugar dela, aparece o total de comentários em cinza. Dentro da lista, os comentários novos ainda mostram a marca \"NOVO\" até você recarregar a página.",
+        "Recarregue a página: a bolinha azul não volta (você já leu). Peça para a outra pessoa comentar de novo: a bolinha azul reaparece com \"1\".",
+        "Escreva você um comentário: o total em cinza sobe, mas nenhuma bolinha azul aparece (o que você mesmo escreve nunca conta como não lido).",
+        "Olhe um item sem nenhum comentário: só o balão, sem número e sem bolinha.",
+        "Se puder, entre com o usuário da outra pessoa: a bolinha azul dela é independente da sua (ler os seus não zera os dela)."
+      ],
+      "esperado": "Comentários de outras pessoas que você ainda não leu aparecem como uma bolinha azul com a quantidade, no balão do rodapé do item. Abrir a aba \"Comentários\" do item zera a bolinha (e ela não volta ao recarregar). Sem novidades, o balão mostra o total em cinza; sem comentários, só o balão. Os seus próprios comentários nunca contam. A bolinha vermelha e o ✓ dos apontamentos continuam exatamente como antes."
+    },
+    {
+      "id": "B1",
+      "titulo": "Topo da operação: \"Progresso\" e \"Documentos anexados\"",
+      "status": "feito",
+      "desc": "No topo da tela de uma operação, os dois cartões de resumo mudaram. O cartão <b>\"Itens emitidos\"</b> virou <b>\"Progresso\"</b> e agora mostra <b>exatamente o mesmo número da aba Dashboard</b>: quantos itens já foram marcados como <i>Concluída</i>, de quantos itens estão no escopo (itens marcados como <i>Não aplicável</i> ficam de fora). O cartão <b>\"Targets\"</b> (que mostrava 3 targets · 1 PJ · 2 PF…) virou <b>\"Documentos anexados\"</b>: quantos itens já têm pelo menos um arquivo anexado. Um item com vários PDFs conta uma vez só. Ter documento não significa estar concluído — são dois cartões independentes. <br><br><b>Correção (5 de outubro):</b> o \"Progresso\" também aparece em mais dois lugares — na coluna <b>\"Progresso\"</b> da lista de targets (dentro da operação) e no quadro <b>\"Progresso geral\"</b> ao abrir um target. Esses dois contavam de outro jeito (itens com arquivo anexado) e por isso podiam mostrar 0 / 3 enquanto o cartão da operação mostrava 1 / 3. Agora os três lugares usam a mesma conta: itens marcados como <i>Concluída</i>, de quantos estão no escopo. O cartão \"Documentos anexados\" não mudou.",
+      "passos": [
+        "Entre no app e abra uma operação que já tenha itens com documentos anexados e alguns itens marcados como \"Concluída\".",
+        "Olhe os dois cartões logo abaixo do nome da operação: o da esquerda deve se chamar \"Documentos anexados\" e o da direita \"Progresso\". Os nomes antigos (\"Targets\" e \"Itens emitidos\") não devem mais aparecer.",
+        "Anote o número do cartão \"Progresso\" (por exemplo, 4 / 7 e, embaixo, \"57,1% do escopo concluído\").",
+        "Clique na aba \"Dashboard\", logo abaixo dos cartões. No quadro \"Progresso geral\", confira que a porcentagem grande e a frase \"4 de 7 itens no escopo\" trazem os MESMOS números do cartão. Repita em mais de uma operação: os dois nunca podem divergir.",
+        "Volte para a aba \"Targets\" e conte, à mão, quantos itens têm documento anexado (o item que tem arquivo mostra o botão de abrir/ver o PDF). Compare com o cartão \"Documentos anexados\".",
+        "Teste um item com mais de um PDF (aqueles que aparecem agrupados): ele deve contar como 1 no cartão, não como 2.",
+        "Marque um item que já tem PDF como \"Concluída\" (no seletor de status do item) e volte ao topo: \"Progresso\" sobe em 1; \"Documentos anexados\" não muda.",
+        "Anexe um PDF novo em um item que ainda não tinha arquivo e volte ao topo: \"Documentos anexados\" sobe em 1; \"Progresso\" só muda se você também marcar o item como \"Concluída\".",
+        "Correção de 5 de outubro — crie (ou use) uma operação com um target de 3 itens SEM nenhum arquivo anexado e marque só 1 deles como \"Concluída\".",
+        "No topo da operação, o cartão \"Progresso\" deve mostrar 1 / 3.",
+        "Na lista de targets (aba \"Targets\"), a coluna \"Progresso\" desse target deve mostrar \"1 / 3 itens\" — e não \"0 / 3\".",
+        "Clique no target. No quadro \"Progresso geral\", o contador deve mostrar 1 / 3, com a barra em um terço.",
+        "Marque um segundo item como \"Concluída\" e volte à operação: os três lugares (cartão, lista e quadro do target) devem mostrar 2 / 3 ao mesmo tempo.",
+        "Marque um item como \"Não aplicável\": ele sai do total nos três lugares (por exemplo, 2 / 2), sempre com o mesmo número nos três."
+      ],
+      "esperado": "O cartão \"Progresso\" mostra sempre o mesmo número e a mesma porcentagem da aba Dashboard. O cartão \"Documentos anexados\" mostra quantos itens têm pelo menos um arquivo (vários PDFs no mesmo item contam uma vez), sem depender do status. Um item respondido só por texto, sem arquivo, não conta como documento anexado. O \"Progresso\" na lista de targets e no quadro \"Progresso geral\" do target mostra sempre o mesmo número do cartão da operação — nunca três números diferentes para a mesma situação."
+    },
+    {
+      "id": "B4",
+      "titulo": "Dados do target mais enxutos (só os campos principais)",
+      "status": "validado",
+      "desc": "Na tela de um target (pessoa ou empresa), a faixa <b>Dados do target</b> mostra só os dados de identidade que importam: <b>pessoa física</b> = Nome, CPF, RG, Nascimento e Nome da mãe; <b>empresa</b> = Razão social e CNPJ. Os outros campos (estado civil, endereço, título de eleitor, nacionalidade, profissão, nome do pai, regime de bens, cônjuge, e-mail, telefone) deixam de aparecer, e o botão \"Ver todos\" some. <b>Nada é apagado</b>: o que já estava preenchido continua guardado e volta a aparecer se a regra for desligada. Imóveis não mudam. Por enquanto isso vale só nas contas em que a regra for ligada (teste controlado); nas outras, tudo segue como hoje.",
+      "passos": [
+        "Peça ao coordenador para ligar a regra \"Dados do target enxutos\" na conta de teste (a regra \"Ficha do target\" também precisa estar ligada, senão a faixa de dados nem aparece).",
+        "Entre no app, abra uma operação e clique em um target que seja <b>pessoa física</b>.",
+        "Logo abaixo do nome e do CPF, olhe a faixa \"Dados do target\": devem aparecer só três campos — RG, Nascimento e Nome da mãe.",
+        "Confira que NÃO aparecem: Estado civil, Endereço, Título de eleitor, Nacionalidade, Profissão, Nome do pai, Regime de bens, Cônjuge, E-mail, Telefone. E que não existe mais o botão \"Ver todos\".",
+        "Volte e abra um target que seja <b>empresa</b>: a faixa deve mostrar só Razão social e CNPJ.",
+        "Se puder, abra um target de <b>imóvel</b>: ali nada muda (seis campos e o botão \"Ver todos\" continuam).",
+        "Teste que nada foi apagado: peça ao coordenador para desligar a regra na conta de teste, recarregue a página do target de pessoa física e confira que os campos escondidos voltaram com os valores que tinham antes.",
+        "Se puder, abra outra conta em que a regra NÃO foi ligada: lá a faixa continua completa, com seis campos e o botão \"Ver todos\"."
+      ],
+      "esperado": "Na conta com a regra ligada: pessoa física mostra só RG, Nascimento e Nome da mãe (além do nome e CPF no topo); empresa mostra só Razão social e CNPJ; sem botão \"Ver todos\"; imóvel igual a hoje. Ao desligar a regra, todos os campos voltam com os valores preservados. Na conta sem a regra, nada muda."
+    },
+    {
+      "id": "C1",
+      "titulo": "Fim da ordenação manual dos itens",
+      "status": "feito",
+      "desc": "Os itens de cada target (pessoa, empresa ou imóvel) aparecem <b>sempre na ordem do número</b> (#1, #2, #3…), que é a ordem do checklist original, <b>numa lista única</b>: as divisões por categoria (os cabeçalhos \"FEDERAIS\", \"CARTÓRIOS\", \"OUTRAS\"…) somem, e a etiqueta de categoria continua em cada item. Não dá mais para arrastar os itens para mudar a posição. Por enquanto isso vale só nas contas em que a regra for ligada (teste controlado); nas outras, tudo segue como hoje (itens agrupados por categoria, com arrastar).",
+      "passos": [
+        "Peça ao coordenador para ligar a regra \"Ordem por número\" na conta de teste.",
+        "Entre no app e abra uma operação que tenha targets com vários itens de categorias diferentes (por exemplo, um item federal e um de cartório).",
+        "Se a lista ainda aparecer dividida por categoria (com cabeçalhos \"FEDERAIS\", \"CARTÓRIOS\"…), recarregue a página (tecla F5 ou Cmd+R) antes de conferir: a tela pode estar com a versão antiga carregada.",
+        "Clique em um target e olhe a lista de itens: confira que os números à esquerda (#1, #2, #3…) estão em ordem crescente, de cima para baixo, do primeiro ao último item, sem nenhum cabeçalho de categoria separando a lista em blocos.",
+        "Confira que um item de número menor nunca aparece abaixo de um de número maior só por ser de outra categoria (por exemplo, o #1 fica acima do #7 mesmo que o #7 seja \"FEDERAIS\" e o #1 seja \"OUTRAS\").",
+        "Olhe a etiqueta pequena embaixo do número de cada item (FEDERAIS, CARTÓRIOS, FISCAL…): ela continua lá, em cada item.",
+        "Passe o mouse sobre um item: não deve aparecer nenhuma alça de arrastar (o ícone de seis pontinhos à esquerda do número).",
+        "Tente arrastar um item para cima ou para baixo segurando o mouse: nada deve se mover.",
+        "Se puder, abra outra conta em que a regra NÃO foi ligada: lá os itens continuam agrupados por categoria, com os cabeçalhos, e a alça de arrastar continua funcionando."
+      ],
+      "esperado": "Na conta com a regra ligada, a lista do target é uma só, na ordem do número do início ao fim, sem cabeçalhos de categoria, com a etiqueta de categoria em cada item e sem como arrastar. Itens sem número (adicionados à mão) ficam no fim da lista. Na conta sem a regra, nada muda: itens agrupados por categoria e arrastar funcionando."
+    },
+    {
+      "id": "C3",
+      "titulo": "Membros não veem a análise da IA",
+      "status": "validado",
+      "desc": "Quem entra numa operação como <b>Membro</b> deixa de ver qualquer coisa feita pela IA: o selo \"IA: aprovado/reprovado\", o quadro \"Análise da IA\", a cor na lateral do item, o \"Aguardando análise\", as datas de validade lidas pela IA e as sugestões da IA nos dados do target. Quem é <b>Admin</b> da operação continua vendo tudo. Por enquanto isso vale só nas contas em que a regra for ligada (teste controlado).",
+      "passos": [
+        "Peça ao coordenador para ligar a regra \"Membro sem IA\" na conta de teste.",
+        "Entre no app com um usuário que seja <b>Membro</b> de uma operação que já tenha documentos anexados.",
+        "Abra a operação e clique em um dos targets (pessoa, empresa ou imóvel).",
+        "Olhe a lista de itens: confira que não aparece nenhum selo \"IA: aprovado\" ou \"IA: reprovado\", nenhum \"Aguardando análise\" e nenhuma data \"Válido / Vence em / Vencido\".",
+        "Saia e entre de novo com um usuário que seja <b>Admin</b> da mesma operação.",
+        "Abra o mesmo target e confira que os selos da IA e as datas de validade aparecem normalmente."
+      ],
+      "esperado": "Como Membro, a análise de IA não aparece em lugar nenhum da tela do target (os documentos, os status e os comentários continuam lá). Como Admin, tudo aparece como antes. Nas contas em que a regra não foi ligada, nada muda para ninguém."
+    },
+    {
+      "id": "C4",
+      "titulo": "Análise de documentos com um modelo de IA mais forte",
+      "status": "validado",
+      "desc": "A análise de IA dos documentos anexados passa a usar um modelo mais forte, que lê o documento com mais cuidado. Por enquanto ela fica ligada só na conta de teste que avisarmos, para comparar antes de ligar para todos.",
+      "passos": [
+        "Entre no ambiente de teste com a conta que avisarmos que está com a análise nova ligada.",
+        "Abra uma operação, entre em um target e anexe um documento a um item (por exemplo, uma certidão).",
+        "Espere alguns segundos até aparecer o resultado da análise da IA no item.",
+        "Abra o resultado e leia a explicação da IA.",
+        "Se puder, anexe também um documento com problema (de outra pessoa, de outro tipo ou vencido) e veja o que a IA diz."
+      ],
+      "esperado": "A análise aparece normalmente, sem erro. A explicação fica mais precisa e aponta certo quando o documento é de outra pessoa, de outro tipo ou está vencido. Pode demorar um pouco mais que antes."
+    },
+    {
+      "id": "#9",
+      "titulo": "Apontamentos aparecem no Extrato (criar, anexar, responder e remover)",
+      "status": "a_fazer"
+    },
+    {
+      "id": "#12",
+      "titulo": "Guardar as análises da IA para consulta futura",
+      "status": "a_fazer"
+    },
+    {
+      "id": "#7",
+      "titulo": "Responder um apontamento com texto, não só com PDF",
+      "status": "feito",
+      "desc": "Um apontamento (pendência dentro de um documento) agora pode ser resolvido escrevendo uma resposta em texto, e não só anexando um PDF. O texto fica guardado com quem respondeu e quando.",
+      "passos": [
+        "Entre no sistema com o seu usuário de teste.",
+        "No menu à esquerda, clique em \"Operações\" e abra uma operação de teste.",
+        "Na aba \"Targets\", clique em um target (pessoa, empresa ou imóvel).",
+        "Em um documento da lista, abra a área \"Apontamentos\" (se não houver nenhum, crie um pelo campo \"Novo apontamento…\").",
+        "Em um apontamento em aberto, clique em \"Responder em texto\", escreva uma frase (ex.: \"Protesto cancelado em 12/08\") e clique em \"Enviar resposta\".",
+        "Depois clique em \"Substituir resposta\", mude o texto e clique em \"Salvar resposta\".",
+        "Recarregue a página e confira se o texto continua lá."
+      ],
+      "esperado": "Ao enviar o texto, o apontamento passa de \"Aberto\" para \"Resolvido\" sem precisar de PDF, e aparece uma faixa com o texto, o seu nome e a data/hora. O botão \"Substituir resposta\" deixa trocar o texto (ou anexar um PDF no lugar). O contador de apontamentos resolvidos do documento sobe junto. Quem só pode ler não vê o botão."
+    },
+    {
+      "id": "Densidade",
+      "titulo": "Telas do app um pouco menores por padrão (equivale a 90% de zoom)",
+      "status": "feito",
+      "desc": "Dentro do sistema (depois de entrar), tudo ficou cerca de 10% menor: textos, botões, espaços e o menu da esquerda. É o mesmo efeito de apertar <b>Cmd + −</b> (ou Ctrl + −) uma vez no navegador, só que já vem assim, sem você precisar mexer no zoom. Cabe mais informação na tela sem rolar. As telas de entrada (login, termos e privacidade) continuam do tamanho de sempre. Nada mudou de lugar: é só o tamanho.",
+      "passos": [
+        "Antes de entrar, confira que o zoom do navegador está em 100% (no Chrome: menu ⋮ → Zoom, ou aperte Cmd + 0 / Ctrl + 0).",
+        "Olhe a tela de login: ela deve estar do tamanho de sempre.",
+        "Entre no app. A lista de operações, o menu da esquerda e os textos devem aparecer um pouco menores do que antes, como se a página estivesse em 90%.",
+        "Confira que o menu da esquerda vai até o fim da tela (sem sobrar uma faixa em branco embaixo) e que o rodapé fica colado no fim da janela.",
+        "Clique no sininho de notificações, no canto superior direito: o painel deve abrir colado na borda direita e ocupar a altura toda da tela.",
+        "Abra um target e passe o mouse sobre o nome de um documento (onde aparece \"2 PDFs\" ou um nome cortado): o balão com o nome completo deve aparecer logo acima, alinhado ao canto direito do texto.",
+        "No mesmo item, abra o seletor de status (Pendente / Parcial / Concluída…): a lista deve abrir normalmente e a troca deve funcionar.",
+        "Clique em \"+ Nova operação\": a tela de criação deve aparecer inteira, com a caixa de texto no meio.",
+        "Dê Cmd + − (Ctrl + −) uma vez e depois Cmd + 0: o app encolhe e volta normalmente — o ajuste do navegador continua funcionando por cima do padrão novo.",
+        "Saia do app: a tela de login volta ao tamanho normal."
+      ],
+      "esperado": "Dentro do app tudo fica ~10% menor do que era, sem nada cortado, sem faixas em branco embaixo do menu ou acima do rodapé, e com os painéis (notificações, balão do nome do documento, seletor de status, nova operação) abrindo no lugar certo. Login, termos e privacidade ficam do tamanho de sempre."
+    },
+    {
+      "id": "Polimento 1",
+      "titulo": "Contador da aba Extrato bate com a lista + nome do item não quebra letra a letra em janela estreita",
+      "status": "feito",
+      "desc": "Dois acertos pequenos. <b>1)</b> O numerozinho ao lado da aba <b>Extrato</b> mostrava 0 (ou só a quantidade de PDFs anexados) mesmo com a lista cheia de acontecimentos — mudança de status, item renomeado, resposta em texto. Agora ele mostra exatamente quantas linhas a aba lista. <b>2)</b> Com a janela do navegador estreita (por exemplo, duas janelas lado a lado), o nome do item na tela do target quebrava uma letra por linha, formando uma coluna fininha. Agora quebra por palavra, e os botões da direita descem pra linha de baixo quando não cabem ao lado.",
+      "passos": [
+        "Abra uma operação que tenha movimentação (status alterado, item renomeado, PDF anexado) e olhe a aba <b>Extrato</b> no topo: o número ao lado dela deve ser igual à quantidade de linhas que aparecem quando você clica na aba.",
+        "Mude o status de um item (na tela do target) e volte pra operação: o número da aba Extrato deve ter subido 1.",
+        "Na tela de um target, deixe a janela do navegador mais estreita (arraste a borda até mais ou menos metade da tela, ou coloque duas janelas lado a lado).",
+        "Olhe um item com nome comprido: o nome deve quebrar por palavra (várias palavras por linha), nunca uma letra por linha. Os botões (status, Anexar) podem descer pra linha de baixo, alinhados à direita.",
+        "Volte a janela pro tamanho normal: nome, selo da IA e botões voltam pra mesma linha, como antes."
+      ],
+      "esperado": "Número da aba Extrato = linhas listadas na aba (inclusive status alterado e renomeações). Nome do item sempre em palavras inteiras, mesmo com a janela estreita, sem nada vazando pra fora do cartão."
+    },
+    {
+      "id": "P1",
+      "titulo": "Aviso quando um PDF enviado contém código embutido (JavaScript)",
+      "status": "feito",
+      "desc": "Alguns PDFs podem carregar código escondido (JavaScript) que roda ao abrir o arquivo — raro em certidão verdadeira e um sinal de alerta. Antes o sistema tentava barrar isso procurando palavras soltas dentro do arquivo e errou: recusou uma matrícula legítima porque a sequência de letras apareceu por acaso dentro de uma imagem. Agora a checagem olha a <b>estrutura</b> do PDF (só onde um código executável pode de fato morar), nunca o miolo das imagens, e <b>não bloqueia nada</b>: o PDF entra normalmente e, se tiver código embutido, o sistema mostra um aviso amarelo no item pedindo revisão. Recurso ligado por conta, aos poucos (primeiro na conta de teste).",
+      "passos": [
+        "Peça ao time técnico que ligue o recurso na sua conta de teste e que te mande dois arquivos: um PDF de teste <b>com</b> código embutido e uma certidão/matrícula escaneada comum.",
+        "Entre no sistema, abra uma operação de teste, a aba \"Targets\" e um target.",
+        "Em um item sem documento, clique em \"Anexar\" e envie o PDF de teste <b>com</b> código embutido.",
+        "Confira que o envio termina normalmente (sem mensagem de erro) e que o item passa a mostrar o PDF anexado.",
+        "Olhe o rodapé do item, ao lado do ícone de baixar: deve aparecer um selo amarelo \"JS embutido\". Passe o mouse por cima e leia a dica.",
+        "Clique em baixar/visualizar o PDF: continua funcionando (é só um aviso).",
+        "Em outro item, envie a certidão/matrícula escaneada comum: o envio termina igual e <b>nenhum</b> selo amarelo aparece.",
+        "No item com o selo, clique em \"Remover PDF\" e confira que o selo some junto."
+      ],
+      "esperado": "Nenhum PDF é recusado por essa checagem. Só o PDF com código embutido de verdade ganha o selo amarelo \"JS embutido\" (ou \"Abre programa externo\"), com dica pedindo revisão; a matrícula escaneada comum passa limpa, sem selo. Remover o PDF tira o selo. Com o recurso desligado na conta, tudo fica exatamente como hoje."
+    },
+    {
+      "id": "P2",
+      "titulo": "Certidões com assinatura digital (arquivo .p7s) analisadas automaticamente",
+      "status": "feito",
+      "desc": "Algumas certidões, como as de protesto, chegam num \"envelope\" de assinatura digital: o PDF de verdade vem embrulhado dentro de um arquivo assinado. A IA não conseguia ler esse envelope (o item ficava sem análise, com erro) e a visualização também não abria. Agora o sistema <b>tira o PDF de dentro do envelope</b> sozinho: a IA analisa esse PDF, e é ele que aparece ao visualizar e baixar. O arquivo assinado original é guardado à parte, sem se perder. Se o envelope estiver mesmo danificado, sem PDF dentro, o item mostra uma mensagem clara pedindo o PDF original, em vez de um erro genérico. Os itens que já tinham travado são reprocessados pelo time técnico. Recurso ligado por conta, aos poucos (primeiro na conta de teste).",
+      "passos": [
+        "Peça ao time técnico que ligue o recurso na sua conta de teste e que te mande um arquivo de certidão com assinatura digital (o envelope de teste).",
+        "Entre no sistema, abra uma operação de teste, a aba \"Targets\" e um target.",
+        "Em um item sem documento, clique em \"Anexar\" e envie o arquivo do envelope.",
+        "Confira que o envio termina normalmente, sem mensagem de erro.",
+        "Espere alguns segundos e confira que o item ganha a análise da IA normalmente (sem \"falha\" e sem \"IA indisponível\").",
+        "Clique em visualizar o documento: o PDF abre normalmente na tela.",
+        "Clique em baixar: o arquivo baixado abre como um PDF comum.",
+        "Em outro item, envie uma certidão PDF comum e confira que tudo funciona exatamente como antes."
+      ],
+      "esperado": "A certidão com assinatura digital é aceita, analisada pela IA e abre na visualização e no download como um PDF comum. A certidão PDF comum continua igual. Se o envelope não tiver PDF dentro, o item mostra \"Envelope assinado sem PDF legível — reenvie o PDF original\". Com o recurso desligado na conta, tudo fica exatamente como hoje."
+    },
+    {
+      "id": "Estatuto A",
+      "titulo": "Análise da IA mais justa: não reprova por dúvida e mostra todas as observações",
+      "status": "feito",
+      "desc": "Primeiro ajuste da análise da IA às regras do novo Estatuto. <b>1)</b> A IA não reprova mais um documento só porque ficou em dúvida: para reprovar, ela precisa apontar algo concreto no documento. <b>2)</b> Se um dado do target não está cadastrado (por exemplo, o CPF/CNPJ em branco), esse dado não é conferido e não reprova o documento. <b>3)</b> O painel \"Análise da IA\" passa a mostrar <b>todas</b> as observações da IA, inclusive as úteis em documentos aprovados (antes só apareciam os motivos de reprovação), sempre com dados concretos (valores, datas, quantidades). <b>4)</b> Documento ilegível (escaneado ruim, página cortada) agora aparece em <b>amarelo, \"leitura comprometida\"</b>, em vez de vermelho \"tipo incorreto\". Vale para as análises feitas a partir de agora; as antigas continuam como estavam até serem reanalisadas.",
+      "passos": [
+        "Entre no sistema, abra uma operação de teste, a aba \"Targets\" e um target.",
+        "Em um item sem documento, anexe uma certidão correta e legível do próprio target.",
+        "Espere alguns segundos e clique no selo \"IA: …\" do item para abrir o painel \"Análise da IA\".",
+        "Confira que, se a IA tiver feito alguma observação, ela aparece na lista abaixo dos 4 indicadores, mesmo com o documento aprovado.",
+        "Em outro item, anexe um documento ilegível (por exemplo, uma foto muito borrada ou uma página em branco).",
+        "Confira que o selo do item fica amarelo com o texto \"IA: leitura comprometida\" (e não vermelho \"reprovado\").",
+        "Abra o painel desse item e confira que os 4 indicadores ficam cinza (nem ✓ nem ✗) e que aparece uma observação explicando o problema de leitura."
+      ],
+      "esperado": "Documento legível e correto continua aprovado (verde), agora com as observações úteis visíveis no painel. Documento ilegível fica amarelo, \"leitura comprometida\", com a explicação. Nenhum documento é reprovado só por falta de um dado que não está cadastrado no target."
+    },
+    {
+      "id": "Estatuto B",
+      "titulo": "Validade justa: matrícula e contrato social não saem mais \"fora da validade\"",
+      "status": "feito",
+      "desc": "Segundo ajuste da análise da IA ao Estatuto. A IA agora identifica <b>que tipo de validade</b> o documento tem, sem inventar prazo: <b>1)</b> <b>validade impressa</b>: vale até a data escrita no documento; <b>2)</b> <b>sem vencimento</b>: documentos que não se atualizam (por exemplo, contrato social e atos societários) estão sempre dentro da validade; <b>3)</b> <b>validade atribuída</b>: documentos que precisam ser atualizados mas não trazem data de validade (por exemplo, matrícula de imóvel) valem <b>30 dias a partir da emissão</b>. Antes, matrícula e contrato social apareciam como \"fora da validade\" só por não terem data impressa. O painel \"Análise da IA\" sempre traz uma observação de validade dizendo em qual desses casos o documento caiu (ou \"sem data de emissão\", quando não dá para ler a data). O que antes se chamava validade \"assumida\" agora se chama \"atribuída\". Precisa da função \"validade pela IA\" ligada na conta e vale para documentos anexados a partir de agora.",
+      "passos": [
+        "Entre no sistema, abra uma operação de teste, a aba \"Targets\" e um target.",
+        "Em um item sem documento, anexe a matrícula de um imóvel emitida há poucos dias.",
+        "Espere alguns segundos e confira que a linha do item mostra \"Emitido em dd/mm/aaaa\" e o selo \"Validade atribuída\", com a data de 30 dias depois da emissão.",
+        "Clique no selo \"IA: …\" do item e confira que o indicador \"Dentro da validade\" está com ✓ e que há uma observação \"Validade atribuída: 30 dias da emissão…\".",
+        "Em outro item, anexe um contrato social (ou outro ato societário), mesmo que seja antigo.",
+        "Confira que a linha mostra o selo \"Sem vencimento\" e que, no painel \"Análise da IA\", o indicador \"Dentro da validade\" está com ✓ e há a observação \"Sem vencimento: documento de natureza permanente\".",
+        "Em um terceiro item, anexe uma certidão que tenha data de validade escrita e confira que aparece \"Válido até dd/mm/aaaa\" com a data do documento."
+      ],
+      "esperado": "Matrícula recente fica dentro da validade (\"Validade atribuída\", 30 dias da emissão). Contrato social fica dentro da validade (\"Sem vencimento\"). Certidão com data impressa segue a data do documento. Nenhum desses é reprovado por \"falta de data de validade\"."
+    },
+    {
+      "id": "Ajustes de tela 1",
+      "titulo": "Tela mais estreita, sem a etiqueta de categoria no item e \"Comentários\" escrito no rodapé",
+      "status": "feito",
+      "desc": "Três ajustes visuais. <b>1)</b> O conteúdo das telas ficou mais estreito (largura máxima menor), para não esticar até a borda em monitores grandes e ficar mais confortável no notebook. <b>2)</b> A etiqueta de categoria (CARTÓRIO, OUTRAS, AMBIENTAL…) saiu do lado esquerdo de cada item da lista; o número do item continua. A informação de categoria não foi apagada, só deixou de aparecer ali. <b>3)</b> No rodapé de cada item, o desenho do balãozinho de comentários virou a palavra <b>\"COMENTÁRIOS\"</b>, no mesmo estilo de \"APONTAMENTOS\". A contagem e a bolinha azul de comentários não lidos continuam iguais.",
+      "passos": [
+        "Entre no sistema e abra uma operação de teste, a aba \"Targets\" e um target.",
+        "Confira que o conteúdo da página não vai até a borda direita da tela em um monitor grande.",
+        "Olhe a lista de itens: à esquerda de cada item aparece só o número (#1, #2…), sem a etiqueta de categoria embaixo.",
+        "No rodapé de um item, confira que aparece \"APONTAMENTOS\" e, ao lado, a palavra \"COMENTÁRIOS\" (sem o desenho do balão).",
+        "Em um item com comentários novos, confira que a bolinha azul com o número aparece ao lado de \"COMENTÁRIOS\"."
+      ],
+      "esperado": "Telas mais estreitas, itens sem a etiqueta de categoria e o rodapé com \"APONTAMENTOS · COMENTÁRIOS\" escritos, com as contagens de antes."
+    },
+    {
+      "id": "P3",
+      "titulo": "Painel da plataforma: ligar e desligar recursos por conta, na tela",
+      "status": "feito",
+      "desc": "Até aqui, para ligar um recurso novo em uma conta (por exemplo, para testar com um cliente antes dos outros), o time técnico precisava fazer isso por fora do sistema. Agora o dono da plataforma faz isso <b>na própria tela da conta</b>, numa seção chamada \"Flags\". Cada recurso aparece com um nome em português, mostra se está ligado ou desligado naquela conta e tem três opções: <b>Ligada</b>, <b>Desligada</b> ou <b>Herdar global</b>. \"Herdar global\" faz a conta seguir o padrão do sistema, que aparece entre parênteses. Também aparece quem mudou e quando. Além disso, a lista de contas deixou de dizer \"Visão só-leitura\", porque o painel também permite fazer alterações.",
+      "passos": [
+        "Entre no sistema com o usuário dono da plataforma.",
+        "Abra o painel da plataforma e confira que o texto no topo da lista de contas não fala mais em \"só-leitura\" e menciona a gestão (nova conta, hosts, convidados e flags).",
+        "Clique na conta de teste.",
+        "Role até o fim da página e encontre a seção \"Flags\", com os grupos \"Produto (interface)\" e \"Backend / IA\".",
+        "Escolha um recurso que esteja em \"Herdar global\" e clique em \"Ligada\".",
+        "Confira que aparece uma mensagem de sucesso, que o estado ao lado passa para \"Ligada\" e que o seu nome aparece com \"agora\".",
+        "Clique em \"Desligada\" no mesmo recurso e confira que o estado passa para \"Desligada\".",
+        "Clique em \"Herdar global\" e confira que volta a mostrar \"Segue o global\".",
+        "Ao terminar, deixe o recurso como estava antes do teste."
+      ],
+      "esperado": "Cada clique mostra uma mensagem de sucesso, e a linha mostra na hora o estado novo e quem alterou. \"Herdar global\" faz a conta voltar ao padrão do sistema. A lista de contas não diz mais \"só-leitura\". Nenhuma outra parte do painel muda."
+    },
+    {
+      "id": "P4",
+      "titulo": "Painel da plataforma: convidados externos mais fáceis de achar e de remover",
+      "status": "feito",
+      "desc": "Na aba <b>Acesso externo</b> agora dá para <b>buscar</b> um convidado, operação ou conta, <b>abrir ou fechar todos</b> de uma vez e ver, sem abrir, o <b>prazo mais apertado</b> de cada convidado e se ele <b>nunca acessou</b>. Há um filtro novo, <b>Expiradas</b>. Na lista de <b>Contas</b> há o filtro <b>Não ativou</b>. Na tela da conta, a seção <b>Convidados externos</b> subiu para logo abaixo dos números do topo. E dá para <b>remover todos os acessos de um convidado</b> de uma vez, com uma caixinha de confirmação.",
+      "passos": [
+        "Entre como dono da plataforma e abra Plataforma › Acesso externo.",
+        "Digite parte do nome de um convidado na busca e veja o contador \"N de M participações\" mudar.",
+        "Clique em \"Expandir tudo\" e depois em \"Recolher tudo\".",
+        "Clique no filtro \"Expiradas\".",
+        "Num convidado de teste, clique em \"Remover todos\", marque a caixinha \"Entendo que…\" e confirme.",
+        "Vá em Plataforma › Contas e clique no filtro \"Não ativou\".",
+        "Abra uma conta que tenha convidados externos."
+      ],
+      "esperado": "A busca e os filtros reduzem a lista e o contador acompanha. Cada convidado mostra embaixo do nome o prazo mais curto (em vermelho se vence em até 7 dias) e \"nunca acessou\" quando for o caso. O botão de remover todos só funciona depois de marcar a caixinha, e o convidado some da lista. \"Não ativou\" mostra só as contas que nunca criaram operação. Na tela da conta, \"Convidados externos\" aparece logo abaixo dos números do topo."
+    },
+    {
+      "id": "P5",
+      "titulo": "Painel da plataforma: estender ou reativar o acesso de um convidado",
+      "status": "feito",
+      "desc": "Cada acesso de convidado externo agora tem, ao lado de <b>Remover</b>, o botão <b>Estender</b> (acesso ainda válido) ou <b>Reativar</b> (acesso já vencido). Ele abre uma janelinha mostrando o <b>prazo atual</b> e o <b>novo prazo</b>: mais 365 dias contados a partir de hoje. Na lista de <b>Contas</b>, ao lado do nome, aparecem os avisos <b>“N ≤ 7d”</b> (acessos que vencem nesta semana) e <b>“N expirados”</b>.",
+      "passos": [
+        "Entre como dono da plataforma e abra Plataforma › Contas.",
+        "Veja, ao lado do nome das contas que têm convidados, os avisos \"≤ 7d\" (amarelo) e \"expirados\" (vermelho), quando houver.",
+        "Abra uma conta com convidados externos.",
+        "Num convidado de teste com acesso vencido, clique em \"Reativar\", confira o prazo atual e o novo prazo e confirme.",
+        "Num convidado com acesso válido, clique em \"Estender\" e confirme.",
+        "Repita em Plataforma › Acesso externo: abra um convidado e use \"Estender\" ou \"Reativar\" na linha da operação."
+      ],
+      "esperado": "A janelinha mostra o prazo atual e a data nova (daqui a 365 dias). Depois de confirmar aparece a mensagem \"… reativado/estendido até DD/MM/AAAA\", o botão de um acesso que estava vencido passa de \"Reativar\" para \"Estender\" e a barra de prazo volta a ficar cheia. O convidado que estava vencido volta a conseguir abrir a operação."
+    },
+    {
+      "id": "Largura responsiva",
+      "titulo": "Largura das telas acompanha o tamanho do monitor",
+      "status": "feito",
+      "desc": "O conteúdo das telas agora ocupa cerca de <b>80% da largura da janela</b>, em vez de uma largura fixa. No notebook continua do mesmo tamanho de antes; num monitor grande a tela abre mais e some a faixa branca dos lados.",
+      "passos": [
+        "Abra o app num notebook e entre numa operação: a largura deve parecer igual à de antes.",
+        "Abra a mesma tela num monitor grande (ou deixe a janela do navegador bem larga).",
+        "Repare nas laterais da tela."
+      ],
+      "esperado": "No notebook nada muda. No monitor grande o conteúdo fica bem mais largo e as faixas brancas dos lados ficam pequenas."
+    },
+    {
+      "id": "IA forte para todos",
+      "titulo": "Modelo de IA mais forte ligado em todas as contas",
+      "status": "feito",
+      "desc": "A análise de IA mais cuidadosa dos documentos (a mesma testada no item C4) agora vem ligada para <b>todas as contas</b>, e não só na conta de teste. Se alguma conta tiver sido desligada de propósito, ela continua desligada.",
+      "passos": [
+        "Entre no ambiente de teste com qualquer conta (não precisa ser a conta de teste do C4).",
+        "Abra uma operação, entre em um target e anexe um documento a um item (por exemplo, uma certidão).",
+        "Espere alguns segundos até aparecer o resultado da análise da IA no item.",
+        "Abra o resultado e leia a explicação da IA."
+      ],
+      "esperado": "A análise aparece normalmente, sem erro, com a explicação mais detalhada (igual à que se via na conta de teste do C4). Pode demorar um pouco mais que antes."
+    },
+    {
+      "id": "Equipe · convite",
+      "titulo": "Aba Equipe mais simples: convite de Membros sem escolher papel e textos curtos",
+      "status": "feito",
+      "desc": "No card Membros, o convite não pede mais pra escolher o papel: todo convidado entra como Membro. Também sumiu a caixinha de trocar o papel em cada pessoa. Os textos dos cards Admins e Membros agora têm uma frase só.",
+      "passos": [
+        "Abra uma operação e clique na aba Equipe.",
+        "Veja o card Membros: ao lado do campo de email existe só o botão Convidar, sem caixinha de papel.",
+        "Nas pessoas listadas, o papel aparece só como etiqueta, sem caixinha pra trocar.",
+        "Leia o texto de cada card: Admins e Membros têm uma frase cada."
+      ],
+      "esperado": "Admins: \"Equipe do escritório que conduz esta operação. Acesso completo.\" Membros: \"Convidados externos. Veem só esta operação, enviam documentos, respondem apontamentos e comentam.\" Nenhuma caixinha de escolher papel no card Membros."
+    },
+    {
+      "id": "Validade · 5 dias",
+      "titulo": "Aviso de vencimento só nos últimos 5 dias",
+      "status": "feito",
+      "desc": "O aviso amarelo \"Vence em N dias\" agora só aparece quando faltam 5 dias ou menos para o documento vencer. Antes aparecia com até 30 dias. A faixa de aviso no topo da página do target e o botão \"Ver\" usam a mesma regra de 5 dias.",
+      "passos": [
+        "Abra uma operação e entre num target que tenha documentos com data de validade.",
+        "Procure um documento que vence daqui a 6 dias ou mais: a etiqueta dele é verde, \"Válido até dd/mm/aaaa\".",
+        "Procure um documento que vence daqui a 5 dias ou menos: a etiqueta é amarela, \"Vence em N dias\".",
+        "Veja a faixa de aviso acima da lista: ela conta os vencidos e os que \"vencem em até 5 dias\".",
+        "Clique em \"Ver\" na faixa: a lista mostra só os vencidos e os que vencem em até 5 dias."
+      ],
+      "esperado": "Documento a 6 dias: verde, fora da faixa de aviso. Documento a 5 dias: amarelo e contado na faixa. Documento vencido: vermelho, \"Vencido há N dias\"."
+    },
+    {
+      "id": "Comentários · conversa única",
+      "titulo": "Comentários do item viram uma conversa só, sem \"sobre AP-1\"",
+      "status": "feito",
+      "desc": "A aba \"Comentários\" de cada item agora é uma conversa única. Não dá mais para escolher \"Sobre: AP-1\" ao comentar, e os comentários não mostram mais a etiqueta \"sobre AP-1\". O botão \"Comentar\" que ficava dentro de cada apontamento também saiu: para comentar, use a aba Comentários. Comentários antigos continuam lá, só sem a etiqueta.",
+      "passos": [
+        "Abra uma operação, entre num target e abra um item que tenha apontamentos.",
+        "Na aba \"Apontamentos\", veja um apontamento: ele não tem mais o botão \"Comentar\" nem \"N comentários\".",
+        "Clique na aba \"Comentários\".",
+        "Veja os filtros no topo: só aparecem \"Todos\" e \"Menções a você\".",
+        "Escreva um comentário e aperte Enter."
+      ],
+      "esperado": "Nenhum texto \"sobre AP-...\" aparece na aba Comentários. Não existe o seletor \"Sobre:\" ao lado do botão Comentar. O comentário novo aparece no fim da lista, sem etiqueta."
+    },
+    {
+      "id": "Item 2 · uploads",
+      "titulo": "Vários documentos no mesmo item não se apagam mais",
+      "status": "feito",
+      "desc": "Antes, ao anexar mais de um documento num item que aceita vários arquivos, o segundo <b>tomava o lugar</b> do primeiro. Isso acontecia em dois casos: <b>1)</b> anexando um depois do outro sem fechar a janela; <b>2)</b> fechando e reabrindo a janela logo depois do primeiro envio, enquanto a IA ainda analisava. Agora cada arquivo vira <b>um documento a mais</b> no item. O botão \"Substituir\" aparece só nos itens que aceitam um único documento.",
+      "passos": [
+        "Entre no ambiente de teste, abra uma operação e entre em um target.",
+        "Escolha um item que aceite vários documentos (por exemplo, um item que você mesmo adicionou com \"Outro item\") e clique em \"Anexar\".",
+        "Na janela, escolha um primeiro PDF e clique em \"Anexar PDF\". A janela continua aberta.",
+        "Escolha um segundo PDF e clique de novo em \"Anexar PDF\". Depois clique em \"Concluir\".",
+        "Agora clique no botão \"Anexar outro\" do mesmo item, logo em seguida (sem esperar a análise da IA), e anexe um terceiro PDF."
+      ],
+      "esperado": "O item mostra \"3 PDFs\" no rodapé, e o olho abre a lista com os três arquivos. Nenhum deles sumiu. Logo depois do primeiro envio, o botão do item diz \"Anexar outro\", não \"Substituir\"."
+    },
+    {
+      "id": "Itens 10·11·15 · limpeza",
+      "titulo": "Telas de operação mais limpas: sem número mascarado, sem status e aba \"Participantes\"",
+      "status": "feito",
+      "desc": "Tiramos da tela o que não ajudava. A lista de operações não tem mais a coluna \"Status\" nem o filtro de status. Dentro da operação, sumiu o selo de status ao lado do nome (só fica o selo cinza \"Finalizada\" quando a operação já foi finalizada), a coluna \"Status\" da lista de targets e a linha com o CPF/CNPJ escondido por asteriscos (***). Esse número também saiu do topo da tela do target e da pergunta de confirmação ao remover um target. A aba \"Equipe\" da operação passou a se chamar \"Participantes\".",
+      "passos": [
+        "No menu à esquerda, clique em \"Operações\".",
+        "Confira as colunas da lista: devem ser só Operação, Targets, Progresso e Atualizado. Ao lado da busca deve haver só a caixinha \"Incluir arquivadas\", sem nenhum filtro de status.",
+        "Clique numa operação de teste. Ao lado do nome da operação não deve aparecer nenhum selo de status. Só uma operação finalizada mostra o selo cinza \"Finalizada\", ao lado do nome e também na lista de operações.",
+        "Na aba \"Targets\", confira que cada linha mostra só o nome do target, sem a linha de números com asteriscos (***), e que não existe a coluna \"Status\".",
+        "Clique num target. No topo da tela deve aparecer só o nome, sem o número com asteriscos.",
+        "Volte para a operação e confira que a aba antes chamada \"Equipe\" agora se chama \"Participantes\". Clique nela e veja que a lista de pessoas continua igual."
+      ],
+      "esperado": "Nenhuma tela de operação mostra status nem número com asteriscos, a busca e o \"Incluir arquivadas\" continuam funcionando, e a aba se chama \"Participantes\"."
+    },
+    {
+      "id": "Ficha do imóvel · 7 campos",
+      "titulo": "Ficha do imóvel só com os 7 dados que importam",
+      "status": "feito",
+      "desc": "A ficha de dados de um imóvel agora mostra só 7 informações, nesta ordem: Proprietário, Matrícula, Cartório / comarca, CCIR, NIRF / CIB, CAR e Inscrição municipal. Matrícula e Inscrição municipal são novas. Saíram Área, Ônus e gravames, Localização, Natureza, Aquisição, Georref. (SIGEF) e VTN (ITR). O que já tinha sido preenchido nesses campos não foi apagado, só não aparece mais. Quando o imóvel foi cadastrado pelo número da matrícula, o campo Matrícula já vem preenchido com esse número.",
+      "passos": [
+        "Abra uma operação que tenha um imóvel.",
+        "Clique no imóvel para abrir a tela dele.",
+        "Olhe o bloco \"Dados do target\" logo abaixo do nome.",
+        "Se o imóvel foi cadastrado pelo número da matrícula, confira o campo Matrícula.",
+        "Clique em \"Extrair via IA\" (se houver PDF anexado) e veja quais campos a IA preenche."
+      ],
+      "esperado": "Aparecem exatamente 7 campos, todos de uma vez, sem o botão \"Ver todos\": Proprietário, Matrícula, Cartório / comarca, CCIR, NIRF / CIB, CAR e Inscrição municipal. Área, Ônus, Localização, Natureza, Aquisição, SIGEF e VTN não aparecem mais. A Matrícula já vem com o número do imóvel quando ele foi cadastrado assim. A IA só preenche esses 7 campos."
+    },
+    {
+      "id": "Item 1 · vários de uma vez",
+      "titulo": "Anexar vários PDFs de uma vez no mesmo item",
+      "status": "feito",
+      "desc": "Nos itens que aceitam vários documentos, agora dá para <b>escolher ou arrastar vários PDFs de uma só vez</b>. Antes era preciso anexar um por um. Cada arquivo vira um documento a mais no item. Se algum arquivo tiver problema, o erro aparece <b>só nele</b> e os outros entram normalmente. Os itens que aceitam um único documento (como CNDT, PGFN e TRT) continuam com um PDF só e o botão \"Substituir\".",
+      "passos": [
+        "Entre no ambiente de teste, abra uma operação e entre em um target.",
+        "Escolha um item que aceite vários documentos (por exemplo, um item que você mesmo adicionou com \"Outro item\") e clique em \"Anexar\".",
+        "Na janela, clique na área pontilhada e selecione 3 PDFs de uma vez (segure Ctrl, ou Cmd no Mac, para marcar mais de um). Os 3 aparecem numa lista.",
+        "Clique em \"Anexar 3 PDFs\" e depois em \"Concluir\".",
+        "Abra outro item que aceite vários documentos e, desta vez, arraste 3 PDFs do seu computador para a área pontilhada. Depois clique em \"Anexar 3 PDFs\".",
+        "Para ver o caso de erro, repita com 2 PDFs bons e 1 arquivo que não seja PDF (por exemplo, um .txt renomeado para .pdf)."
+      ],
+      "esperado": "Nos dois primeiros itens aparece \"3 PDFs\" no rodapé, e o olho abre os três arquivos. A aba Extrato mostra um evento para cada arquivo. No caso de erro, só o arquivo ruim fica na janela, com a mensagem em vermelho embaixo dele, e os outros 2 entram no item. Num item de documento único, como CNDT, só dá para escolher um arquivo."
+    },
+    {
+      "id": "Item 3 · responder apontamento",
+      "titulo": "Responder um apontamento com vários PDFs e o texto, de uma vez só",
+      "status": "feito",
+      "desc": "O cartão do apontamento agora tem um botão <b>\"Responder\"</b>. Ele abre a mesma janela usada para anexar documentos no item. Nela dá para <b>arrastar ou escolher vários PDFs</b> e <b>escrever a resposta</b>, e tudo é enviado num clique só. A resposta vira uma <b>lista de documentos</b>, cada um com o nome de quem enviou. Para trocar um documento, o administrador tira esse documento da lista e alguém responde de novo. Cada resposta aparece na aba <b>Extrato</b>, com quem fez e o que foi enviado.",
+      "passos": [
+        "Entre no ambiente de teste, abra uma operação e entre em um target.",
+        "Em um item que tenha apontamentos, abra a área \"Apontamentos e comentários\".",
+        "Num apontamento ainda em aberto, clique em \"Responder\". A janela abre na hora.",
+        "Arraste 2 ou 3 PDFs do seu computador para a área pontilhada e escreva um texto no campo \"Resposta formal\".",
+        "Clique no botão de envio, que mostra quantos PDFs vão (por exemplo, \"Anexar 2 PDFs com resposta\").",
+        "Abra a aba \"Extrato\" da operação."
+      ],
+      "esperado": "A janela fecha e o apontamento fica marcado como resolvido, com todos os PDFs listados (cada um com o nome de quem enviou) e o texto logo abaixo. No Extrato aparece uma linha \"Apontamento respondido com 2 PDFs e texto\" com o seu nome. Se um dos arquivos não for um PDF de verdade, nada é enviado e o erro aparece em vermelho embaixo desse arquivo; é só tirá-lo da lista e enviar de novo."
+    },
+    {
+      "id": "Itens 4·6·8 · farol da IA",
+      "titulo": "Análise da IA com três cores: Aprovado, Atenção e Reprovado",
+      "status": "feito",
+      "desc": "A análise da IA de cada documento agora segue o Estatuto. A <b>própria IA escolhe a cor</b> lendo o conteúdo: <b>Aprovado</b> (verde, sem ressalva), <b>Atenção</b> (amarelo, ressalva sem risco imediato) ou <b>Reprovado</b> (vermelho, risco para a operação). A IA julga pela <b>função</b> do documento, não pelo título: uma certidão que cobre o que o item pede é aceita mesmo com outro nome. Documento sem data de validade impressa vale <b>30 dias</b> a partir da emissão e não é mais reprovado só por isso. Documento ilegível vira <b>Atenção</b> com a explicação, e o selo \"leitura comprometida\" deixou de existir. O quadro da análise mostra <b>três verificações</b> (Item, Target, Validade) e, abaixo, <b>tópicos curtos</b> com um título em negrito e o dado concreto, sempre com um tópico de <b>Validade</b>. Documentos analisados antes desta mudança continuam com a análise antiga até serem enviados de novo.",
+      "passos": [
+        "Entre no ambiente de teste, abra uma operação e entre em um target.",
+        "Num item, anexe uma certidão negativa (\"nada consta\") do próprio target e espere alguns segundos.",
+        "Veja o selo ao lado do item e clique nele para abrir a \"Análise da IA\".",
+        "Em outro item, anexe uma certidão com algum apontamento (por exemplo, protesto ou débito) ou uma certidão de outra empresa.",
+        "Em outro item, anexe uma matrícula de imóvel emitida há mais de 30 dias.",
+        "Abra a \"Análise da IA\" de cada um."
+      ],
+      "esperado": "A certidão negativa aparece como \"IA: Aprovado\" (verde), com as três verificações marcadas e o tópico \"Validade\" dizendo até quando vale. A certidão com apontamento ou de outra empresa aparece como \"IA: Reprovado\" (vermelho), com um tópico em negrito que diz o que foi encontrado (por exemplo, \"Protestos identificados: 2 protestos, somando R$ ...\" ou o CNPJ de outra empresa). A matrícula antiga aparece como \"IA: Reprovado\", com o tópico \"Validade\" dizendo que venceu. Nenhum selo diz \"leitura comprometida\"."
+    }
+  ]
 }

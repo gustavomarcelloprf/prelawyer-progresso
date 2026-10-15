@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "14 de outubro de 2026",
+  "atualizado_em": "15 de outubro de 2026",
   "itens": [
     {
       "id": "#23",
@@ -803,6 +803,20 @@
         "Abra a \"Análise da IA\" de cada um."
       ],
       "esperado": "A certidão negativa aparece como \"IA: Aprovado\" (verde), com as três verificações marcadas e o tópico \"Validade\" dizendo até quando vale. A certidão com apontamento ou de outra empresa aparece como \"IA: Reprovado\" (vermelho), com um tópico em negrito que diz o que foi encontrado (por exemplo, \"Protestos identificados: 2 protestos, somando R$ ...\" ou o CNPJ de outra empresa). A matrícula antiga aparece como \"IA: Reprovado\", com o tópico \"Validade\" dizendo que venceu. Nenhum selo diz \"leitura comprometida\"."
+    },
+    {
+      "id": "Item 5 · análise por item",
+      "titulo": "A IA analisa todos os documentos do item juntos e dá um veredito só",
+      "status": "feito",
+      "desc": "Quando um item tem <b>mais de um documento</b> anexado (por exemplo, duas certidões do mesmo tipo enviadas em datas diferentes), a IA agora lê <b>todos juntos</b>, em ordem de envio, e dá <b>um único veredito</b> para o item. Um documento mais novo pode <b>esclarecer ou superar</b> um mais antigo: uma certidão positiva seguida de uma negativa mais recente deixa de ser \"Reprovado\" e passa a trazer um tópico dizendo o que foi resolvido e por qual documento. A validade mostrada é a do <b>documento mais recente</b>. Anexar, substituir ou remover um documento faz a IA reanalisar o item inteiro. Os textos dos tópicos ficaram mais <b>diretos</b>: frases curtas, um dado por tópico, sem travessões. Se um item tiver muitos documentos (mais de 10, ou muito pesados), a IA analisa só os mais recentes e avisa num tópico \"Conjunto truncado\".",
+      "passos": [
+        "Entre no ambiente de teste, abra uma operação e entre em um target.",
+        "Em um item que aceita vários documentos (por exemplo, um item \"Outro item\"), anexe uma certidão com algum apontamento (protesto, débito ou processo) e espere a análise.",
+        "No mesmo item, use \"Anexar outro\" e envie uma certidão mais recente, negativa, do mesmo tipo e do mesmo target.",
+        "Espere alguns segundos e clique no selo \"IA: …\" do item para abrir a \"Análise da IA\".",
+        "Remova um dos dois documentos pelo visualizador (ícone do olho) e abra a análise de novo."
+      ],
+      "esperado": "Depois do segundo documento, o item mostra UM selo só (não um por documento). A análise fala dos dois documentos (\"documento 1\", \"documento 2\"), o veredito deixa de ser \"Reprovado\" e um tópico diz que o apontamento foi superado pela certidão mais recente. O tópico \"Validade\" usa a data do documento mais novo. Os textos são curtos e sem travessão. Ao remover um documento, a análise é refeita só com o que ficou."
     }
   ]
 }

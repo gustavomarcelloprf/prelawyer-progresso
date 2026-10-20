@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Plano das 4 Frentes DueHub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f6f6f4; --surface:#ffffff; --alt:#efefec; --border:#e2e2de; --border-strong:#cfcfca;
+  --text:#1b1b1a; --text2:#55554f; --muted:#7a7a73; --ink:#2f2f2c;
+  --gate:#a9524a;  --gate-bg:#f7ecea;
+  --spine:#9a6634; --spine-bg:#f6eee5;
+  --infos:#4c63ad; --infos-bg:#eceff8;
+  --agent:#6f5aa8; --agent-bg:#f0edf7;
+  --upl:#3f7f62;   --upl-bg:#e9f3ee;
+  --asst:#2f7480;  --asst-bg:#e7f2f3;
+  --you:#86743a;   --you-bg:#f5f1e3;
+  --qa:#666661;    --qa-bg:#efefec;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:20px;padding-block:32px 56px}
+h1{font-size:clamp(24px,3.6vw,32px);line-height:1.15;letter-spacing:-.02em;margin:0 0 8px;font-weight:700;text-wrap:balance}
+.lede{color:var(--text2);max-width:70ch;margin:0}
+h2{font-size:18px;margin:0 0 4px;font-weight:650}
+.sub{color:var(--text2);margin:0 0 14px;font-size:14px;max-width:80ch}
+section{padding-top:34px}
+
+.ms-line{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));border:1px solid var(--border);border-radius:10px;background:var(--surface);overflow:hidden;margin-top:22px}
+.ms{padding:12px 14px;border-right:1px solid var(--border)}
+.ms:last-child{border-right:0}
+.ms .dt{font-size:13px;font-weight:650;font-variant-numeric:tabular-nums;color:var(--ink)}
+.ms .t{font-size:13px;color:var(--text2);margin-top:2px;line-height:1.3}
+.ms.prod{background:var(--upl-bg)}
+.ms.prod .dt{color:var(--upl)}
+
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--text2);margin-bottom:12px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:3px;background:var(--cb);border-left:3px solid var(--c)}
+
+.cal{display:grid;gap:14px}
+.week{border:1px solid var(--border);border-radius:12px;background:var(--surface);overflow:hidden}
+.week>header{padding:9px 14px;background:var(--alt);border-bottom:1px solid var(--border);font-size:13px;color:var(--text2)}
+.week>header b{color:var(--text);margin-right:8px}
+.days{display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+.day{border-right:1px solid var(--border);padding:10px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.day:last-child{border-right:0}
+.dh{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}
+.dw{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.dn{font-weight:650;font-size:15px;font-variant-numeric:tabular-nums}
+.tag-hoje{font-size:10.5px;font-weight:600;color:#fff;background:var(--ink);border-radius:4px;padding:1px 6px}
+.day.off{background:repeating-linear-gradient(135deg,transparent 0 7px,var(--alt) 7px 8px)}
+.offt{font-size:13px;color:var(--muted)}
+.card{all:unset;box-sizing:border-box;display:block;width:100%;cursor:pointer;border-left:3px solid var(--c);background:var(--cb);border-radius:6px;padding:6px 8px;font-size:12.5px;line-height:1.3;color:var(--text);transition:box-shadow .12s, transform .12s}
+.card:hover{box-shadow:0 0 0 1px var(--c);transform:translateY(-1px)}
+.card:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.card .who{display:block;font-size:10.5px;font-weight:600;color:var(--c);letter-spacing:.02em;margin-bottom:1px}
+.mark{font-size:12px;font-weight:600;display:flex;gap:6px;align-items:center;color:var(--ink);padding-top:2px}
+.mark::before{content:"";width:7px;height:7px;transform:rotate(45deg);background:var(--ink);flex:none}
+.mark.prod{color:var(--upl)}
+.mark.prod::before{background:var(--upl)}
+.f-gate{--c:var(--gate);--cb:var(--gate-bg)} .f-spine{--c:var(--spine);--cb:var(--spine-bg)}
+.f-infos{--c:var(--infos);--cb:var(--infos-bg)} .f-agent{--c:var(--agent);--cb:var(--agent-bg)}
+.f-upl{--c:var(--upl);--cb:var(--upl-bg)} .f-asst{--c:var(--asst);--cb:var(--asst-bg)}
+.f-you{--c:var(--you);--cb:var(--you-bg)} .f-qa{--c:var(--qa);--cb:var(--qa-bg)}
+@media (max-width:820px){
+  .days{grid-template-columns:minmax(0,1fr)}
+  .day{border-right:0;border-bottom:1px solid var(--border)}
+  .day:last-child{border-bottom:0}
+}
+
+.need{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.need li{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 16px;display:grid;grid-template-columns:90px minmax(0,1fr);gap:4px 14px}
+.need .when{font-size:12.5px;font-weight:600;color:var(--ink)}
+.need .q{font-weight:600}
+.need .r{grid-column:2;font-size:14px;color:var(--text2)}
+@media (max-width:560px){.need li{grid-template-columns:minmax(0,1fr)}.need .r{grid-column:1}}
+
+dialog{border:0;border-radius:14px;padding:0;max-width:min(520px,calc(100vw - 32px));width:100%;box-shadow:0 20px 50px rgba(0,0,0,.18);background:var(--surface);color:var(--text)}
+dialog::backdrop{background:rgba(20,20,18,.35)}
+.dlg-top{padding:16px 20px 12px;border-bottom:1px solid var(--border);border-top:4px solid var(--c);border-radius:14px 14px 0 0}
+.dlg-meta{font-size:12px;font-weight:600;color:var(--c);letter-spacing:.02em}
+.dlg-title{font-size:18px;font-weight:650;margin:4px 0 0;line-height:1.3}
+.dlg-body{padding:14px 20px 4px;display:grid;gap:12px}
+.dlg-body h3{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 3px;font-weight:600}
+.dlg-body p{margin:0;font-size:14.5px}
+.dlg-foot{padding:14px 20px 18px;display:flex;justify-content:flex-end}
+.btn{font:inherit;font-size:14px;font-weight:600;background:var(--ink);color:#fff;border:0;border-radius:8px;padding:8px 16px;cursor:pointer}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--border);font-size:12.5px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+<header>
+  <h1>Plano das 4 frentes do DueHub</h1>
+  <p class="lede">InfoSimples, agente emissor, assistente global e upload geral. Seis CLIs trabalham ao mesmo tempo. Tudo fica pronto em staging em <b>03/11</b> e vai para produção em <b>06/11</b>, desligado, para ligarmos só na conta piloto.</p>
+  <div class="ms-line">
+    <div class="ms prod"><div class="dt">26/10</div><div class="t">Segurança e LGPD em produção</div></div>
+    <div class="ms"><div class="dt">27/10</div><div class="t">Base de anexo e fila</div></div>
+    <div class="ms"><div class="dt">28/10</div><div class="t">Upload geral</div></div>
+    <div class="ms"><div class="dt">29/10</div><div class="t">Assistente</div></div>
+    <div class="ms"><div class="dt">30/10</div><div class="t">InfoSimples</div></div>
+    <div class="ms"><div class="dt">03/11</div><div class="t">Agente emissor</div></div>
+    <div class="ms prod"><div class="dt">06/11</div><div class="t">Tudo em produção</div></div>
+  </div>
+</header>
+
+<section>
+  <h2>Calendário</h2>
+  <p class="sub">Clique em qualquer card para ver, em linguagem simples, o que ele significa. C1 a C6 são os seis CLIs; "(1/2)" quer dizer primeiro de dois dias na mesma tarefa.</p>
+  <div class="legend" id="legend"></div>
+  <div class="cal" id="cal"></div>
+</section>
+
+<section>
+  <h2>O que precisa de você</h2>
+  <ul class="need">
+    <li><span class="when">Até 20/10</span><span class="q">Confirmar as decisões do dia 1</span><span class="r">InfoSimples emite sozinha ao criar a operação; o agente nunca resolve captcha, login ou pagamento; o assistente é só para a equipe interna; o teto de gasto com IA é ajustado ao novo uso.</span></li>
+    <li><span class="when">Todo dia</span><span class="q">Revisar e aprovar ~6 PRs</span><span class="r">É o que define a velocidade. Sugestão: três janelas fixas (11h, 15h, 18h).</span></li>
+    <li><span class="when">Até 03/11</span><span class="q">Definir quem atende a fila "Precisa de humano"</span><span class="r">Certidões que o agente não consegue emitir caem nessa fila.</span></li>
+    <li><span class="when">Até 06/11</span><span class="q">Assinar o contrato de dados (DPA) com InfoSimples e Anthropic</span><span class="r">Sem ele, InfoSimples e agente vão para produção mas continuam desligados.</span></li>
+  </ul>
+</section>
+
+<footer>Atualizado em 20/10/2026.</footer>
+</div>
+
+<dialog id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg-top" id="dlg-top">
+    <div class="dlg-meta" id="dlg-meta"></div>
+    <h2 class="dlg-title" id="dlg-title"></h2>
+  </div>
+  <div class="dlg-body">
+    <div><h3>O que é</h3><p id="dlg-oque"></p></div>
+    <div><h3>Por que importa</h3><p id="dlg-porque"></p></div>
+    <div><h3>Pronto quando</h3><p id="dlg-pronto"></p></div>
+  </div>
+  <div class="dlg-foot"><button class="btn" id="dlg-close" type="button">Fechar</button></div>
+</dialog>
+
+<script>
+const F={gate:["Segurança e base","f-gate"],spine:["Anexo e fila","f-spine"],infos:["InfoSimples","f-infos"],agent:["Agente emissor","f-agent"],upl:["Upload geral","f-upl"],asst:["Assistente","f-asst"],you:["Você e coordenação","f-you"],qa:["Testes e entregas","f-qa"]};
+
+// k: [frente, título, o que é, por que importa, pronto quando]
+const T={
+ decid:["you","Decisões do dia 1","Você confirma as regras que guiam o trabalho: o que a InfoSimples emite sozinha, até onde vai o agente, quem usa o assistente e quanto podemos gastar com IA.","Os CLIs começam amanhã e precisam dessas respostas para não construir na direção errada.","As decisões estão registradas e os CLIs recebem as instruções."],
+ prompts:["you","Preparar os 6 CLIs","A coordenação escreve as instruções de cada CLI: o que fazer, em que ordem e quais arquivos são dele.","Seis CLIs no mesmo código precisam de divisão clara para não pisarem um no outro.","Cada CLI tem seu roteiro e sua pasta de trabalho separada."],
+ p0:["you","Combinar as peças (contratos)","Um primeiro PR que define nomes, formatos e chaves liga/desliga que todas as frentes vão usar.","Com o combinado pronto, os CLIs trabalham em paralelo sem esperar uns pelos outros.","O PR está aprovado e todos os CLIs partem dele."],
+ ci:["gate","Testes automáticos","Os testes automáticos de cada mudança passam a rodar na nossa própria máquina.","Com 6 CLIs trabalhando ao mesmo tempo, os testes garantem que uma mudança não quebra outra.","Toda mudança mostra os testes passando antes de ser aprovada."],
+ l01:["gate","Revisão de segurança das telas antigas","Revisar telas antigas do sistema para garantir que cada uma confere a conta de quem acessa.","Segurança e LGPD vêm antes de qualquer emissão automática.","Todas as rotas verificam a conta de quem pede, com teste que garante isso."],
+ escopo:["gate","Cada um vê só o que pode","Reforçar a regra que decide quais operações cada usuário enxerga.","O assistente vai responder sobre \"todas as suas operações\". Essa regra precisa estar impecável antes.","Testes garantem que cada usuário só vê as operações às quais tem acesso."],
+ toggle:["gate","Liga/desliga de IA por conta","Uma chave no painel para desligar a IA de um cliente específico.","As minutas de LGPD prometem que o cliente pode desligar a IA. Hoje só existe um desliga geral.","Com a chave desligada, nenhuma função de IA roda para aquela conta."],
+ teto:["gate","Custo por frente e teto mensal","Registrar quanto cada função gasta de IA (análise, assistente, upload, agente) e ajustar o teto mensal.","Com novas funções usando IA, o teto precisa acompanhar o uso para nada parar no meio do mês.","O painel mostra o gasto separado por função e o teto novo está valendo."],
+ logs:["gate","Registros protegidos + staging atualizado","Os registros internos do servidor passam a mascarar dados pessoais, e o ambiente de testes é atualizado para a versão mais nova.","Proteção de dados pessoais e testes manuais confiáveis.","Registros sem dados pessoais e staging na versão mais recente."],
+ promo0:["qa","Levar segurança e LGPD para produção","As correções dos últimos dias são publicadas no sistema real.","Precisam estar em produção antes de qualquer frente nova ser ligada lá.","Produção roda a versão com as correções."],
+ e1:["spine","Peça única de anexar documento","Hoje a lógica de anexar um PDF está escrita dentro da tela de upload. Vamos separá-la numa peça que todas as frentes reutilizam.","InfoSimples, agente e upload geral precisam anexar documentos do mesmo jeito que o usuário anexa. Para o usuário nada muda.","O upload de hoje funciona igual, agora usando a peça nova."],
+ e2:["spine","Saber quem trouxe cada documento","Cada documento passa a guardar sua origem — usuário, InfoSimples, agente ou upload geral — e mostra um selo.","Quem revisa precisa saber se o PDF veio de uma pessoa ou de um robô.","O item mostra \"via InfoSimples\", \"via agente\" etc. e o Extrato registra a origem."],
+ e3:["spine","Fila de emissão","Uma lista de pedidos que o sistema processa sozinho, em segundo plano. Se o servidor reiniciar, nada se perde e nada é cobrado duas vezes.","É o motor que a InfoSimples e o agente usam para trabalhar sem ninguém clicar.","Um pedido de teste entra na fila, é processado e o documento aparece no item certo."],
+ i1:["infos","Conector da InfoSimples","Trazer o código que já conversa com a InfoSimples, já testado no projeto do emissor.","Reaproveitar o que funciona é mais rápido e seguro que escrever do zero.","O conector responde corretamente nos testes, sem gastar créditos."],
+ i3:["infos","Teto de gasto com emissão","Um limite mensal, por conta, do quanto pode ser gasto com a InfoSimples.","Cada consulta custa dinheiro. O teto evita surpresa na fatura.","Ao atingir o teto, os pedidos param e o sistema avisa."],
+ i5:["infos","Status da emissão no item","O item passa a mostrar \"Emitindo…\", \"Emitido automaticamente\", \"Falhou — anexe manualmente\" ou \"Sem cobertura\".","O usuário precisa saber o que o sistema está fazendo por ele e o que sobrou para ele.","Os quatro estados aparecem no item, com botão \"Tentar de novo\"."],
+ parciais:["infos","Certidões que pedem mais dados","PGFN de pessoa física, TSE e Receita PF precisam de dados da ficha (nascimento, nome da mãe). TJSP e TJRJ levam duas etapas.","Aumenta a quantidade de certidões emitidas sozinhas, além das 10 da primeira leva.","Essas certidões saem automaticamente quando a ficha do target está preenchida."],
+ i2:["infos","InfoSimples automática ao criar a operação","Ligar o conector à fila: ao criar uma operação, o sistema pede sozinho as certidões que a InfoSimples cobre.","É a entrega principal da frente: menos trabalho manual em cada operação.","Criar uma operação de teste gera os pedidos e os PDFs aparecem nos itens certos."],
+ i4:["infos","Reaproveitar certidão válida","Se a mesma conta já tem uma certidão válida do mesmo CPF/CNPJ, ela é reaproveitada em vez de comprada de novo.","Economiza dinheiro sem perder validade. Nunca entre contas diferentes.","Uma segunda operação com o mesmo CNPJ não gera cobrança nova."],
+ i6:["infos","Teste real da InfoSimples","Emitir de verdade algumas certidões em staging usando os R$ 100 de crédito de avaliação.","Os testes anteriores usam respostas simuladas; este confirma o comportamento real.","CNDT, PGFN e IBAMA chegam como PDF válido no item certo."],
+ a4:["agent","Teste do agente no Claude Console","Criar o agente emissor no Claude Console e testar se ele consegue abrir os portais de certidão (Receita, TST, tribunais).","Muitos sites do governo só aceitam acesso a partir do Brasil. Esse teste decide se o agente roda direto no Console ou precisa de um executor no Brasil.","Sabemos quais portais abrem pelo Console e quais precisam do executor no Brasil."],
+ a5:["agent","Instruções do agente","Passar para o agente do Console as instruções de cada portal que já tínhamos escrito, e as regras: nunca resolver captcha, fazer login, usar certificado ou pagar.","É o que faz o agente saber o que fazer em cada site e onde parar.","O agente segue as instruções e para com \"precisa de humano\" quando encontra barreira."],
+ a6:["agent","Piloto do agente no Console","O agente do Console emite sozinho um tipo de certidão de um portal sem captcha nem login.","Prova que o caminho funciona antes de expandir para outros portais.","Uma certidão real é emitida pelo agente do Console e passa na verificação de PDF."],
+ a1:["agent","Ligar o DueHub ao Claude Console","A fila de emissão passa a mandar pedidos ao agente do Console, acompanha cada um e, quando o PDF fica pronto, anexa no item certo.","É a ponte entre o DueHub e o agente. Sem servidor intermediário: o próprio DueHub conversa com a Anthropic.","Um pedido criado no DueHub vira uma emissão no Console e o PDF volta para o item."],
+ a2:["agent","Botão \"Pedir ao agente\"","Nos itens que a InfoSimples não cobre, aparece um botão para mandar o pedido ao agente, com selo de acompanhamento.","Dá ao usuário controle sobre o que vai para o agente no começo.","Clicar no botão cria o pedido e o selo mostra \"Na fila do agente\"."],
+ a3:["agent","Fila \"Precisa de humano\"","Uma lista, por operação, das certidões que o agente não conseguiu emitir, com o motivo e quem assumiu.","Captcha, login e pagamento continuam exigindo uma pessoa. A fila organiza esse trabalho.","Alguém assume o item, anexa o PDF e o pedido some da fila."],
+ agstg:["agent","Agente do Console ligado em staging","Rodar o fluxo completo em staging com o agente real do Console.","Confirma que tudo funciona fora do ambiente de teste.","Um pedido feito no staging é emitido pelo agente e volta para o item certo."],
+ u1:["upl","Classificador de arquivos","Lê o arquivo enviado e descobre de qual target e de qual certidão ele é (pelo CPF/CNPJ/matrícula e pela IA).","É o que permite soltar vários arquivos de uma vez sem escolher destino um por um.","Arquivos de teste são classificados no destino certo."],
+ u2:["upl","Lista de destinos","Uma lista compacta dos targets e certidões da operação, para o classificador e para o usuário escolher.","Sem ela, a tela teria que buscar target por target.","A lista aparece completa e rápida em operações grandes."],
+ u3:["upl","Caixa de upload na aba Targets","A faixa \"solte arquivos aqui\" no topo da aba Targets, com a fila mostrando a análise de cada arquivo.","É a entrada da frente, como no protótipo aprovado.","Soltar arquivos mostra a fila analisando."],
+ u4:["upl","Revisão e confirmação","O usuário vê o destino sugerido de cada arquivo, corrige se quiser e confirma. Nada é anexado antes disso.","Mantém a decisão final com a pessoa.","Confirmar anexa cada arquivo no lugar certo; conflitos aparecem na própria linha."],
+ u5:["upl","Destino \"Outro\"","Quando o arquivo não casa com nenhuma certidão, dá para criar um item \"Outro\" com o nome sugerido.","Evita arquivo sem lugar.","O item novo é criado e o arquivo anexado nele."],
+ u6:["upl","Testes de tela do upload","Testes automáticos que simulam um usuário usando a caixa do começo ao fim.","Garante que mudanças futuras não quebrem o fluxo.","Os testes passam no CI."],
+ u7:["upl","Lote salvo no servidor","Os arquivos enviados ficam guardados até a confirmação, mesmo se a página recarregar.","No MVP, recarregar a página perde o lote.","Recarregar a página mantém os arquivos e as sugestões."],
+ g1:["asst","Guardar conversas","Onde o sistema salva as conversas com o assistente, para continuar depois.","Sem isso, cada pergunta começa do zero.","As conversas aparecem na lista e podem ser retomadas ou apagadas."],
+ g2:["asst","Ferramentas de consulta","As \"perguntas\" que o assistente sabe fazer ao sistema: operações, pendências, vencimentos, onde está um target, por que a IA reprovou.","É o que permite respostas com dados reais, sempre limitadas ao que o usuário pode ver.","Cada ferramenta tem teste mostrando que não vaza dado de outra operação ou conta."],
+ g3:["asst","O cérebro do assistente","A parte que conversa com a IA, decide quais consultas fazer e monta a resposta com links para a fonte.","Junta as ferramentas numa conversa útil, com controle de custo.","Perguntas como \"o que falta na operação X?\" voltam certas e com fonte."],
+ g4:["asst","Painel do assistente (⌘J)","O painel lateral que abre de qualquer tela, com a operação atual como contexto.","É como o usuário vai usar o assistente no dia a dia, conforme o protótipo aprovado.","O atalho abre o painel em qualquer tela e as respostas linkam para itens."],
+ g5:["asst","Página do assistente","Uma página só para o assistente, com histórico, respostas aparecendo aos poucos e limpeza automática de conversas antigas.","Respostas longas sem espera e conversas que não ficam guardadas para sempre (LGPD).","Página no ar, texto aparecendo em tempo real e conversas com mais de 90 dias apagadas."],
+ g6:["asst","Ações com confirmação","O assistente sugere uma ação (ex.: criar apontamento) e só executa quando o usuário clica em Confirmar.","Útil sem tirar o controle do usuário.","A ação sugerida só acontece depois do clique."],
+ g7:["asst","Pedir emissão pelo assistente","O assistente também pode sugerir \"emitir esta certidão\" ou \"reaproveitar este documento em outra operação\".","Junta o assistente às frentes de emissão.","A sugestão confirmada cria o pedido na fila."],
+ smoke:["qa","Teste de ponta a ponta","Roda os fluxos novos em staging como um usuário faria.","Pega problemas que os testes isolados não pegam.","Os fluxos passam sem erro em staging."],
+ revisao:["qa","Revisão cruzada","Um CLI revisa o trabalho dos outros antes da aprovação.","Uma segunda leitura pega erros e conflitos entre frentes.","Os PRs do dia têm revisão registrada."],
+ qa:["qa","Conferir em staging","Testar à mão a frente que acabou de chegar em staging.","Confirma que o que foi entregue faz o que o protótipo prometia.","A frente funciona na conta piloto de staging."],
+ promo:["qa","Levar para produção (desligado)","Publicar o que está pronto no sistema real, com as chaves desligadas.","Deixa tudo pronto em produção para ligar na conta piloto quando quisermos.","Produção roda a nova versão e nada muda para os clientes."],
+ regressao:["qa","Teste geral","Repassar todas as telas principais para ver se nada antigo quebrou.","Muitas mudanças em pouco tempo aumentam o risco de quebrar algo existente.","Fluxos antigos e novos funcionam em staging."],
+ fix:["qa","Correções","Resolver o que os testes e a conferência encontraram.","Antes de levar para produção, staging precisa estar limpo.","Nenhum problema aberto bloqueando a entrega."],
+ checklist:["you","Checklist da entrega","Conferir item por item o que vai para produção.","Evita esquecer migração, configuração ou chave.","Checklist completo e aprovado."],
+ piloto:["you","Ligar na conta piloto","Ligar as frentes em produção só para a conta piloto. InfoSimples e agente só com o contrato de dados assinado.","Testar com uso real e controlado antes de abrir para todos.","A conta piloto usa as frentes novas."],
+ monitor:["qa","Acompanhar o piloto","Olhar custo, erros e fila humana durante o uso real.","Ajustar antes de liberar para mais contas.","Custo e erros dentro do esperado."],
+ fecha:["you","Fechamento","Revisar o piloto e decidir os próximos passos.","Define quando liberar para outros clientes.","Próximas etapas combinadas."]
+};
+
+const W=[
+ ["Semana 1","Segurança, base e início de todas as frentes",[
+  ["seg","19/10",{},[["Você","decid"],["Coordenação","prompts"]]],
+  ["ter","20/10",{hoje:1},[["Coordenação","p0"],["C1","ci"],["C2","e1","(1/2)"],["C3","i1"],["C4","a4","(1/2)"],["C5","u1"],["C6","escopo"]]],
+  ["qua","21/10",{},[["C1","l01"],["C2","e1","(2/2)"],["C3","teto"],["C4","a4","(2/2)"],["C5","u2"],["C6","g1"]]],
+  ["qui","22/10",{},[["C1","toggle"],["C2","e2"],["C3","i3"],["C4","a5"],["C5","u3"],["C6","g2","(1/2)"]]],
+  ["sex","23/10",{},[["C1","logs"],["C2","e3","(1/3)"],["C3","i5","(1/2)"],["C4","a6","(1/3)"],["C5","u4","(1/2)"],["C6","g2","(2/2)"]]]
+ ]],
+ ["Semana 2","Base pronta; upload, assistente e InfoSimples chegam a staging",[
+  ["seg","26/10",{marks:[["prod","Segurança e LGPD em produção"]]},[["C1","promo0"],["C2","e3","(2/3)"],["C3","i5","(2/2)"],["C4","a6","(2/3)"],["C5","u4","(2/2)"],["C6","g3","(1/2)"]]],
+  ["ter","27/10",{marks:[["","Base de anexo e fila"]]},[["C1","revisao"],["C2","e3","(3/3)"],["C3","parciais"],["C4","a6","(3/3)"],["C5","u5"],["C6","g3","(2/2)"]]],
+  ["qua","28/10",{marks:[["","Upload geral em staging"]]},[["C1","qa"],["C2","a1","(1/2)"],["C3","i2"],["C4","g5","(1/2)"],["C5","u6"],["C6","g4","(1/2)"]]],
+  ["qui","29/10",{marks:[["","Assistente em staging"]]},[["C1","smoke"],["C2","a1","(2/2)"],["C3","i4"],["C4","g5","(2/2)"],["C5","u7","(1/2)"],["C6","g4","(2/2)"]]],
+  ["sex","30/10",{marks:[["","InfoSimples em staging"],["prod","Base, upload e assistente em produção"]]},[["C1","promo"],["C2","a2"],["C3","i6"],["C4","parciais"],["C5","u7","(2/2)"],["C6","g6","(1/2)"]]]
+ ]],
+ ["Semana 3","Agente fecha e tudo vai para produção",[
+  ["seg","02/11",{off:"Feriado (Finados)"},[]],
+  ["ter","03/11",{marks:[["","Agente em staging"]]},[["C1","regressao"],["C2","a3"],["C3","parciais"],["C4","parciais"],["C5","g7","(1/2)"],["C6","g6","(2/2)"]]],
+  ["qua","04/11",{},[["C1","smoke"],["C2","agstg"],["C5","g7","(2/2)"],["Todos","fix"]]],
+  ["qui","05/11",{},[["Todos","fix"],["Coordenação","checklist"]]],
+  ["sex","06/11",{marks:[["prod","Tudo em produção, desligado"]]},[["C1","promo"]]]
+ ]],
+ ["Semana 4","Piloto em produção e folga para ajustes",[
+  ["seg","09/11",{},[["Você","piloto"]]],
+  ["ter","10/11",{},[["Todos","monitor"]]],
+  ["qua","11/11",{},[["Todos","fix"]]],
+  ["qui","12/11",{},[["Todos","fix"]]],
+  ["sex","13/11",{},[["Coordenação","fecha"]]]
+ ]]
+];
+
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+document.getElementById("legend").innerHTML=Object.values(F).map(([n,c])=>`<span class="${c}"><i></i>${n}</span>`).join("");
+document.getElementById("cal").innerHTML=W.map(([t,s,days])=>`
+ <div class="week"><header><b>${t}</b>${s}</header><div class="days">${days.map(([w,d,o,items])=>`
+  <div class="day${o.off?" off":""}">
+   <div class="dh"><span class="dw">${w}</span><span class="dn">${d}</span>${o.hoje?'<span class="tag-hoje">hoje</span>':""}</div>
+   ${o.off?`<div class="offt">${o.off}</div>`:""}
+   ${items.map(([who,k,part])=>{const x=T[k];return `<button type="button" class="card ${F[x[0]][1]}" data-k="${k}" data-who="${esc(who)}" data-d="${d}" data-part="${part||""}"><span class="who">${esc(who)}</span>${esc(x[1])}${part?" "+part:""}</button>`}).join("")}
+   ${(o.marks||[]).map(([c,t])=>`<div class="mark ${c}">${t}</div>`).join("")}
+  </div>`).join("")}</div></div>`).join("");
+
+const dlg=document.getElementById("dlg");
+document.getElementById("cal").addEventListener("click",e=>{
+  const b=e.target.closest(".card"); if(!b) return;
+  const x=T[b.dataset.k], f=F[x[0]];
+  document.getElementById("dlg-top").className="dlg-top "+f[1];
+  document.getElementById("dlg-meta").textContent=`${f[0]} · ${b.dataset.who} · ${b.dataset.d}${b.dataset.part?" · dia "+b.dataset.part.replace(/[()]/g,""):""}`;
+  document.getElementById("dlg-title").textContent=x[1];
+  document.getElementById("dlg-oque").textContent=x[2];
+  document.getElementById("dlg-porque").textContent=x[3];
+  document.getElementById("dlg-pronto").textContent=x[4];
+  if(dlg.showModal) dlg.showModal(); else dlg.setAttribute("open","");
+});
+document.getElementById("dlg-close").addEventListener("click",()=>dlg.close?dlg.close():dlg.removeAttribute("open"));
+dlg.addEventListener("click",e=>{if(e.target===dlg) dlg.close();});
+</script>
+
+</body>
+</html>

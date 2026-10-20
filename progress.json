@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "15 de outubro de 2026",
+  "atualizado_em": "20 de outubro de 2026",
   "itens": [
     {
       "id": "#23",
@@ -817,6 +817,20 @@
         "Remova um dos dois documentos pelo visualizador (ícone do olho) e abra a análise de novo."
       ],
       "esperado": "Depois do segundo documento, o item mostra UM selo só (não um por documento). A análise fala dos dois documentos (\"documento 1\", \"documento 2\"), o veredito deixa de ser \"Reprovado\" e um tópico diz que o apontamento foi superado pela certidão mais recente. O tópico \"Validade\" usa a data do documento mais novo. Os textos são curtos e sem travessão. Ao remover um documento, a análise é refeita só com o que ficou."
+    },
+    {
+      "id": "Checklist multi-comarca",
+      "titulo": "Itens repetidos por comarca ou pela razão social anterior não somem mais ao criar a operação",
+      "status": "feito",
+      "desc": "Alguns checklists pedem a <b>mesma certidão</b> para comarcas diferentes (por exemplo, São Paulo e Sorocaba) e, às vezes, de novo para a <b>razão social anterior</b> da empresa. Antes, ao criar a operação, essas repetições eram tratadas como se fossem a mesma linha e <b>sumiam</b>: no checklist Altus Towers, Altus Empreendimentos e Oasis ficavam com 31 itens em vez de 41, e a RGC com 35 em vez de 40. Agora <b>todos os itens entram</b>, e o nome de cada um traz a comarca e, quando for o caso, a razão social anterior (exemplo: <i>\"Certidão de Distribuidor de Ações Cíveis do 1º Grau — SOROCABA/SP\"</i>).",
+      "passos": [
+        "Crie uma nova operação enviando o checklist <b>Altus Towers</b> (planilha de 15/10/2026).",
+        "No rascunho da operação, abra os targets <b>Altus Empreendimentos</b>, <b>RGC</b> e <b>Oasis</b> e conte os itens.",
+        "Procure itens com o mesmo nome seguidos de <b>— SÃO PAULO</b>, <b>— SOROCABA/SP</b> ou <b>— SANTO ANDRÉ/SP</b>.",
+        "Em Altus Empreendimentos e Oasis, procure os itens que terminam com <b>— Razão Social Anterior: …</b>.",
+        "Crie a operação e confira que os mesmos itens aparecem na tela do target."
+      ],
+      "esperado": "Altus Empreendimentos com <b>41</b> itens, RGC com <b>40</b> e Oasis com <b>41</b>; os demais targets com o mesmo número de antes. Itens de mesmo nome aparecem separados, cada um com a sua comarca (e a razão social anterior, quando houver)."
     }
   ]
 }
